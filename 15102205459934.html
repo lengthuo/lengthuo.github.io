@@ -1,0 +1,459 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  树-二叉查找树（BST） - lengthuo
+  
+  </title>
+ <meta name="description" content="路漫漫其修远兮吾将上下而求索">
+ <link href="atom.xml" rel="alternate" title="lengthuo" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html">lengthuo</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; lengthuo</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>金融云解决方案</label></li>
+
+          
+            <li><a title="架构-架构流程图" href="15102836287298.html">架构-架构流程图</a></li>
+          
+            <li><a title="架构-问题与解决方案" href="15102820788307.html">架构-问题与解决方案</a></li>
+          
+            <li><a title="定义-异常处理" href="15099481239896.html">定义-异常处理</a></li>
+          
+            <li><a title="文档-单元测试" href="15097993606121.html">文档-单元测试</a></li>
+          
+            <li><a title="定义-开发流程" href="15097069077658.html">定义-开发流程</a></li>
+          
+            <li><a title="文档-契约测试" href="15097068761270.html">文档-契约测试</a></li>
+          
+            <li><a title="定义-返回码" href="15097062709914.html">定义-返回码</a></li>
+          
+            <li><a title="定义-日志 （1）" href="15097048723727.html">定义-日志 （1）</a></li>
+          
+            <li><a title="定义-代码规范" href="15097030429159.html">定义-代码规范</a></li>
+          
+            <li><a title="定义-日志（2）" href="15097028101727.html">定义-日志（2）</a></li>
+          
+            <li><a title="文档-初始化项目流程" href="15097024555685.html">文档-初始化项目流程</a></li>
+          
+            <li><a title="定义-返回值格式" href="15097018044485.html">定义-返回值格式</a></li>
+          
+            <li><a title="定义-请求参数处理" href="15097016017686.html">定义-请求参数处理</a></li>
+          
+            <li><a title="定义-git提交代码规范" href="15097013558689.html">定义-git提交代码规范</a></li>
+          
+            <li><a title="文档-接口调用流程" href="15097007112817.html">文档-接口调用流程</a></li>
+          
+            <li><a title="定义-中心返回错误到p2p" href="15096995487331.html">定义-中心返回错误到p2p</a></li>
+          
+            <li><a title="定义-接口个数（未解决）" href="15096947595600.html">定义-接口个数（未解决）</a></li>
+          
+            <li><a title="定义-分页" href="15096937437171.html">定义-分页</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>php</label></li>
+
+          
+            <li><a title="练习题" href="15100534066184.html">练习题</a></li>
+          
+            <li><a title="基础" href="15100478594807.html">基础</a></li>
+          
+            <li><a title="开发规范" href="15096850612612.html">开发规范</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>laravel</label></li>
+
+          
+            <li><a title="header" href="15102790903215.html">header</a></li>
+          
+            <li><a title="cookie" href="15102370714513.html">cookie</a></li>
+          
+            <li><a title="cache" href="15102229366026.html">cache</a></li>
+          
+            <li><a title="查询作用域" href="15101110402458.html">查询作用域</a></li>
+          
+            <li><a title="Request" href="15099459172249.html">Request</a></li>
+          
+            <li><a title="redis" href="15099421951950.html">redis</a></li>
+          
+            <li><a title="session" href="15099380444293.html">session</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>redis</label></li>
+
+          
+            <li><a title="支持类型" href="15099434695015.html">支持类型</a></li>
+          
+            <li><a title="认识redis" href="15099433750652.html">认识redis</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>linux</label></li>
+
+          
+            <li><a title="系统定时任务-cron" href="15097607422303.html">系统定时任务-cron</a></li>
+          
+            <li><a title="服务重启" href="15097602933518.html">服务重启</a></li>
+          
+            <li><a title="系统定时任务-at" href="15097593737810.html">系统定时任务-at</a></li>
+          
+            <li><a title="linux 查看服务器系统的信息" href="15097189513675.html">linux 查看服务器系统的信息</a></li>
+          
+            <li><a title="常用命令" href="15097187372089.html">常用命令</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>git</label></li>
+
+          
+            <li><a title="提交代码规范" href="15097964202481.html">提交代码规范</a></li>
+          
+            <li><a title="git命令大全" href="15097175223406.html">git命令大全</a></li>
+          
+            <li><a title="git 常用命令" href="15097169426182.html">git 常用命令</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>算法</label></li>
+
+          
+            <li><a title="排序-说明" href="15098667005910.html">排序-说明</a></li>
+          
+            <li><a title="排序-归并排序" href="15098651418800.html">排序-归并排序</a></li>
+          
+            <li><a title="排序-插入排序-希尔排序（面试热点）" href="15097185400207.html">排序-插入排序-希尔排序（面试热点）</a></li>
+          
+            <li><a title="排序-选择排序" href="15097183591874.html">排序-选择排序</a></li>
+          
+            <li><a title="排序-插入排序-直接插入排序（面试热点）" href="15097183328300.html">排序-插入排序-直接插入排序（面试热点）</a></li>
+          
+            <li><a title="排序-快速排序（面试热点）" href="15097181541647.html">排序-快速排序（面试热点）</a></li>
+          
+            <li><a title="排序-冒泡(基础)" href="15097179853305.html">排序-冒泡(基础)</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>数据结构</label></li>
+
+          
+            <li><a title="树-红黑树（Red Black Tree）" href="15102209229230.html">树-红黑树（Red Black Tree）</a></li>
+          
+            <li><a title="树-二叉查找树（BST）" href="15102205459934.html">树-二叉查找树（BST）</a></li>
+          
+            <li><a title="hash" href="15098725685121.html">hash</a></li>
+          
+            <li><a title="树" href="15098688823158.html">树</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>常用js代码</label></li>
+
+          
+            <li><a title="参数验证" href="15101054949430.html">参数验证</a></li>
+          
+            <li><a title="form表单提交方式，submit和button的用法" href="15100286139267.html">form表单提交方式，submit和button的用法</a></li>
+          
+            <li><a title="table具体某一列值+bootstrap弹框" href="15100254209802.html">table具体某一列值+bootstrap弹框</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>金融云解决方案</span></li>
+                        
+                          <li><a title="架构-架构流程图" href="15102836287298.html">架构-架构流程图</a></li>
+                        
+                          <li><a title="架构-问题与解决方案" href="15102820788307.html">架构-问题与解决方案</a></li>
+                        
+                          <li><a title="定义-异常处理" href="15099481239896.html">定义-异常处理</a></li>
+                        
+                          <li><a title="文档-单元测试" href="15097993606121.html">文档-单元测试</a></li>
+                        
+                          <li><a title="定义-开发流程" href="15097069077658.html">定义-开发流程</a></li>
+                        
+                          <li><a title="文档-契约测试" href="15097068761270.html">文档-契约测试</a></li>
+                        
+                          <li><a title="定义-返回码" href="15097062709914.html">定义-返回码</a></li>
+                        
+                          <li><a title="定义-日志 （1）" href="15097048723727.html">定义-日志 （1）</a></li>
+                        
+                          <li><a title="定义-代码规范" href="15097030429159.html">定义-代码规范</a></li>
+                        
+                          <li><a title="定义-日志（2）" href="15097028101727.html">定义-日志（2）</a></li>
+                        
+                          <li><a title="文档-初始化项目流程" href="15097024555685.html">文档-初始化项目流程</a></li>
+                        
+                          <li><a title="定义-返回值格式" href="15097018044485.html">定义-返回值格式</a></li>
+                        
+                          <li><a title="定义-请求参数处理" href="15097016017686.html">定义-请求参数处理</a></li>
+                        
+                          <li><a title="定义-git提交代码规范" href="15097013558689.html">定义-git提交代码规范</a></li>
+                        
+                          <li><a title="文档-接口调用流程" href="15097007112817.html">文档-接口调用流程</a></li>
+                        
+                          <li><a title="定义-中心返回错误到p2p" href="15096995487331.html">定义-中心返回错误到p2p</a></li>
+                        
+                          <li><a title="定义-接口个数（未解决）" href="15096947595600.html">定义-接口个数（未解决）</a></li>
+                        
+                          <li><a title="定义-分页" href="15096937437171.html">定义-分页</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>php</span></li>
+                        
+                          <li><a title="练习题" href="15100534066184.html">练习题</a></li>
+                        
+                          <li><a title="基础" href="15100478594807.html">基础</a></li>
+                        
+                          <li><a title="开发规范" href="15096850612612.html">开发规范</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>laravel</span></li>
+                        
+                          <li><a title="header" href="15102790903215.html">header</a></li>
+                        
+                          <li><a title="cookie" href="15102370714513.html">cookie</a></li>
+                        
+                          <li><a title="cache" href="15102229366026.html">cache</a></li>
+                        
+                          <li><a title="查询作用域" href="15101110402458.html">查询作用域</a></li>
+                        
+                          <li><a title="Request" href="15099459172249.html">Request</a></li>
+                        
+                          <li><a title="redis" href="15099421951950.html">redis</a></li>
+                        
+                          <li><a title="session" href="15099380444293.html">session</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>redis</span></li>
+                        
+                          <li><a title="支持类型" href="15099434695015.html">支持类型</a></li>
+                        
+                          <li><a title="认识redis" href="15099433750652.html">认识redis</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>linux</span></li>
+                        
+                          <li><a title="系统定时任务-cron" href="15097607422303.html">系统定时任务-cron</a></li>
+                        
+                          <li><a title="服务重启" href="15097602933518.html">服务重启</a></li>
+                        
+                          <li><a title="系统定时任务-at" href="15097593737810.html">系统定时任务-at</a></li>
+                        
+                          <li><a title="linux 查看服务器系统的信息" href="15097189513675.html">linux 查看服务器系统的信息</a></li>
+                        
+                          <li><a title="常用命令" href="15097187372089.html">常用命令</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>git</span></li>
+                        
+                          <li><a title="提交代码规范" href="15097964202481.html">提交代码规范</a></li>
+                        
+                          <li><a title="git命令大全" href="15097175223406.html">git命令大全</a></li>
+                        
+                          <li><a title="git 常用命令" href="15097169426182.html">git 常用命令</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>算法</span></li>
+                        
+                          <li><a title="排序-说明" href="15098667005910.html">排序-说明</a></li>
+                        
+                          <li><a title="排序-归并排序" href="15098651418800.html">排序-归并排序</a></li>
+                        
+                          <li><a title="排序-插入排序-希尔排序（面试热点）" href="15097185400207.html">排序-插入排序-希尔排序（面试热点）</a></li>
+                        
+                          <li><a title="排序-选择排序" href="15097183591874.html">排序-选择排序</a></li>
+                        
+                          <li><a title="排序-插入排序-直接插入排序（面试热点）" href="15097183328300.html">排序-插入排序-直接插入排序（面试热点）</a></li>
+                        
+                          <li><a title="排序-快速排序（面试热点）" href="15097181541647.html">排序-快速排序（面试热点）</a></li>
+                        
+                          <li><a title="排序-冒泡(基础)" href="15097179853305.html">排序-冒泡(基础)</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>数据结构</span></li>
+                        
+                          <li><a title="树-红黑树（Red Black Tree）" href="15102209229230.html">树-红黑树（Red Black Tree）</a></li>
+                        
+                          <li><a title="树-二叉查找树（BST）" href="15102205459934.html">树-二叉查找树（BST）</a></li>
+                        
+                          <li><a title="hash" href="15098725685121.html">hash</a></li>
+                        
+                          <li><a title="树" href="15098688823158.html">树</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>常用js代码</span></li>
+                        
+                          <li><a title="参数验证" href="15101054949430.html">参数验证</a></li>
+                        
+                          <li><a title="form表单提交方式，submit和button的用法" href="15100286139267.html">form表单提交方式，submit和button的用法</a></li>
+                        
+                          <li><a title="table具体某一列值+bootstrap弹框" href="15100254209802.html">table具体某一列值+bootstrap弹框</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>树-二叉查找树（BST）</h1>
+
+<p>二叉排序树（Binary Sort Tree），又称二叉查找树（Binary Search Tree），亦称二叉搜索树。</p>
+
+<blockquote>
+<p>查找所需要的最大次数=树的深度</p>
+</blockquote>
+
+<ol>
+<li>左子树上所有结点的值均小于或等于它的根结点的值。</li>
+<li>右子树上所有结点的值均大于或等于它的根结点的值。</li>
+<li>左、右子树也分别为二叉排序树。</li>
+</ol>
+
+<p>缺点：（查找效率接近线性）<br/>
+<img src="media/15102205459934/15102213267069.jpg" alt=""/></p>
+
+<p><img src="media/15102205459934/15102213420407.jpg" alt=""/></p>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="15102209229230.html"  title="Previous Post: 树-红黑树（Red Black Tree）">&laquo; 树-红黑树（Red Black Tree）</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="15101110402458.html" 
+	        title="Next Post: 查询作用域">查询作用域 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '15102205459934.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    <script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+
+  </body>
+</html>
