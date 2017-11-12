@@ -1,141 +1,376 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>  
-	  
-  	金融云解决方案 - lengthuo
-  	
-	</title>
-
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<link href="atom.xml" rel="alternate" title="lengthuo" type="application/atom+xml">
-
-	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<script src="asset/javascripts/jquery.min.js"></script>
-	<script src="asset/highlightjs/highlight.pack.js"></script>
-	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
-<script>hljs.initHighlightingOnLoad();</script>
-
-	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
-	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
-	<style type="text/css">
-/* latin */
-@font-face {
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-/* latin */
-@font-face {
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-/* latin */
-@font-face {
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-	</style>
-	
-	<style type="text/css">
-	.container .left-col{ opacity: 1;}
-	#pagenavi a{ font-size: 1.3em;}
-	#pagenavi .next:before{ top: 3px;}
-	#pagenavi .prev:before{ top: 3px;}
-	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
-	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
-	#header .subtitle {
-		line-height: 1.2em;
-		padding-top: 8px;
-	}
-	article pre{ background: none; border: none; padding: 0;}
-	article .entry-content{text-align: left;}
-	.share-comment{ padding: 25px 0px; clear: both;}
-	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
-
-	</style>
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  金融云解决方案 - lengthuo
   
+  </title>
+ <meta name="description" content="路漫漫其修远兮吾将上下而求索">
+ <link href="atom.xml" rel="alternate" title="lengthuo" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
 
-</head>
-
-
-<body>
-	<div class="container">
-		<div class="left-col">
-			<div class="intrude-less">
-				<header id="header" class="inner">
-				 
-					
-					<h1><a href="index.html">lengthuo</a></h1>
-					<p class="subtitle">路漫漫其修远兮吾将上下而求索</p>
-					<nav id="main-nav">
-						<ul class="main">
-						
-						  <li id=""><a target="self" href="index.html">Home</a></li>
-						
-						  <li id=""><a target="_self" href="archives.html">Archives</a></li>
-						
-						</ul>
-					</nav>
-
-					<nav id="sub-nav">
-						<div class="social">
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
 
 
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html">lengthuo</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; lengthuo</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>金融云解决方案</label></li>
+
+          
+            <li><a title="架构-架构流程图" href="15102836287298.html">架构-架构流程图</a></li>
+          
+            <li><a title="架构-问题与解决方案" href="15102820788307.html">架构-问题与解决方案</a></li>
+          
+            <li><a title="定义-异常处理" href="15099481239896.html">定义-异常处理</a></li>
+          
+            <li><a title="文档-单元测试" href="15097993606121.html">文档-单元测试</a></li>
+          
+            <li><a title="定义-开发流程" href="15097069077658.html">定义-开发流程</a></li>
+          
+            <li><a title="文档-契约测试" href="15097068761270.html">文档-契约测试</a></li>
+          
+            <li><a title="定义-返回码" href="15097062709914.html">定义-返回码</a></li>
+          
+            <li><a title="定义-日志 （1）" href="15097048723727.html">定义-日志 （1）</a></li>
+          
+            <li><a title="定义-代码规范" href="15097030429159.html">定义-代码规范</a></li>
+          
+            <li><a title="定义-日志（2）" href="15097028101727.html">定义-日志（2）</a></li>
+          
+            <li><a title="文档-初始化项目流程" href="15097024555685.html">文档-初始化项目流程</a></li>
+          
+            <li><a title="定义-返回值格式" href="15097018044485.html">定义-返回值格式</a></li>
+          
+            <li><a title="定义-请求参数处理" href="15097016017686.html">定义-请求参数处理</a></li>
+          
+            <li><a title="定义-git提交代码规范" href="15097013558689.html">定义-git提交代码规范</a></li>
+          
+            <li><a title="文档-接口调用流程" href="15097007112817.html">文档-接口调用流程</a></li>
+          
+            <li><a title="定义-中心返回错误到p2p" href="15096995487331.html">定义-中心返回错误到p2p</a></li>
+          
+            <li><a title="定义-接口个数（未解决）" href="15096947595600.html">定义-接口个数（未解决）</a></li>
+          
+            <li><a title="定义-分页" href="15096937437171.html">定义-分页</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>php</label></li>
+
+          
+            <li><a title="练习题" href="15100534066184.html">练习题</a></li>
+          
+            <li><a title="基础" href="15100478594807.html">基础</a></li>
+          
+            <li><a title="开发规范" href="15096850612612.html">开发规范</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>laravel</label></li>
+
+          
+            <li><a title="header" href="15102790903215.html">header</a></li>
+          
+            <li><a title="cookie" href="15102370714513.html">cookie</a></li>
+          
+            <li><a title="cache" href="15102229366026.html">cache</a></li>
+          
+            <li><a title="查询作用域" href="15101110402458.html">查询作用域</a></li>
+          
+            <li><a title="Request" href="15099459172249.html">Request</a></li>
+          
+            <li><a title="redis" href="15099421951950.html">redis</a></li>
+          
+            <li><a title="session" href="15099380444293.html">session</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>redis</label></li>
+
+          
+            <li><a title="支持类型" href="15099434695015.html">支持类型</a></li>
+          
+            <li><a title="认识redis" href="15099433750652.html">认识redis</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>linux</label></li>
+
+          
+            <li><a title="系统定时任务-cron" href="15097607422303.html">系统定时任务-cron</a></li>
+          
+            <li><a title="服务重启" href="15097602933518.html">服务重启</a></li>
+          
+            <li><a title="系统定时任务-at" href="15097593737810.html">系统定时任务-at</a></li>
+          
+            <li><a title="linux 查看服务器系统的信息" href="15097189513675.html">linux 查看服务器系统的信息</a></li>
+          
+            <li><a title="常用命令" href="15097187372089.html">常用命令</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>git</label></li>
+
+          
+            <li><a title="提交代码规范" href="15097964202481.html">提交代码规范</a></li>
+          
+            <li><a title="git命令大全" href="15097175223406.html">git命令大全</a></li>
+          
+            <li><a title="git 常用命令" href="15097169426182.html">git 常用命令</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>算法</label></li>
+
+          
+            <li><a title="排序-说明" href="15098667005910.html">排序-说明</a></li>
+          
+            <li><a title="排序-归并排序" href="15098651418800.html">排序-归并排序</a></li>
+          
+            <li><a title="排序-插入排序-希尔排序（面试热点）" href="15097185400207.html">排序-插入排序-希尔排序（面试热点）</a></li>
+          
+            <li><a title="排序-选择排序" href="15097183591874.html">排序-选择排序</a></li>
+          
+            <li><a title="排序-插入排序-直接插入排序（面试热点）" href="15097183328300.html">排序-插入排序-直接插入排序（面试热点）</a></li>
+          
+            <li><a title="排序-快速排序（面试热点）" href="15097181541647.html">排序-快速排序（面试热点）</a></li>
+          
+            <li><a title="排序-冒泡(基础)" href="15097179853305.html">排序-冒泡(基础)</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>数据结构</label></li>
+
+          
+            <li><a title="树-红黑树（Red Black Tree）" href="15102209229230.html">树-红黑树（Red Black Tree）</a></li>
+          
+            <li><a title="树-二叉查找树（BST）" href="15102205459934.html">树-二叉查找树（BST）</a></li>
+          
+            <li><a title="hash" href="15098725685121.html">hash</a></li>
+          
+            <li><a title="树" href="15098688823158.html">树</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>常用js代码</label></li>
+
+          
+            <li><a title="参数验证" href="15101054949430.html">参数验证</a></li>
+          
+            <li><a title="form表单提交方式，submit和button的用法" href="15100286139267.html">form表单提交方式，submit和button的用法</a></li>
+          
+            <li><a title="table具体某一列值+bootstrap弹框" href="15100254209802.html">table具体某一列值+bootstrap弹框</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>金融云解决方案</span></li>
+                        
+                          <li><a title="架构-架构流程图" href="15102836287298.html">架构-架构流程图</a></li>
+                        
+                          <li><a title="架构-问题与解决方案" href="15102820788307.html">架构-问题与解决方案</a></li>
+                        
+                          <li><a title="定义-异常处理" href="15099481239896.html">定义-异常处理</a></li>
+                        
+                          <li><a title="文档-单元测试" href="15097993606121.html">文档-单元测试</a></li>
+                        
+                          <li><a title="定义-开发流程" href="15097069077658.html">定义-开发流程</a></li>
+                        
+                          <li><a title="文档-契约测试" href="15097068761270.html">文档-契约测试</a></li>
+                        
+                          <li><a title="定义-返回码" href="15097062709914.html">定义-返回码</a></li>
+                        
+                          <li><a title="定义-日志 （1）" href="15097048723727.html">定义-日志 （1）</a></li>
+                        
+                          <li><a title="定义-代码规范" href="15097030429159.html">定义-代码规范</a></li>
+                        
+                          <li><a title="定义-日志（2）" href="15097028101727.html">定义-日志（2）</a></li>
+                        
+                          <li><a title="文档-初始化项目流程" href="15097024555685.html">文档-初始化项目流程</a></li>
+                        
+                          <li><a title="定义-返回值格式" href="15097018044485.html">定义-返回值格式</a></li>
+                        
+                          <li><a title="定义-请求参数处理" href="15097016017686.html">定义-请求参数处理</a></li>
+                        
+                          <li><a title="定义-git提交代码规范" href="15097013558689.html">定义-git提交代码规范</a></li>
+                        
+                          <li><a title="文档-接口调用流程" href="15097007112817.html">文档-接口调用流程</a></li>
+                        
+                          <li><a title="定义-中心返回错误到p2p" href="15096995487331.html">定义-中心返回错误到p2p</a></li>
+                        
+                          <li><a title="定义-接口个数（未解决）" href="15096947595600.html">定义-接口个数（未解决）</a></li>
+                        
+                          <li><a title="定义-分页" href="15096937437171.html">定义-分页</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>php</span></li>
+                        
+                          <li><a title="练习题" href="15100534066184.html">练习题</a></li>
+                        
+                          <li><a title="基础" href="15100478594807.html">基础</a></li>
+                        
+                          <li><a title="开发规范" href="15096850612612.html">开发规范</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>laravel</span></li>
+                        
+                          <li><a title="header" href="15102790903215.html">header</a></li>
+                        
+                          <li><a title="cookie" href="15102370714513.html">cookie</a></li>
+                        
+                          <li><a title="cache" href="15102229366026.html">cache</a></li>
+                        
+                          <li><a title="查询作用域" href="15101110402458.html">查询作用域</a></li>
+                        
+                          <li><a title="Request" href="15099459172249.html">Request</a></li>
+                        
+                          <li><a title="redis" href="15099421951950.html">redis</a></li>
+                        
+                          <li><a title="session" href="15099380444293.html">session</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>redis</span></li>
+                        
+                          <li><a title="支持类型" href="15099434695015.html">支持类型</a></li>
+                        
+                          <li><a title="认识redis" href="15099433750652.html">认识redis</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>linux</span></li>
+                        
+                          <li><a title="系统定时任务-cron" href="15097607422303.html">系统定时任务-cron</a></li>
+                        
+                          <li><a title="服务重启" href="15097602933518.html">服务重启</a></li>
+                        
+                          <li><a title="系统定时任务-at" href="15097593737810.html">系统定时任务-at</a></li>
+                        
+                          <li><a title="linux 查看服务器系统的信息" href="15097189513675.html">linux 查看服务器系统的信息</a></li>
+                        
+                          <li><a title="常用命令" href="15097187372089.html">常用命令</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>git</span></li>
+                        
+                          <li><a title="提交代码规范" href="15097964202481.html">提交代码规范</a></li>
+                        
+                          <li><a title="git命令大全" href="15097175223406.html">git命令大全</a></li>
+                        
+                          <li><a title="git 常用命令" href="15097169426182.html">git 常用命令</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>算法</span></li>
+                        
+                          <li><a title="排序-说明" href="15098667005910.html">排序-说明</a></li>
+                        
+                          <li><a title="排序-归并排序" href="15098651418800.html">排序-归并排序</a></li>
+                        
+                          <li><a title="排序-插入排序-希尔排序（面试热点）" href="15097185400207.html">排序-插入排序-希尔排序（面试热点）</a></li>
+                        
+                          <li><a title="排序-选择排序" href="15097183591874.html">排序-选择排序</a></li>
+                        
+                          <li><a title="排序-插入排序-直接插入排序（面试热点）" href="15097183328300.html">排序-插入排序-直接插入排序（面试热点）</a></li>
+                        
+                          <li><a title="排序-快速排序（面试热点）" href="15097181541647.html">排序-快速排序（面试热点）</a></li>
+                        
+                          <li><a title="排序-冒泡(基础)" href="15097179853305.html">排序-冒泡(基础)</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>数据结构</span></li>
+                        
+                          <li><a title="树-红黑树（Red Black Tree）" href="15102209229230.html">树-红黑树（Red Black Tree）</a></li>
+                        
+                          <li><a title="树-二叉查找树（BST）" href="15102205459934.html">树-二叉查找树（BST）</a></li>
+                        
+                          <li><a title="hash" href="15098725685121.html">hash</a></li>
+                        
+                          <li><a title="树" href="15098688823158.html">树</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>常用js代码</span></li>
+                        
+                          <li><a title="参数验证" href="15101054949430.html">参数验证</a></li>
+                        
+                          <li><a title="form表单提交方式，submit和button的用法" href="15100286139267.html">form表单提交方式，submit和button的用法</a></li>
+                        
+                          <li><a title="table具体某一列值+bootstrap弹框" href="15100254209802.html">table具体某一列值+bootstrap弹框</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ 
 
 
+	
+		<div class="markdown-body">
+		<h1>文档-初始化项目流程</h1>
 
-
-
-
-
-
-
-
-
-								
-
-								<a class="rss" href="atom.xml" title="RSS">RSS</a>
-							
-						</div>
-					</nav>
-				</header>				
-			</div>
-		</div>	
-		<div class="mid-col">
-			<div class="mid-col-container"> <div id="content" class="inner">
-<div itemscope itemtype="http://schema.org/Blog">
-
-
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2017-11-03T17:47:35+08:00" itemprop="datePublished">2017/11/3</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='%E9%87%91%E8%9E%8D%E4%BA%91%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.html'>金融云解决方案</a>&nbsp;
-			 
-			</div>
-		</div>
-		<h1 class="title" itemprop="name"><a href="15097024555685.html" itemprop="url">
-		文档-初始化项目流程</a></h1>
-		<div class="entry-content" itemprop="articleBody">
-			
-			<h3 id="toc_0">1 laravel版本统一 5.4.*</h3>
+		<h3 id="toc_0">1 laravel版本统一 5.4.*</h3>
 
 <h3 id="toc_1">2 mysql 配置</h3>
 
@@ -249,320 +484,55 @@ LogAfter
 </code></pre>
 
 
-			
-			
 		</div>
+	
 
-	</article>
  
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2017-11-03T17:36:44+08:00" itemprop="datePublished">2017/11/3</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='%E9%87%91%E8%9E%8D%E4%BA%91%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.html'>金融云解决方案</a>&nbsp;
-			 
-			</div>
-		</div>
-		<h1 class="title" itemprop="name"><a href="15097018044485.html" itemprop="url">
-		定义-返回值格式</a></h1>
-		<div class="entry-content" itemprop="articleBody">
-			
-			<p>返回格式</p>
+	
 
-<pre><code>{
-    &quot;isException&quot;:true|false
-    &quot;code&quot;:xxx
-    &quot;msg&quot;:xxx
-    &quot;data&quot;:
-}
-
-</code></pre>
-
-<p>代码处理</p>
-
-<pre><code>&lt;?php
-/**
- * @author lishuo
- */
-
-namespace App\Tools;
-
-
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Support\Facades\Response;
-
-/**
- * 返回格式化
- * Class ReturnFormat
- * @package App\Tools
- */
-class ReturnFormat
-{
-    /**
-     * @param array $data
-     * @param string $state
-     * @param string $message
-     * @param $isException
-     * @return mixed
-     */
-    public static function message($data = [], $state = &#39;SUCCESS&#39;, $message = &#39;&#39;, $isException = false)
-    {
-        self::formatData($data);
-        $data = !is_array($data) ? [] : $data;//返回值为true的时候直接返回空数组
-        $code = self::getCodeByStates($state);
-        $message = $message ? : self::getMessageByStates($state);
-        return Response::json([
-            &#39;isException&#39; =&gt; $isException,
-            &quot;code&quot;        =&gt; $code,
-            &quot;msg&quot;         =&gt; $message,
-            &quot;data&quot;        =&gt; $data,
-        ]);
-    }
-
-    /**
-     * 数据格式化  处理分页，具体分页参考分页的标准定义
-     * @param $data
-     */
-    private static function formatData(&amp;$data)
-    {
-        if ($data instanceof LengthAwarePaginator) {
-            $data = $data-&gt;toArray();
-            $data[&#39;list&#39;] = $data[&#39;data&#39;];
-            unset($data[&#39;data&#39;], $data[&#39;next_page_url&#39;], $data[&#39;path&#39;], $data[&#39;prev_page_url&#39;], $data[&#39;last_page&#39;], $data[&#39;from&#39;], $data[&#39;to&#39;]);
-        }
-    }
-
-    private static function getCodeByStates($state)
-    {
-        return isset(config(&quot;code.&quot; . $state)[&#39;code&#39;]) ? config(&quot;code.&quot; . $state)[&#39;code&#39;] : &#39;500.&#39;;
-    }
-
-    private static function getMessageByStates($state)
-    {
-        return isset(config(&quot;code.&quot; . $state)[&#39;msg&#39;]) ? config(&quot;code.&quot; . $state)[&#39;msg&#39;] : &#39;未知错误&#39;;
-    }
-}
-
-
-</code></pre>
-
-
-			
-			
-		</div>
-
-	</article>
  
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2017-11-03T17:33:21+08:00" itemprop="datePublished">2017/11/3</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='%E9%87%91%E8%9E%8D%E4%BA%91%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.html'>金融云解决方案</a>&nbsp;
-			 
-			</div>
-		</div>
-		<h1 class="title" itemprop="name"><a href="15097016017686.html" itemprop="url">
-		定义-请求参数处理</a></h1>
-		<div class="entry-content" itemprop="articleBody">
-			
-			<h2 id="toc_0">请求参数</h2>
+	
 
-<pre><code>
-{
-    &quot;data&quot;:{
-        &quot;mobile&quot;:13800138000,
-        &quot;password&quot;:&quot;5f6c86ce169952d34586a5c39d3441dc&quot;
-     }
-}
-
-</code></pre>
-
-<p>由于代码中json是2层，会有诸多不便，所以所有的请求参数都过滤为</p>
-
-<pre><code>
-{
-    &quot;mobile&quot;:13800138000,
-    &quot;password&quot;:&quot;5f6c86ce169952d34586a5c39d3441dc&quot;
-}
-
-代码
-
-if (!isset($request-&gt;data)) {
-    MyLog::info(&quot;RequestFilterMiddleware&quot;, &quot;请求参数中没有data参数&quot;);
-     return ReturnFormat::message([], 2000);
- }
- $request-&gt;replace($request-&gt;data);  //替换参数
- return $next($request);
-
-</code></pre>
-
-
-			
-			
-		</div>
-
-	</article>
  
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2017-11-03T17:29:15+08:00" itemprop="datePublished">2017/11/3</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='%E9%87%91%E8%9E%8D%E4%BA%91%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.html'>金融云解决方案</a>&nbsp;
-			 
-			</div>
-		</div>
-		<h1 class="title" itemprop="name"><a href="15097013558689.html" itemprop="url">
-		定义-git提交代码规范</a></h1>
-		<div class="entry-content" itemprop="articleBody">
-			
-			<h2 id="toc_0">实例</h2>
+	
 
-<pre><code>feat(module):(JRY-120) 后台订单列表
-</code></pre>
-
-<h2 id="toc_1">定义</h2>
-
-<pre><code>
-&lt;type&gt;(&lt;scope&gt;):&lt;jira:id&gt;&lt;subject&gt;
-    &lt;BLANK LINE&gt;
-&lt;body&gt;
-   &lt;BLANK LINE&gt;
-&lt;footer&gt; 
-
-jira:id : 
-       JIRA 号(没有填:JRY-00)
-type：
-       下面有几个我们常用到的
-      . feat :新功能 
-      . fix :修复bug  
-      . doc : 文档改变
-      . style : 代码格式改变
-      . refactor :某个已有功能重构
-      . perf :性能优化
-      . test :增加测试
-      . build :改变了build工具 如 grunt换成了 npm
-      . revert: 撤销上一次的 commit 
-      . chore 维护
-scope：
-       用来说明此次修改的影响范围 可以随便填写任何东西，推荐使用
-       all ：表示影响面大 ，如修改了网络框架  会对真个程序产生影响
-       loation： 表示影响小，某个小小的功能
-       module：表示会影响某个模块 如登录模块、首页模块 、用户管理模块等等  
-       
-subject:
-       用来简要描述本次改动，概述就好了
-body:
-       具体的修改信息 应该尽量详细
-footer：
-       放置写备注啥的。
-
-</code></pre>
-
-
-			
-			
-		</div>
-
-	</article>
  
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2017-11-03T17:18:31+08:00" itemprop="datePublished">2017/11/3</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='%E9%87%91%E8%9E%8D%E4%BA%91%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.html'>金融云解决方案</a>&nbsp;
-			 
-			</div>
-		</div>
-		<h1 class="title" itemprop="name"><a href="15097007112817.html" itemprop="url">
-		文档-接口调用流程</a></h1>
-		<div class="entry-content" itemprop="articleBody">
-			
-			<h2 id="toc_0">调用顺序</h2>
-
-<p>还在探索中</p>
-
-<ol>
-<li>网关调用p2p</li>
-<li>p2p 转发 各个中心完成业务，p2p组装需要的参数返回给接入方</li>
-<li>网关可以直接掉中心完成简单的单独的业务（由于后期业务复杂，单独中心完成不了需求，接口逐渐都走p2p中心）</li>
-</ol>
-
-<p>接入方调用的接口都必须在网关中注册，否则没有权限调用该接口</p>
-
-<pre><code>
-    gateway_url_auth 表中添加一条记录 ，
-表的设计
-    CREATE TABLE `gateway_url_auth` (
-  `id` int(20) NOT NULL AUTO_INCREMENT,
-  `service_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT &#39;&#39;,
-  `module_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT &#39;&#39;,
-  `sub_path` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT &#39;&#39;,
-  `enabled` tinyint(1) NOT NULL DEFAULT &#39;0&#39; COMMENT &#39;是否可用：默认为否 ‘0’，是 ‘1’&#39;,
-  `auth_flag` tinyint(1) NOT NULL DEFAULT &#39;1&#39; COMMENT &#39;是否需要鉴权，默认为需要鉴权：是 ‘1’，否 ‘0’&#39;,
-  `create_time` datetime DEFAULT NULL,
-  `create_user` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `update_time` datetime DEFAULT NULL,
-  `update_user` datetime DEFAULT NULL,
-  `remarks` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT &#39;备注&#39;,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-例如：
-service_name    sub_path
-permission     permission/tssystem/role/create
- 中心名称        中心名称    接口路径           
-
-
-</code></pre>
-
-<p>p2p调用中心的接口时候没有要求。（一开始的设计是p2p和每一个中心都是平级的关系）</p>
-
-
-			
-			
-		</div>
-
-	</article>
-  
-
-</div>
-<nav id="pagenavi">
-	 <a class="prev" href="金融云解决方案_1.html">Prev</a>  
-	 <a class="next" href="金融云解决方案_3.html">Next</a> 
-	<div class="center"><a href="archives.html">Blog Archives</a></div>
-
-</nav>
-
-</div>
-
-
-
-        </div>
-			<footer id="footer" class="inner">Copyright &copy; 2014
-Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
-Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
-      </footer>
-		</div>
-	</div>
+	
 
   
+  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
     
-<script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    <script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
 
-</body>
+  </body>
 </html>

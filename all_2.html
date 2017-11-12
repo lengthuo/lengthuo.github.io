@@ -1,141 +1,376 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>  
-	  
-  	lengthuo
-  	
-	</title>
-
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<link href="atom.xml" rel="alternate" title="lengthuo" type="application/atom+xml">
-
-	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<script src="asset/javascripts/jquery.min.js"></script>
-	<script src="asset/highlightjs/highlight.pack.js"></script>
-	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
-<script>hljs.initHighlightingOnLoad();</script>
-
-	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
-	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
-	<style type="text/css">
-/* latin */
-@font-face {
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-/* latin */
-@font-face {
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-/* latin */
-@font-face {
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-	</style>
-	
-	<style type="text/css">
-	.container .left-col{ opacity: 1;}
-	#pagenavi a{ font-size: 1.3em;}
-	#pagenavi .next:before{ top: 3px;}
-	#pagenavi .prev:before{ top: 3px;}
-	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
-	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
-	#header .subtitle {
-		line-height: 1.2em;
-		padding-top: 8px;
-	}
-	article pre{ background: none; border: none; padding: 0;}
-	article .entry-content{text-align: left;}
-	.share-comment{ padding: 25px 0px; clear: both;}
-	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
-
-	</style>
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  lengthuo
   
+  </title>
+ <meta name="description" content="路漫漫其修远兮吾将上下而求索">
+ <link href="atom.xml" rel="alternate" title="lengthuo" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
 
-</head>
-
-
-<body>
-	<div class="container">
-		<div class="left-col">
-			<div class="intrude-less">
-				<header id="header" class="inner">
-				 
-					
-					<h1><a href="index.html">lengthuo</a></h1>
-					<p class="subtitle">路漫漫其修远兮吾将上下而求索</p>
-					<nav id="main-nav">
-						<ul class="main">
-						
-						  <li id=""><a target="self" href="index.html">Home</a></li>
-						
-						  <li id=""><a target="_self" href="archives.html">Archives</a></li>
-						
-						</ul>
-					</nav>
-
-					<nav id="sub-nav">
-						<div class="social">
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
 
 
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html">lengthuo</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; lengthuo</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>金融云解决方案</label></li>
+
+          
+            <li><a title="架构-架构流程图" href="15102836287298.html">架构-架构流程图</a></li>
+          
+            <li><a title="架构-问题与解决方案" href="15102820788307.html">架构-问题与解决方案</a></li>
+          
+            <li><a title="定义-异常处理" href="15099481239896.html">定义-异常处理</a></li>
+          
+            <li><a title="文档-单元测试" href="15097993606121.html">文档-单元测试</a></li>
+          
+            <li><a title="定义-开发流程" href="15097069077658.html">定义-开发流程</a></li>
+          
+            <li><a title="文档-契约测试" href="15097068761270.html">文档-契约测试</a></li>
+          
+            <li><a title="定义-返回码" href="15097062709914.html">定义-返回码</a></li>
+          
+            <li><a title="定义-日志 （1）" href="15097048723727.html">定义-日志 （1）</a></li>
+          
+            <li><a title="定义-代码规范" href="15097030429159.html">定义-代码规范</a></li>
+          
+            <li><a title="定义-日志（2）" href="15097028101727.html">定义-日志（2）</a></li>
+          
+            <li><a title="文档-初始化项目流程" href="15097024555685.html">文档-初始化项目流程</a></li>
+          
+            <li><a title="定义-返回值格式" href="15097018044485.html">定义-返回值格式</a></li>
+          
+            <li><a title="定义-请求参数处理" href="15097016017686.html">定义-请求参数处理</a></li>
+          
+            <li><a title="定义-git提交代码规范" href="15097013558689.html">定义-git提交代码规范</a></li>
+          
+            <li><a title="文档-接口调用流程" href="15097007112817.html">文档-接口调用流程</a></li>
+          
+            <li><a title="定义-中心返回错误到p2p" href="15096995487331.html">定义-中心返回错误到p2p</a></li>
+          
+            <li><a title="定义-接口个数（未解决）" href="15096947595600.html">定义-接口个数（未解决）</a></li>
+          
+            <li><a title="定义-分页" href="15096937437171.html">定义-分页</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>php</label></li>
+
+          
+            <li><a title="练习题" href="15100534066184.html">练习题</a></li>
+          
+            <li><a title="基础" href="15100478594807.html">基础</a></li>
+          
+            <li><a title="开发规范" href="15096850612612.html">开发规范</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>laravel</label></li>
+
+          
+            <li><a title="header" href="15102790903215.html">header</a></li>
+          
+            <li><a title="cookie" href="15102370714513.html">cookie</a></li>
+          
+            <li><a title="cache" href="15102229366026.html">cache</a></li>
+          
+            <li><a title="查询作用域" href="15101110402458.html">查询作用域</a></li>
+          
+            <li><a title="Request" href="15099459172249.html">Request</a></li>
+          
+            <li><a title="redis" href="15099421951950.html">redis</a></li>
+          
+            <li><a title="session" href="15099380444293.html">session</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>redis</label></li>
+
+          
+            <li><a title="支持类型" href="15099434695015.html">支持类型</a></li>
+          
+            <li><a title="认识redis" href="15099433750652.html">认识redis</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>linux</label></li>
+
+          
+            <li><a title="系统定时任务-cron" href="15097607422303.html">系统定时任务-cron</a></li>
+          
+            <li><a title="服务重启" href="15097602933518.html">服务重启</a></li>
+          
+            <li><a title="系统定时任务-at" href="15097593737810.html">系统定时任务-at</a></li>
+          
+            <li><a title="linux 查看服务器系统的信息" href="15097189513675.html">linux 查看服务器系统的信息</a></li>
+          
+            <li><a title="常用命令" href="15097187372089.html">常用命令</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>git</label></li>
+
+          
+            <li><a title="提交代码规范" href="15097964202481.html">提交代码规范</a></li>
+          
+            <li><a title="git命令大全" href="15097175223406.html">git命令大全</a></li>
+          
+            <li><a title="git 常用命令" href="15097169426182.html">git 常用命令</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>算法</label></li>
+
+          
+            <li><a title="排序-说明" href="15098667005910.html">排序-说明</a></li>
+          
+            <li><a title="排序-归并排序" href="15098651418800.html">排序-归并排序</a></li>
+          
+            <li><a title="排序-插入排序-希尔排序（面试热点）" href="15097185400207.html">排序-插入排序-希尔排序（面试热点）</a></li>
+          
+            <li><a title="排序-选择排序" href="15097183591874.html">排序-选择排序</a></li>
+          
+            <li><a title="排序-插入排序-直接插入排序（面试热点）" href="15097183328300.html">排序-插入排序-直接插入排序（面试热点）</a></li>
+          
+            <li><a title="排序-快速排序（面试热点）" href="15097181541647.html">排序-快速排序（面试热点）</a></li>
+          
+            <li><a title="排序-冒泡(基础)" href="15097179853305.html">排序-冒泡(基础)</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>数据结构</label></li>
+
+          
+            <li><a title="树-红黑树（Red Black Tree）" href="15102209229230.html">树-红黑树（Red Black Tree）</a></li>
+          
+            <li><a title="树-二叉查找树（BST）" href="15102205459934.html">树-二叉查找树（BST）</a></li>
+          
+            <li><a title="hash" href="15098725685121.html">hash</a></li>
+          
+            <li><a title="树" href="15098688823158.html">树</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>常用js代码</label></li>
+
+          
+            <li><a title="参数验证" href="15101054949430.html">参数验证</a></li>
+          
+            <li><a title="form表单提交方式，submit和button的用法" href="15100286139267.html">form表单提交方式，submit和button的用法</a></li>
+          
+            <li><a title="table具体某一列值+bootstrap弹框" href="15100254209802.html">table具体某一列值+bootstrap弹框</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>金融云解决方案</span></li>
+                        
+                          <li><a title="架构-架构流程图" href="15102836287298.html">架构-架构流程图</a></li>
+                        
+                          <li><a title="架构-问题与解决方案" href="15102820788307.html">架构-问题与解决方案</a></li>
+                        
+                          <li><a title="定义-异常处理" href="15099481239896.html">定义-异常处理</a></li>
+                        
+                          <li><a title="文档-单元测试" href="15097993606121.html">文档-单元测试</a></li>
+                        
+                          <li><a title="定义-开发流程" href="15097069077658.html">定义-开发流程</a></li>
+                        
+                          <li><a title="文档-契约测试" href="15097068761270.html">文档-契约测试</a></li>
+                        
+                          <li><a title="定义-返回码" href="15097062709914.html">定义-返回码</a></li>
+                        
+                          <li><a title="定义-日志 （1）" href="15097048723727.html">定义-日志 （1）</a></li>
+                        
+                          <li><a title="定义-代码规范" href="15097030429159.html">定义-代码规范</a></li>
+                        
+                          <li><a title="定义-日志（2）" href="15097028101727.html">定义-日志（2）</a></li>
+                        
+                          <li><a title="文档-初始化项目流程" href="15097024555685.html">文档-初始化项目流程</a></li>
+                        
+                          <li><a title="定义-返回值格式" href="15097018044485.html">定义-返回值格式</a></li>
+                        
+                          <li><a title="定义-请求参数处理" href="15097016017686.html">定义-请求参数处理</a></li>
+                        
+                          <li><a title="定义-git提交代码规范" href="15097013558689.html">定义-git提交代码规范</a></li>
+                        
+                          <li><a title="文档-接口调用流程" href="15097007112817.html">文档-接口调用流程</a></li>
+                        
+                          <li><a title="定义-中心返回错误到p2p" href="15096995487331.html">定义-中心返回错误到p2p</a></li>
+                        
+                          <li><a title="定义-接口个数（未解决）" href="15096947595600.html">定义-接口个数（未解决）</a></li>
+                        
+                          <li><a title="定义-分页" href="15096937437171.html">定义-分页</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>php</span></li>
+                        
+                          <li><a title="练习题" href="15100534066184.html">练习题</a></li>
+                        
+                          <li><a title="基础" href="15100478594807.html">基础</a></li>
+                        
+                          <li><a title="开发规范" href="15096850612612.html">开发规范</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>laravel</span></li>
+                        
+                          <li><a title="header" href="15102790903215.html">header</a></li>
+                        
+                          <li><a title="cookie" href="15102370714513.html">cookie</a></li>
+                        
+                          <li><a title="cache" href="15102229366026.html">cache</a></li>
+                        
+                          <li><a title="查询作用域" href="15101110402458.html">查询作用域</a></li>
+                        
+                          <li><a title="Request" href="15099459172249.html">Request</a></li>
+                        
+                          <li><a title="redis" href="15099421951950.html">redis</a></li>
+                        
+                          <li><a title="session" href="15099380444293.html">session</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>redis</span></li>
+                        
+                          <li><a title="支持类型" href="15099434695015.html">支持类型</a></li>
+                        
+                          <li><a title="认识redis" href="15099433750652.html">认识redis</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>linux</span></li>
+                        
+                          <li><a title="系统定时任务-cron" href="15097607422303.html">系统定时任务-cron</a></li>
+                        
+                          <li><a title="服务重启" href="15097602933518.html">服务重启</a></li>
+                        
+                          <li><a title="系统定时任务-at" href="15097593737810.html">系统定时任务-at</a></li>
+                        
+                          <li><a title="linux 查看服务器系统的信息" href="15097189513675.html">linux 查看服务器系统的信息</a></li>
+                        
+                          <li><a title="常用命令" href="15097187372089.html">常用命令</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>git</span></li>
+                        
+                          <li><a title="提交代码规范" href="15097964202481.html">提交代码规范</a></li>
+                        
+                          <li><a title="git命令大全" href="15097175223406.html">git命令大全</a></li>
+                        
+                          <li><a title="git 常用命令" href="15097169426182.html">git 常用命令</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>算法</span></li>
+                        
+                          <li><a title="排序-说明" href="15098667005910.html">排序-说明</a></li>
+                        
+                          <li><a title="排序-归并排序" href="15098651418800.html">排序-归并排序</a></li>
+                        
+                          <li><a title="排序-插入排序-希尔排序（面试热点）" href="15097185400207.html">排序-插入排序-希尔排序（面试热点）</a></li>
+                        
+                          <li><a title="排序-选择排序" href="15097183591874.html">排序-选择排序</a></li>
+                        
+                          <li><a title="排序-插入排序-直接插入排序（面试热点）" href="15097183328300.html">排序-插入排序-直接插入排序（面试热点）</a></li>
+                        
+                          <li><a title="排序-快速排序（面试热点）" href="15097181541647.html">排序-快速排序（面试热点）</a></li>
+                        
+                          <li><a title="排序-冒泡(基础)" href="15097179853305.html">排序-冒泡(基础)</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>数据结构</span></li>
+                        
+                          <li><a title="树-红黑树（Red Black Tree）" href="15102209229230.html">树-红黑树（Red Black Tree）</a></li>
+                        
+                          <li><a title="树-二叉查找树（BST）" href="15102205459934.html">树-二叉查找树（BST）</a></li>
+                        
+                          <li><a title="hash" href="15098725685121.html">hash</a></li>
+                        
+                          <li><a title="树" href="15098688823158.html">树</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>常用js代码</span></li>
+                        
+                          <li><a title="参数验证" href="15101054949430.html">参数验证</a></li>
+                        
+                          <li><a title="form表单提交方式，submit和button的用法" href="15100286139267.html">form表单提交方式，submit和button的用法</a></li>
+                        
+                          <li><a title="table具体某一列值+bootstrap弹框" href="15100254209802.html">table具体某一列值+bootstrap弹框</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ 
 
 
+	
+		<div class="markdown-body">
+		<h1>基础</h1>
 
-
-
-
-
-
-
-
-
-								
-
-								<a class="rss" href="atom.xml" title="RSS">RSS</a>
-							
-						</div>
-					</nav>
-				</header>				
-			</div>
-		</div>	
-		<div class="mid-col">
-			<div class="mid-col-container"> <div id="content" class="inner">
-<div itemscope itemtype="http://schema.org/Blog">
-
-
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2017-11-07T17:44:19+08:00" itemprop="datePublished">2017/11/7</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='php%E4%B8%93%E6%A0%8F.html'>php</a>&nbsp;
-			 
-			</div>
-		</div>
-		<h1 class="title" itemprop="name"><a href="15100478594807.html" itemprop="url">
-		基础</a></h1>
-		<div class="entry-content" itemprop="articleBody">
-			
-			<p>没有先后顺序，想到哪就写到哪</p>
+		<p>没有先后顺序，想到哪就写到哪</p>
 
 <pre><code>深拷贝：赋值时值完全复制，完全的copy，对其中一个作出改变，不会影响另一个
 
@@ -186,495 +421,55 @@ get_class_methods($b); | get_class_methods(new AA()); //获取类的方法 参�
 </code></pre>
 
 
-			
-			
 		</div>
+	
 
-	</article>
  
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2017-11-07T12:23:33+08:00" itemprop="datePublished">2017/11/7</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='%E5%B8%B8%E7%94%A8js%E4%BB%A3%E7%A0%81.html'>常用js代码</a>&nbsp;
-			 
-			</div>
-		</div>
-		<h1 class="title" itemprop="name"><a href="15100286139267.html" itemprop="url">
-		form表单提交方式，submit和button的用法</a></h1>
-		<div class="entry-content" itemprop="articleBody">
-			
-			<pre><code>
+	
 
-在jsp的前端页面的头部插入一个js方法：
-
- function checkUser(){
-   var result = document.getElementById(&quot;userid&quot;).value;
-   var password = document.getElementById(&quot;userpassid&quot;).value;
-   if(result == &quot;&quot;  ){
-     alert(&quot;用户名不能为空&quot;);
-     return false;
-   }
-   if(password == &quot;&quot;  ){
-    alert(&quot;密码不能为空&quot;);
-     return false;
-   }else{
-   return true;
-   }
-}
-
-在form表单里写成这样：
-&lt;form id=&quot;formid&quot;  name= &quot;myform&quot; method = &#39;post&#39;  action = &#39;user_login_submit.action&#39; onsubmit = &quot;return checkUser();&quot; &gt;
-            &lt;table width=&quot;100%&quot; border=&quot;0&quot;&gt;
-              &lt;tr&gt;
-                &lt;td width=&quot;60&quot; height=&quot;40&quot; align=&quot;right&quot;&gt;用户名&amp;nbsp;&lt;/td&gt;
-                &lt;td&gt;&lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;text2&quot; name = &quot;username&quot; id = &quot;userid&quot;/&gt;&lt;/td&gt;
-              &lt;/tr&gt;
-              &lt;tr&gt;
-                &lt;td width=&quot;60&quot; height=&quot;40&quot; align=&quot;right&quot;&gt;密&amp;nbsp;&amp;nbsp;码&amp;nbsp;&lt;/td&gt;
-                &lt;td&gt;&lt;input type=&quot;password&quot; value=&quot;&quot; class=&quot;text2&quot; name = &quot;userpass&quot; id = &quot;userpassid&quot;/&gt;&lt;/td&gt;
-              &lt;/tr&gt;
-              &lt;tr&gt;
-                &lt;td width=&quot;60&quot; height=&quot;40&quot; align=&quot;right&quot;&gt;&amp;nbsp;&lt;/td&gt;
-                &lt;td&gt;&lt;div class=&quot;c4&quot;&gt;
-                    &lt;input type=&quot;submit&quot; value=&quot;&quot; class=&quot;btn2&quot;  /&gt;
  
+	
 
-方法二：
-
-function checkUser(){
-   var result = document.getElementById(&quot;userid&quot;).value;
-   var password = document.getElementById(&quot;passid&quot;).value;
-
-   if(result == &quot;&quot;  ){
-     alert(&quot;用户名不能为空&quot;);
-     return false;
-   }
-   if(password == &quot;&quot;  ){
-    alert(&quot;密码不能为空&quot;);
-     return false;
-   }
-  document.getElementById(&quot;formid&quot;).submit();
-}
-
-form表格的写法，需要写id
- &lt;form id=&quot;formid&quot; method = &#39;post&#39;  action = &#39;user_login_submit.action&#39;  &gt;
-
-button按钮的写法如下：
-&lt;input type=&quot;button&quot; value=&quot;&quot; class=&quot;btn2&quot; onclick = &quot;checkUser();&quot; /&gt;
-
-</code></pre>
-
-
-			
-			
-		</div>
-
-	</article>
  
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2017-11-07T11:30:20+08:00" itemprop="datePublished">2017/11/7</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='%E5%B8%B8%E7%94%A8js%E4%BB%A3%E7%A0%81.html'>常用js代码</a>&nbsp;
-			 
-			</div>
-		</div>
-		<h1 class="title" itemprop="name"><a href="15100254209802.html" itemprop="url">
-		table具体某一列值+bootstrap弹框</a></h1>
-		<div class="entry-content" itemprop="articleBody">
-			
-			<p>常用弹框实例</p>
+	
 
-<pre><code>@extends(&#39;admin.layouts.base&#39;)
-
-@section(&#39;afterHeadCss&#39;)
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;{{asset(&#39;/css/admin/productList.css&#39;)}}&quot;&gt;
-@append
-
-@section(&#39;main&#39;)
-    &lt;div class=&quot;list-container&quot;&gt;
-        &lt;div class=&quot;list-title&quot;&gt;
-            &lt;p&gt;平台账户中心&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;list-container&quot;&gt;
-            &lt;div class=&quot;table-container table-responsive&quot;&gt;
-                &lt;table id=&quot;list-table&quot; class=&quot;list-table table table-bordered table-hover&quot;&gt;
-                    &lt;thead&gt;
-                    &lt;tr&gt;
-                        &lt;td&gt;账户名称&lt;/td&gt;
-                        &lt;td&gt;账户类型&lt;/td&gt;
-                        &lt;td&gt;可用金额&lt;/td&gt;
-                        &lt;td&gt;冻结金额&lt;/td&gt;
-                        &lt;td&gt;银行编号&lt;/td&gt;
-                        &lt;td&gt;银行卡号&lt;/td&gt;
-                        &lt;td&gt;身份证号&lt;/td&gt;
-                        &lt;td&gt;预留手机号&lt;/td&gt;
-                        &lt;td&gt;认证状态&lt;/td&gt;
-                        &lt;td&gt;创建时间&lt;/td&gt;
-                        &lt;td&gt;操作&lt;/td&gt;
-                    &lt;/tr&gt;
-                    &lt;/thead&gt;
-                    &lt;tbody class=&quot;table-content&quot;&gt;
-                    @foreach($data[&#39;list&#39;] as $datum)
-                        &lt;tr&gt;
-                            &lt;td&gt;{{$datum[&#39;name&#39;]}}&lt;/td&gt;
-                            &lt;td&gt;{{config(&#39;enum.platFormWalletEnum.type.&#39;.$datum[&#39;type&#39;])}}&lt;/td&gt;
-                            &lt;td&gt;{{$datum[&#39;valid_cash&#39;]}}&lt;/td&gt;
-                            &lt;td&gt;{{$datum[&#39;freeze_cash&#39;]}}&lt;/td&gt;
-                            &lt;td&gt;{{$datum[&#39;bank_code&#39;]}}&lt;/td&gt;
-                            &lt;td&gt;{{$datum[&#39;card_number&#39;]}}&lt;/td&gt;
-                            &lt;td&gt;{{$datum[&#39;identity_number&#39;]}}&lt;/td&gt;
-                            &lt;td&gt;{{$datum[&#39;card_mobile&#39;]}}&lt;/td&gt;
-                            &lt;td&gt;{{config(&#39;enum.platFormWalletEnum.card_status.&#39;.$datum[&#39;card_status&#39;])}}&lt;/td&gt;
-                            &lt;td&gt;{{$datum[&#39;created_at&#39;]}}&lt;/td&gt;
-                            &lt;td&gt;
-                                &lt;input type=&quot;hidden&quot; value=&quot;{{$datum[&#39;id&#39;]}}&quot; name=&quot;id&quot; class=&quot;id&quot;&gt;
-                                @if($datum[&#39;card_status&#39;]==0 &amp;&amp; authVerify(&#39;admin-wallet/platformwallet-list&#39;))
-                                    &lt;button
-                                            class=&quot;btn btn-primary&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModal&quot;
-                                            data-toggle=&quot;modal&quot; onclick=&quot;submitForm(this)&quot;&gt;绑卡
-                                    &lt;/button&gt;
-                                @endif
-                            &lt;/td&gt;
-                        &lt;/tr&gt;
-                    @endforeach
-                    &lt;/tbody&gt;
-                &lt;/table&gt;
-                &lt;ul class=&quot;pager&quot;&gt;
-                    &lt;li class=&quot;previous @if($data[&#39;current_page&#39;]&lt;=1) disabled @endif&quot;&gt;&lt;a
-                                href=&quot;/admin-wallet/platformwallet-list?page={{$data[&#39;older_page&#39;]}}&quot;&gt;&amp;larr; 上一页&lt;/a&gt;
-                    &lt;/li&gt;
-                    &lt;li class=&quot;next @if($data[&#39;current_page&#39;]&gt;=$data[&#39;total_page&#39;]) disabled @endif&quot;&gt;&lt;a
-                                href=&quot;/admin-wallet/platformwallet-list?page={{$data[&#39;newer_page&#39;]}}&quot;&gt;下一页 &amp;rarr;&lt;/a&gt;
-                    &lt;/li&gt;
-                &lt;/ul&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-
-        &lt;!-- Modal --&gt;
-        &lt;div class=&quot;modal fade&quot; id=&quot;myModal&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;myModalLabel&quot;&gt;
-            &lt;div class=&quot;modal-dialog&quot; role=&quot;document&quot;&gt;
-                &lt;div class=&quot;modal-content&quot;&gt;
-                    &lt;div class=&quot;modal-header&quot;&gt;
-                        &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;&lt;span
-                                    aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;
-                        &lt;h4 class=&quot;modal-title&quot; id=&quot;myModalLabel&quot;&gt;绑卡&lt;/h4&gt;
-                    &lt;/div&gt;
-                    &lt;div class=&quot;modal-body&quot;&gt;
-                        &lt;div class=&quot;row&quot;&gt;
-                            &lt;form class=&quot;form-horizontal&quot; method=&quot;post&quot;&gt;
-                                &lt;div class=&quot;form-group&quot;&gt;
-                                    &lt;input type=&quot;hidden&quot; class=&quot;form-control&quot; id=&quot;selectId&quot;&gt;
-                                    &lt;label for=&quot;inputEmail3&quot; class=&quot;col-sm-2 control-label&quot;&gt;银行编号&lt;/label&gt;
-                                    &lt;div class=&quot;col-sm-10&quot;&gt;
-                                        &lt;input class=&quot;form-control&quot; id=&quot;bank_code&quot;&gt;
-                                    &lt;/div&gt;
-                                &lt;/div&gt;
-                                &lt;div class=&quot;form-group&quot;&gt;
-                                    &lt;label for=&quot;inputPassword3&quot; class=&quot;col-sm-2 control-label&quot;&gt;银行账号&lt;/label&gt;
-                                    &lt;div class=&quot;col-sm-10&quot;&gt;
-                                        &lt;input class=&quot;form-control&quot; id=&quot;card_number&quot;&gt;
-                                    &lt;/div&gt;
-                                &lt;/div&gt;
-                            &lt;/form&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                    &lt;div class=&quot;modal-footer&quot;&gt;
-                        &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; data-dismiss=&quot;modal&quot;&gt;关闭&lt;/button&gt;
-                        &lt;input type=&quot;button&quot; value=&quot;确定&quot; class=&quot;btn btn-primary&quot; onclick=&quot;submitBindCard();&quot;/&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        {{-- href=&quot;/admin-wallet/platformwallet-bindCard/{{$datum[&quot;id&quot;]}}&quot; type=&quot;button&quot;--}}
-    &lt;/div&gt;
-
-    &lt;script&gt;
-        //弹框中的提交
-        function submitBindCard() {
-            var id = $(&#39;#selectId&#39;).val();
-            var bank_code = $(&#39;#bank_code&#39;).val();
-            var card_number = $(&#39;#card_number&#39;).val();
-            $.post(&#39;/admin-wallet/platformwallet-bindCard/&#39; + id,
-                {
-                    &quot;bank_code&quot;: bank_code,
-                    &quot;card_number&quot;: card_number
-                },
-                function (data) {
-                    if (data) {
-                        console.log(data);
-                    }
-                });
-        }
-        //获取某个表单的值
-        function submitForm(btn) {
-            //获取参数表单参数
-            var id = $(btn.parentElement.children[0]).val();
-            $(&#39;#selectId&#39;).val(id);
-            
-            //还有一种根据名称去取值  $(&quot;input[name=&#39;recharge_id&#39;]&quot;).val();
-            //同样所有的取值都可以复制 $(&quot;input[name=&#39;xxx&#39;]&quot;).val(123);
-        }
-
-    &lt;/script&gt;
-@stop
-
-
-
-</code></pre>
-
-
-			
-			
-		</div>
-
-	</article>
  
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2017-11-06T14:02:03+08:00" itemprop="datePublished">2017/11/6</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='%E9%87%91%E8%9E%8D%E4%BA%91%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.html'>金融云解决方案</a>&nbsp;
-			 
-			</div>
-		</div>
-		<h1 class="title" itemprop="name"><a href="15099481239896.html" itemprop="url">
-		定义-异常处理</a></h1>
-		<div class="entry-content" itemprop="articleBody">
-			
-			<p>修改laravel异常类handler.php<br/>
-异常返回统一处理</p>
-
-<pre><code>
-&lt;?php
-
-namespace App\Exceptions;
-
-use App\Tools\LogWrite\LogWrite;
-use App\Tools\ReturnFormat;
-use Exception;
-use Illuminate\Auth\AuthenticationException;
-use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-
-class Handler extends ExceptionHandler
-{
-    /**
-     * A list of the exception types that should not be reported.
-     *
-     * @var array
-     */
-    protected $dontReport = [
-        \Illuminate\Auth\AuthenticationException::class,
-        \Illuminate\Auth\Access\AuthorizationException::class,
-        \Symfony\Component\HttpKernel\Exception\HttpException::class,
-        \Illuminate\Database\Eloquent\ModelNotFoundException::class,
-        \Illuminate\Session\TokenMismatchException::class,
-        \Illuminate\Validation\ValidationException::class,
-    ];
-
-    /**
-     * Report or log an exception.
-     *
-     * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
-     *
-     * @param  \Exception  $exception
-     * @return void
-     */
-    public function report(Exception $exception)
-    {
-        parent::report($exception);
-    }
-
-    /**
-     * Render an exception into an HTTP response.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Exception  $exception
-     * @return \Illuminate\Http\Response
-     */
-    public function render($request, Exception $exception)
-    {
-        $message = $this-&gt;parseException($exception);
-        $errors = [
-            &quot;error_file&quot; =&gt; $exception-&gt;getFile(),
-            &quot;error_code&quot; =&gt; $exception-&gt;getCode(),
-            &#39;error_message&#39; =&gt; $exception-&gt;getMessage(),
-        ];
-        LogWrite::error(array_merge($message, $errors), &quot;异常错误&quot;,&#39;error&#39;);
-        return ReturnFormat::message([], $message[&#39;status&#39;], $message[&#39;msg&#39;], true);//统一返回参数不合
-    }
-
-    /**
-     * Convert an authentication exception into an unauthenticated response.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Illuminate\Auth\AuthenticationException  $exception
-     * @return \Illuminate\Http\Response
-     */
-    protected function unauthenticated($request, AuthenticationException $exception)
-    {
-        if ($request-&gt;expectsJson()) {
-            return response()-&gt;json([&#39;error&#39; =&gt; &#39;Unauthenticated.&#39;], 401);
-        }
-
-        return redirect()-&gt;guest(&#39;login&#39;);
-    }
-    /**
-     * 解析失败
-     * @return array
-     */
-    protected function parseException(Exception $exception)
-    {
-        $message = &#39;TNTERNAL_SERVER_ERROR&#39;;
-        $msg = &#39;&#39;;
-        if ($exception instanceof LoginException || xxx 捕捉自动以异常
-        ) {
-            $message = $exception-&gt;getMessage();
-        } elseif ($exception instanceof ConnectionException) {
-            $message = &#39;REDIS_HANDLING_ERROR&#39;;
-        } elseif ($exception instanceof NotFoundHttpException) {
-            $message = &#39;NOT_FOUND&#39;;
-        } elseif ($exception instanceof MethodNotAllowedHttpException) {
-            $message = &#39;METHOD_NOT_ALLOWED&#39;;
-        } elseif ($exception instanceof ValidationException) {
-            $errors = $exception-&gt;validator-&gt;errors()-&gt;getMessages();
-            foreach ($errors as $k =&gt; $v) {
-                $msg = $k . &#39;|&#39; . $v[0];
-                break;
-            }
-            $message = &#39;PARAM_INVALID&#39;;
-        } elseif ($exception instanceof QueryException) {
-            $message = &#39;DATA_HANDLING_ERROR&#39;;
-        }
-        LogWrite::exception($exception);
-        return [&#39;status&#39; =&gt; $message, &#39;msg&#39; =&gt;$msg ];
-    }
-}
-
-
-</code></pre>
-
-
-			
-			
-		</div>
-
-	</article>
- 
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2017-11-06T13:25:17+08:00" itemprop="datePublished">2017/11/6</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='laravel.html'>laravel</a>&nbsp;
-			 
-			</div>
-		</div>
-		<h1 class="title" itemprop="name"><a href="15099459172249.html" itemprop="url">
-		Request</a></h1>
-		<div class="entry-content" itemprop="articleBody">
-			
-			<p>实例</p>
-
-<pre><code>&lt;?php
-
-namespace App\Http\Requests\Wallet;
-
-use App\Http\Requests\BaseRequest;
-
-class CompanyRechargeRequest extends BaseRequest
-{
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
-    public function authorize()
-    {
-        return true;
-    }
-
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
-    public function rules()
-    {
-        return [
-            &#39;cash&#39;=&gt;&#39;required|numeric|min:0&#39;,
-            &#39;type&#39;=&gt;&#39;required|numeric&#39;,
-            &#39;recharge_way&#39;=&gt;&#39;required|numeric&#39;,
-            &#39;pay_type&#39;=&gt;&#39;required_if:recharge_way,2&#39;,
-            //具体支持的类型参考官方文档
-        ];
-    }
-
-    /**
-     * @return array
-     */
-    public function messages()
-    {
-        return [
-            &#39;cash.required&#39;=&gt;&#39;充值金额不能为空&#39;,
-            &#39;cash.numeric&#39;=&gt;&#39;充值金额格式不正确&#39;,
-            &#39;cash.min&#39;=&gt;&#39;充值金额不能小于0&#39;,
-            &#39;type.required&#39;=&gt;&#39;充值类型不能为空&#39;,
-            &#39;type.numeric&#39;=&gt;&#39;充值类型格式不正确&#39;,
-            &#39;recharge_way.required&#39;=&gt;&#39;支付方式不能为空&#39;,
-            &#39;recharge_way.numeric&#39;=&gt;&#39;支付方式格式不正确&#39;,
-            &#39;pay_type.required_if&#39;=&gt;&#39;网银类型不能为空&#39;,
-        ];
-    }
-}
-
-
-</code></pre>
-
-
-			
-			
-		</div>
-
-	</article>
-  
-
-</div>
-<nav id="pagenavi">
-	 <a class="prev" href="all_1.html">Prev</a>  
-	 <a class="next" href="all_3.html">Next</a> 
-	<div class="center"><a href="archives.html">Blog Archives</a></div>
-
-</nav>
-
-</div>
-
-
-
-        </div>
-			<footer id="footer" class="inner">Copyright &copy; 2014
-Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
-Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
-      </footer>
-		</div>
-	</div>
+	
 
   
+  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
     
-<script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    <script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
 
-</body>
+  </body>
 </html>
