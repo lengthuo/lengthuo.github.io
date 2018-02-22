@@ -313,8 +313,6 @@
         <li><label>other</label></li>
 
           
-            <li><a title="2018" href="15192205651213.html">2018</a></li>
-          
             <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
           
             <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -612,8 +610,6 @@
                     
                       <li class="side-title"><span>other</span></li>
                         
-                          <li><a title="2018" href="15192205651213.html">2018</a></li>
-                        
                           <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
                         
                           <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -668,45 +664,11 @@
 
 	
 		<div class="markdown-body">
-		<h1>基础-StringBuffer StringBuilder</h1>
+		<h1>基础-常用命令</h1>
 
-		<p>String 字符串常量<br/>
-StringBuffer 字符串变量（线程安全）<br/>
-StringBuilder 字符串变量（非线程安全）</p>
-
-<p>StringBuffer，由名字可以看出，是一个String的缓冲区，也就是说一个类似于String的字符串缓冲区，和String不同的是，它可以被修改，而且是线程安全的。StringBuffer在任意时刻都有一个特定的字符串序列，不过这个序列和它的长度可以通过一些函数调用进行修改。它的结构层次如下图：</p>
-
-<p><img src="media/15162420570699/15162423111363.jpg" alt=""/></p>
-
-<p>StringBuffer是线程安全的，因此如果有几个线程同时操作StringBuffer，对它来说也只是一个操作序列，所有操作串行发生。</p>
-
-<p>每一个StringBuffer都有一个容量，如果内容的大小不超过容量，StringBuffer就不会分配更大容量的缓冲区；如果需要更大的容量，StringBuffer会自动增加容量。和StringBuffer类似的有StringBuilder，两者之间的操作相同，不过StringBuilder不是线程安全的。虽然如此，由于StringBuilder没有同步，所以它的速度更快一些。</p>
-
-<h3 id="toc_0">原理</h3>
-
-<p>StringBuffer继承了抽象类AbstractStringBuilder，在AbstractStringBuilder类中，有两个字段分别是char[]类型的value和int类型的count，也就是说，StringBuffer本质上是一个字符数组：</p>
-
-<pre><code>/** 
- * The value is used for character storage. 
- */  
-char[] value;  
-  
-/** 
- * The count is the number of characters used. 
- */  
-int count;  
-</code></pre>
-
-<p>//具体分析，自行参考源码</p>
-
-<p><a href="http://blog.csdn.net/u012877472/article/details/50808554">StringBuffer详解</a><br/>
-<a href="http://blog.csdn.net/zi_jun/article/details/7624999">java中stringBuilder的用法</a><br/>
-总结：</p>
-
-<p>如果对字符串的改变少，使用String；<br/>
-如果对字符串修改的较多，需要线程安全就用StringBuffer（加锁），不需要就使用StringBuilder。速度肯定StringBuilder快，不需要锁的操作。（java里面凡是关于线程安全的操作都必须加锁机制。）</p>
-
-<p>参考文献<a href="http://blog.csdn.net/u012877472/article/details/50808554">StringBuffer详解</a></p>
+		<ol>
+<li>javap -c Buffer   查看 其字节码实现</li>
+</ol>
 
 
 		</div>

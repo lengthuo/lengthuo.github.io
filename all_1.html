@@ -313,8 +313,6 @@
         <li><label>other</label></li>
 
           
-            <li><a title="2018" href="15192205651213.html">2018</a></li>
-          
             <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
           
             <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -612,8 +610,6 @@
                     
                       <li class="side-title"><span>other</span></li>
                         
-                          <li><a title="2018" href="15192205651213.html">2018</a></li>
-                        
                           <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
                         
                           <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -668,96 +664,46 @@
 
 	
 		<div class="markdown-body">
-		<h1>SPL--SplObjectStorage 方法使用</h1>
+		<h1>cpu信息</h1>
 
-		<p><a href="http://php.net/manual/zh/class.splobjectstorage.php">php手册</a></p>
+		<h3 id="toc_0">概念</h3>
 
-<h3 id="toc_0">描述</h3>
-
-<p>The SplObjectStorage class provides a map from objects to data or, by ignoring data, an object set. This dual purpose can be useful in many cases involving the need to uniquely identify objects.</p>
-
-<h3 id="toc_1">实例</h3>
-
-<pre><code>class A
-{
-    public $i;
-    public function __construct ($i)
-    {
-        $this-&gt;i = $i;
-    }
-}
-
-$a1 = new A(1);
-$a2 = new A(2);
-$a3 = new A(3);
-$container = new SplObjectStorage();
-//SplObjectStorage::attach 添加对象到Storage中
-$container-&gt;attach($a1);
-$container-&gt;attach($a2);
-//SplObjectStorage::detach 将对象从Storage中移除
-$container-&gt;attach($a2);
-var_dump($container);
-//SplObjectStorage::contains用于检查对象是否存在Storage中
-var_dump($container-&gt;contains($a1)); //true
-var_dump($container-&gt;contains($a4)); //false
-//遍历
-$container-&gt;rewind();
-while ($container-&gt;valid()) {
-    var_dump($container-&gt;current());
-    $container-&gt;next();
-}
-
-
-// As a map from objects to data
-$s = new SplObjectStorage();
-
-$o1 = new StdClass;
-$o2 = new StdClass;
-$o3 = new StdClass;
-
-$s[$o1] = &quot;data for object 1&quot;;
-$s[$o2] = [1, 2, 3];
-
-if (isset($s[$o2])) {
-    var_dump($s);
-    var_dump($s[$o2]);
-}
-
-//输出结果
-class SplObjectStorage#1 (1) {
-  private $storage =&gt;
-  array(2) {
-    &#39;000000000e726c4600000000698e987d&#39; =&gt;
-    array(2) {
-      &#39;obj&#39; =&gt;
-      class stdClass#2 (0) {
-        ...
-      }
-      &#39;inf&#39; =&gt;
-      string(17) &quot;data for object 1&quot;
-    }
-    &#39;000000000e726c4700000000698e987d&#39; =&gt;
-    array(2) {
-      &#39;obj&#39; =&gt;
-      class stdClass#3 (0) {
-        ...
-      }
-      &#39;inf&#39; =&gt;
-      array(3) {
-        ...
-      }
-    }
-  }
-}
-/Users/shuo/w3c/test/spl/splObjectStorage.php:15:
-array(3) {
-  [0] =&gt;
-  int(1)
-  [1] =&gt;
-  int(2)
-  [2] =&gt;
-
+<pre><code> ① 物理CPU               
+          实际Server中插槽上的CPU个数
+          物理cpu数量，可以数不重复的 physical id 有几个           
+ ② 逻辑CPU               
+          Linux用户对 /proc/cpuinfo 这个文件肯定不陌生. 它是用来存储cpu硬件信息的
+          信息内容分别列出了processor 0 – n 的规格。这里需要注意，如果你认为n就是真实的cpu数的话, 就大错特错了
+          一般情况，我们认为一颗cpu可以有多核，加上intel的超线程技术(HT), 可以在逻辑上再分一倍数量的cpu core出来
+          逻辑CPU数量=物理cpu数量 x cpu cores 这个规格值 x 2(如果支持并开启ht)
+          备注一下：Linux下top查看的CPU也是逻辑CPU个数              
+ ③ CPU核数           
+          一块CPU上面能处理数据的芯片组的数量、比如现在的i5 760,是双核心四线程的CPU、而 i5 2250 是四核心四线程的CPU              
+          一般来说，**物理CPU个数×每颗核数就应该等于逻辑CPU的个数，**如果不相等的话，则表示服务器的CPU支持超线程技术    
 </code></pre>
+
+<h3 id="toc_1">命令</h3>
+
+<p>查看物理CPU的个数<br/>
+cat /proc/cpuinfo |grep &quot;physical id&quot;|sort |uniq|wc -l<br/>
+2</p>
+
+<p>查看逻辑CPU的个数<br/>
+cat /proc/cpuinfo |grep &quot;processor&quot;|wc -l <br/>
+24</p>
+
+<p>查看CPU是几核<br/>
+cat /proc/cpuinfo |grep &quot;cores&quot;|uniq<br/><br/>
+6</p>
+
+<p>我这里应该是2个CPU,每个CPU有6个core,应该是Intel的CPU,支持超线程,所以显示24 </p>
+
+<h3 id="toc_2">mac</h3>
+
+<p>关于本机，系统报告<br/>
+<img src="media/15121290135332/15121295852793.jpg" alt=""/></p>
+
+<p>本机 cpu1 双核的</p>
 
 
 		</div>

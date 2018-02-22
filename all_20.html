@@ -313,8 +313,6 @@
         <li><label>other</label></li>
 
           
-            <li><a title="2018" href="15192205651213.html">2018</a></li>
-          
             <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
           
             <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -612,8 +610,6 @@
                     
                       <li class="side-title"><span>other</span></li>
                         
-                          <li><a title="2018" href="15192205651213.html">2018</a></li>
-                        
                           <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
                         
                           <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -668,70 +664,200 @@
 
 	
 		<div class="markdown-body">
-		<h1>进程线程</h1>
+		<h1>迭代器模式 Iterator</h1>
 
-		<h3 id="toc_0">进程(process):多进程的好处是，一个进程崩溃不会影响其他进程，</h3>
+		<blockquote>
+<p>迭代器模式，提供一种方法顺序访问一个聚合对象中的各种元素，而又不暴露该对象的内部表示。</p>
+</blockquote>
 
-<p>进程是一组有自己的内存和执行路径的计算机指令； </p>
+<h3 id="toc_0">角色</h3>
 
-<h3 id="toc_1">线程（thread):</h3>
+<ol>
+<li>迭代器角色（Iterator）:
 
-<p>线程虽然是一组计算机指令，但线程都执行在一个宿主的执行路径里，没有自己的内存。 </p>
+<ol>
+<li>定义遍历元素所需要的方法，一般来说会有这么三个方法：取得下一个元素的方法next()，判断是否遍历结束的方法hasNext()），移出当前对象的方法remove(),</li>
+<li>php默认的spl标准库中自带这个接口，有5个方法（参考实例代码）</li>
+</ol></li>
+<li>具体迭代器角色（Concrete Iterator）：实现迭代器接口中定义的方法，完成集合的迭代。</li>
+<li>容器角色(Aggregate):  一般是一个接口，提供一个iterator()方法，例如java中的Collection接口，List接口，Set接口等</li>
+<li>具体容器角色（ConcreteAggregate）：就是抽象容器的具体实现类，比如List接口的有序列表实现ArrayList，List接口的链表实现LinkList，Set接口的哈希列表的实现HashSet等。</li>
+</ol>
 
-<hr/>
+<h3 id="toc_1">实例</h3>
 
-<p>多进程的好处是：一个进程崩溃不会影响其他进程，<br/>
-多线程的好处是：线程更容易创建于管理,没有内存分配/合并方面的开销，线程的切换非常迅速，因为无需切换上下文</p>
+<p>分析:<br/>
+Book                        具体容器中存放的角色<br/>
+BookList                    容器<br/>
+BookListIterator            具体迭代器<br/>
+BookListReverseIterator     具体迭代器 反向的（实际中使用中，只需要遍历的操作，很少会用）</p>
 
-<h3 id="toc_2">应用</h3>
+<p>uml图<br/>
+<img src="media/15159115676241/15159135264436.jpg" alt=""/></p>
 
-<p>如论学什么东西都要尽可能的知道一些底层的东西，有利于以后的使用。</p>
+<p>代码实例：</p>
 
-<h5 id="toc_3">java</h5>
+<pre><code>//Book
+namespace MyApp\Iterator;
+class Book
+{
+    protected $id;
 
-<p>是由C++ 开发的。单进程，多线程。，索引在开发时候，一般都的考虑多线程的问题,例如简单的单例书写，由于是多进程，所以操作单例的时候一定要加锁。来保证单例，而php就不用，因为php是单进程单线<br/>
-程的。所以不会产生同时的问题。</p>
+    protected $title;
 
-<h5 id="toc_4">php</h5>
+    public function __construct ($id, $title)
+    {
+        $this-&gt;id = $id;
+        $this-&gt;title = $title;
+    }
 
-<p>由于是单进程单线的，所以开发会相对简单，不会设计太多的锁问题。所以php会更快上手。</p>
+    /**
+     * @return mixed
+     */
+    public function getId ()
+    {
+        return $this-&gt;id;
+    }
 
-<h5 id="toc_5">mysql</h5>
+    /**
+     * @param mixed $id
+     */
+    public function setId ($id)
+    {
+        $this-&gt;id = $id;
+    }
 
-<p>单进程多线程</p>
+    /**
+     * @return mixed
+     */
+    public function getTitle ()
+    {
+        return $this-&gt;title;
+    }
 
-<p>多线程的。也就是说，所有的程序中的链接都只是一个线程，他们都在一个进程里面。下面我举一个例子：</p>
+    /**
+     * @param mixed $title
+     */
+    public function setTitle ($title)
+    {
+        $this-&gt;title = $title;
+    }
+}
 
-<p>当2个事务同时更新同一个表的同一条记录的时候，在都没有commit之前，会有一个发生等待，为什么会等待。mysql 是CS结构的 （ 客户--client--server物理数据。 服务器--mysql-server是服务端），会有一个主进程处理所有的请求。在主进程中会监控所有子进程的所有的操作包括事务的操作。这时候主进程监测到，之后会按照顺序执行，下一个事务就等待。</p>
 
-<p>网上常常会看到这个问题：为什么Oracle在Windows上是多线程，而在Linux上是多进程的？<br/>
-  传统的unix系统，早期没有提供多线程，只有多进程。linux是最近的版本才加入多线程支持，以前一直都是多进程。windows很早就支持多线程，本地应用大部分也是多线程。因此oracle在windows上一直都是多线程，在unix上才是多进程。所以mysql很可能是从windows发站起来的。所以mysql一开始就是多线程的。</p>
+//BookList
+namespace MyApp\Iterator;
 
-<h5 id="toc_6">redis</h5>
 
-<p><a href="http://www.syyong.com/db/Redis-why-the-use-of-single-process-and-single-threaded-way-so-fast.html">Redis 为什么使用单进程单线程方式也这么快</a><br/>
-Redis 采用的是基于内存的采用的是单进程单线程模型的 KV 数据库，由 C 语言编写。官方提供的数据是可以达到100000+的 qps。这个数据不比采用单进程多线程的同样基于内存的 KV 数据库 Memcached 差。</p>
+//容器:存储书
+class BookList
+{
+    protected $books = [];
 
-<p>Redis 快的主要原因有：</p>
+    public function getBook ($id)
+    {
+        if (isset($this-&gt;books[$id])) return $this-&gt;books[$id];
+        return null;
+    }
 
-<p>完全基于内存；<br/>
-数据结构简单，对数据操作也简单；<br/>
-使用多路 I/O 复用模型；</p>
+    public function addBook (Book $book)
+    {
+        $this-&gt;books[] = $book;
+    }
 
-<h5 id="toc_7">nginx</h5>
+    public function remove ($id)
+    {
+        foreach ($this-&gt;books as $key =&gt; $book) {
+            if ($id == $key) unset($this-&gt;books[$key]);
+        }
+    }
 
-<p>nginx使用一个多进程模型来对外提供服务，其中一个master进程，多个worker进程。master进程负责管理nginx本身和其他worker进程。<br/>
-<a href="http://tengine.taobao.org/book/chapter_02.html">nginx平台初探(100%)</a></p>
+    public function count ()
+    {
+        return count($this-&gt;books);
+    }
+}
 
-<h3 id="toc_8">单进程单线程好处</h3>
+//BookListIterator
+namespace MyApp\Iterator;
 
-<p>代码更清晰，处理逻辑更简单<br/>
-不用去考虑各种锁的问题，不存在加锁释放锁操作，没有因为可能出现死锁而导致的性能消耗<br/>
-不存在多进程或者多线程导致的切换而消耗 CPU</p>
+//spl 标准类库 Iterator 自带5个方法
+//当然如果对于简单的数据结构比如数组，我们宁愿使用for也不会使用迭代器的
+class BookListIterator implements \Iterator
+{
+    protected $books;
+    protected $currentBook = 0;
 
-<h3 id="toc_9">单进程单线程弊端</h3>
+    public function __construct (BookList $bookList)
+    {
+        $this-&gt;books = $bookList;
+    }
 
-<p>无法发挥多核 CPU 性能，不过可以通过在单机开多个 Redis 实例来完善；</p>
+    //Return the current element 返回当前元素
+    public function current ()
+    {
+        return $this-&gt;books-&gt;getBook($this-&gt;currentBook);
+    }
+
+    //Move forward to next element 移动下标到下一个元素
+    public function next ()
+    {
+        $this-&gt;currentBook++;
+    }
+
+    //Return the key of the current element 返回当前元素的key
+    public function key ()
+    {
+        return $this-&gt;currentBook;
+    }
+
+    //Checks if current position is valid 检查当前元素是否有效
+    public function valid ()
+    {
+        return null !== $this-&gt;books-&gt;getBook($this-&gt;currentBook);
+    }
+
+    // Rewind the Iterator to the first element 回到第一个元素
+    public function rewind ()
+    {
+        $this-&gt;currentBook = 0;
+    }
+}
+
+</code></pre>
+
+<p>测试：<br/>
+<img src="media/15159115676241/15159184846617.jpg" alt=""/></p>
+
+<h3 id="toc_2">代码优化（遍历与实现分开）</h3>
+
+<pre><code>BookList类添加一个方法
+ public function iterator ()
+    {
+        return new  BookListIterator($this);
+    }
+</code></pre>
+
+<p>测试：<br/>
+<img src="media/15159115676241/15159898544198.jpg" alt=""/></p>
+
+<h3 id="toc_3">迭代器模式的优缺点：</h3>
+
+<p>迭代器模式的优点有：</p>
+
+<ol>
+<li>简化了遍历方式，对于对象集合的遍历，还是比较麻烦的，对于数组或者有序列表，我们尚可以通过游标来取得，但用户需要在对集合了解很清楚的前提下，自行遍历对象，但是对于hash表来说，用户遍历起来就比较麻烦了。而引入了迭代器方法后，用户用起来就简单的多了。</li>
+<li>可以提供多种遍历方式，比如说对有序列表，我们可以根据需要提供正序遍历，倒序遍历两种迭代器，用户用起来只需要得到我们实现好的迭代器，就可以方便的对集合进行遍历了。</li>
+<li>封装性良好，用户只需要得到迭代器就可以遍历，而对于遍历算法则不用去关心。</li>
+</ol>
+
+<p>迭代器模式的缺点：<br/>
+对于比较简单的遍历（像数组或者有序列表），使用迭代器方式遍历较为繁琐，大家可能都有感觉，像ArrayList，我们宁可愿意使用for循环和get方法来遍历集合。（是因为我们熟悉他们的内部结构）</p>
+
+<p>在java中迭代器模式是与集合共生共死的，一般来说，我们只要实现一个集合，就需要同时提供这个集合的迭代器，就像java中的Collection，List、Set、Map等，这些集合都有自己的迭代器。假如我们要实现一个这样的新的容器，当然也需要引入迭代器模式，给我们的容器实现一个迭代器。</p>
+
+<p>参考文档<br/>
+<a href="https://www.cnblogs.com/ysw-go/p/5384516.html">Java设计模式系列之迭代器模式</a></p>
 
 
 		</div>

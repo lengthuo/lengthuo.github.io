@@ -313,8 +313,6 @@
         <li><label>other</label></li>
 
           
-            <li><a title="2018" href="15192205651213.html">2018</a></li>
-          
             <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
           
             <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -612,8 +610,6 @@
                     
                       <li class="side-title"><span>other</span></li>
                         
-                          <li><a title="2018" href="15192205651213.html">2018</a></li>
-                        
                           <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
                         
                           <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -668,28 +664,93 @@
 
 	
 		<div class="markdown-body">
-		<h1>实战--热部署（热加载）</h1>
+		<h1>实战--统一异常处理</h1>
 
-		<h3 id="toc_0">热部署</h3>
+		<h3 id="toc_0">异常总是会和枚举一起使用</h3>
 
-<h3 id="toc_1">热加载（开发）</h3>
+<p>1 枚举类的定义</p>
 
-<p>很多方式可以百度</p>
+<pre><code>
+//返回枚举定义
+public enum ResultEnum {
+    ERROR(-1,&quot;位置错误&quot;),
+    SUCCESS(1000,&quot;成功&quot;),
+    TEXT(200,&quot;测试&quot;),
+    ;
+
+    private Integer code;
+    private String msg;
+
+    ResultEnum(Integer code, String msg) {
+        this.code = code;
+        this.msg = msg;
+    }
+
+    //不需要set方法。
+    public Integer getCode() {
+        return code;
+    }
+    public String getMsg() {
+        return msg;
+    }
+
+} 
+
+</code></pre>
 
 <ol>
-<li><p>&lt;!--热加载--&gt;<br/>
-    <dependency><br/>
-        <groupId>org.springframework.boot</groupId><br/>
-        <artifactId>spring-boot-devtools</artifactId><br/>
-    </dependency></p></li>
-<li><p>Intellij中的设置（eclipse可能不需要配置此项）<br/>
-（如果是第一次配置需要配置下面2项。之后每次只需要配置一次（下面的第一项）即可）</p>
-
-<ol>
-<li>IDEA开启项目自动编译，进入设置，Build,Execut, Deployment -&gt; Compiler 勾选中左侧的Build Project automatically</li>
-<li>IDEA开启项目运行时自动make, ctrl + shift + a搜索命令：registry -&gt; 勾选compiler.automake.allow.when.app.running</li>
-</ol></li>
+<li>自定义的异常处理</li>
 </ol>
+
+<pre><code>//一定要继承RuntimeException出现异常之后会自动回滚。
+public class TestException  extends  RuntimeException{
+
+    private Integer code;
+
+    public TestException(ResultEnum resultEnum) {
+        super(resultEnum.getMsg());
+        this.code = resultEnum.getCode();
+    }
+
+    public Integer getCode() {
+        return code;
+    }
+
+    public void setCode(Integer code) {
+        this.code = code;
+    }
+}
+</code></pre>
+
+<ol>
+<li>统一异常处理。处理所有的异常<br/>
+（使用 ：  使用 throw new TestException(ResultEnum.TEXT);）</li>
+</ol>
+
+<pre><code>@ControllerAdvice
+public class HandleException {
+
+    private final static Logger logger = LoggerFactory.getLogger(HandleException.class);
+
+    //统一异常处理
+    @ResponseBody
+    @ExceptionHandler(value = Exception.class) //要捕获的异常类
+    public Result handle(Exception e) {
+        if (e instanceof TestException) {
+            TestException testException = (TestException) e;
+            return ResultUtils.error(testException.getCode(), testException.getMessage());
+        }
+        logger.error(&quot;[系统异常]={}&quot;, e); //会出现未知的异常
+        return ResultUtils.error(100, e.getMessage());
+    }
+
+}
+</code></pre>
+
+<h3 id="toc_1">设计到的注解</h3>
+
+<p>@ControllerAdvice<br/>
+@ExceptionHandler(value = Exception.class) //要捕获的异常类</p>
 
 
 		</div>

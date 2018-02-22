@@ -313,8 +313,6 @@
         <li><label>other</label></li>
 
           
-            <li><a title="2018" href="15192205651213.html">2018</a></li>
-          
             <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
           
             <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -612,8 +610,6 @@
                     
                       <li class="side-title"><span>other</span></li>
                         
-                          <li><a title="2018" href="15192205651213.html">2018</a></li>
-                        
                           <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
                         
                           <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -668,37 +664,29 @@
 
 	
 		<div class="markdown-body">
-		<h1>实战--raml命令</h1>
+		<h1>实战--代码读取配置文件</h1>
 
-		<p>raml2html </p>
+		<h3 id="toc_0">类中获取classpath下面的（resources）目录下面的配置文件</h3>
 
-<p>Usage: raml2html [options] [RAML input file]</p>
+<pre><code>@RestController
+@PropertySource(value= {&quot;classpath:jdbc.properties&quot;})   //添加注解
+public class TestController {
 
-<p>选项：<br/>
-  --version       显示版本号                                              [布尔]<br/>
-  -h, --help      显示帮助信息                                            [布尔]<br/>
-  -i, --input     Input file                                            [字符串]<br/>
-  -o, --output    Output file                                           [字符串]<br/>
-  -t, --template  Template path                                         [字符串]<br/>
-  -v, --validate  Validate RAML and examples (off by default)             [布尔]<br/>
-  -p, --pretty    Make the output file pretty (readable)                  [布尔]<br/>
-  --theme         Theme name                                            [字符串]</p>
+    private final static Logger logger = LoggerFactory.getLogger(TestController.class);
 
-<p>示例：<br/>
-  raml2html example.raml &gt; example.html<br/>
-  raml2html --theme raml2html-markdown-theme example.raml &gt; example.html<br/>
-  raml2html --template my-template.nunjucks -i example.raml -o example.html</p>
+    @Value(&quot;${a}&quot;)                                       //获取配置文件数据
+    private String a;
 
-<p>raml2html xxxxx.raml -o  xxx.html   默认的参数可以省略</p>
+    @Autowired
+    private UserServices userServices;
 
-<h2 id="toc_0">-t</h2>
-
-<p>是修改模板的 </p>
-
-<h2 id="toc_1">-v</h2>
-
-<p>验证raml的语法 （每次写的时候都需要跑一下，验证。养成良好的习惯）<br/>
-raml2html -v xxx.raml   如果通过之后会生成界面元素（否则会提示报错信息）</p>
+    @GetMapping(&quot;/user/{id}&quot;)
+    public User hello(@PathVariable(&quot;id&quot;) int id){
+        logger.info(&quot;id={}&quot;,id);
+        logger.info(&quot;a={}&quot;,a);                              //使用配置文件内容
+        return userServices.getUserById(id);
+    }
+</code></pre>
 
 
 		</div>

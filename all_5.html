@@ -313,8 +313,6 @@
         <li><label>other</label></li>
 
           
-            <li><a title="2018" href="15192205651213.html">2018</a></li>
-          
             <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
           
             <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -612,8 +610,6 @@
                     
                       <li class="side-title"><span>other</span></li>
                         
-                          <li><a title="2018" href="15192205651213.html">2018</a></li>
-                        
                           <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
                         
                           <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -668,25 +664,28 @@
 
 	
 		<div class="markdown-body">
-		<h1>使用小技巧</h1>
+		<h1>加密 - php</h1>
 
-		<p>项目案例的使用</p>
+		<p>自述对加密的了解：</p>
 
-<pre><code>存储用户信息用的是hash值来存储，
+<p>可逆    aes<br/>
+不可逆  </p>
 
-key 用户token   key1 是存储的dsession  value1 是真正用户信息的key（也是hash的）
-这样做的目的是为了安全
+<p><a href="https://v.qq.com/x/page/r0382zb80cb.html">加密过程</a></p>
 
+<p>加密模式：<br/>
+ 分组密码有五种工作体制：<br/>
+ 1.电码本模式（Electronic Codebook Book (ECB)）；<br/>
+ 2.密码分组链接模式（Cipher Block Chaining (CBC)）；<br/>
+ 3.计算器模式（Counter (CTR)）；<br/>
+ 4.密码反馈模式（Cipher FeedBack (CFB)）；<br/>
+ 5.输出反馈模式（Output FeedBack (OFB)）。</p>
 
+<p>五中模式的讲解<br/>
+<a href="https://www.tuicool.com/articles/AZZjiu">模式讲解</a></p>
 
-hash
-
-key     key1    value1    value1 可以经过某种转换，来获取value2
-
-value2  usename   xxx
-         password  xxx
-
-</code></pre>
+<p>key就是自定义加密key，自己定义的简单串；<br/>
+iv是initialization vector的意思，就是加密的初始话矢量，初始化加密函数的变量。</p>
 
 
 		</div>

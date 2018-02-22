@@ -313,8 +313,6 @@
         <li><label>other</label></li>
 
           
-            <li><a title="2018" href="15192205651213.html">2018</a></li>
-          
             <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
           
             <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -612,8 +610,6 @@
                     
                       <li class="side-title"><span>other</span></li>
                         
-                          <li><a title="2018" href="15192205651213.html">2018</a></li>
-                        
                           <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
                         
                           <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -668,52 +664,43 @@
 
 	
 		<div class="markdown-body">
-		<h1>文档--排序-快速排序（面试热点）</h1>
+		<h1>文档--排序-插入排序-希尔排序（面试热点）</h1>
 
 		<blockquote>
-<p>插入排序是一种简单直观的排序算法。它的工作原理非常类似于我们抓扑克牌</p>
+<p>直接插入排序的改进<br/>
+不稳定</p>
 </blockquote>
 
+<p><img src="media/15097185400207/15098637955002.jpg" alt=""/></p>
+
+<h3 id="toc_0">注意事项</h3>
+
+<ul>
+<li>增量选择  一般的初次取序列的一半为增量，以后每次减半，直到增量为1。</li>
+</ul>
+
+<h3 id="toc_1">代码示例</h3>
+
 <pre><code>
-/**
- * 快速排序使用分治策略(Divide and Conquer)来把一个序列分为两个子序列。
- * 步骤为：
- * 从序列中挑出一个元素，作为&quot;基准&quot;(pivot).
- *  把所有比基准值小的元素放在基准前面，
- *  所有比基准值大的元素放在基准的后面（相同的数可以到任一边），这个称为分区(partition)操作。
- *  对每个分区递归地进行步骤1~2，递归的结束条件是序列的大小是0或1，这时整体已经被排好序了
- */
+$arr = [10, 9, 29, 22, 6, 18, 30, 29];
 
-$s = [1, 9, 2, 8, 3, 7, 100, 24, 21];
-
-// 最差时间复杂度 ---- O(n^2)
-// 平均时间复杂度为   ---- O(n×logn)
-
-$s = quickSort($s);
-
-function quickSort(&amp;$arr)
+function shell_sort(&amp;$arr)
 {
-    if (count($arr) &gt; 1) {
-        $k = $arr[0];
-        $x = [];
-        $y = [];
-        $_size = count($arr);
-        for ($i = 1; $i &lt; $_size; $i++) {
-            if ($arr[$i] &lt;= $k) {
-                $x[] = $arr[$i];
-            } elseif ($arr[$i] &gt; $k) {
-                $y[] = $arr[$i];
+    if (!is_array($arr)) return;
+    $n = count($arr);
+    for ($gap = floor($n / 2); $gap &gt; 0; $gap = floor($gap /= 2)) {
+        for ($i = $gap; $i &lt; $n; ++$i) {
+            for ($j = $i - $gap; $j &gt;= 0 &amp;&amp; $arr[$j + $gap] &lt; $arr[$j]; $j -= $gap) {
+                $temp = $arr[$j];
+                $arr[$j] = $arr[$j + $gap];
+                $arr[$j + $gap] = $temp;
             }
         }
-        $x = quickSort($x);
-        $y = quickSort($y);
-        return array_merge($x, [$k], $y);
-    } else {
-        return $arr;
     }
 }
 
-print_r($s);
+shell_sort($arr);
+print_r($arr);
 
 
 

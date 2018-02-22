@@ -313,8 +313,6 @@
         <li><label>other</label></li>
 
           
-            <li><a title="2018" href="15192205651213.html">2018</a></li>
-          
             <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
           
             <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -612,8 +610,6 @@
                     
                       <li class="side-title"><span>other</span></li>
                         
-                          <li><a title="2018" href="15192205651213.html">2018</a></li>
-                        
                           <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
                         
                           <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -668,44 +664,124 @@
 
 	
 		<div class="markdown-body">
-		<h1>笔记--docker-lnmp</h1>
+		<h1>笔记--常用命令</h1>
 
-		<p>docker run -p 8880:80 -p 8881:3306  --name lnmp -v /Users/shuo/docker/lnmp/www:/www -d hub.c.163.com/cookienull/centos7_pure_lnmp</p>
+		<p>没有先后顺序，最近用到的，想起来就做下笔记。</p>
 
-<p>创建成功后执行 lnmp start启动下服务即可正常访问</p>
+<ul>
+<li>telnet 127.0.0.1 3301            检测某ip对应的端口是否可通</li>
+<li><p>ssh d1@123.206.62.146  -p 60022  远程连接</p></li>
+<li><p>tail -f xxx文件                   监听文件</p></li>
+<li><p>tail -n +10           // 从10行开始显示到结束的内容</p></li>
+<li><p>tail -n 10            // 显示最后10 行的内容</p></li>
+<li><p>head -n 10       // 显示开头 10 行的内容  head -n +10      // 同 head -n 10</p></li>
+</ul>
 
-<p>docker 自定义的环境</p>
+<h3 id="toc_0">查看系统编码</h3>
 
-<p>centos7 lnmp 纯净版 php版本7 mysql版本5.6 <br/>
-composer version 1.1.3<br/>
-git version 1.8.3.1</p>
+<p>查看支持的字符编码 locale</p>
 
-<h3 id="toc_0">mysql配置</h3>
+<p>修改/etc/sysconfig/i18n，如改成中文编码： LANG=C.UTF-8  （这个编码是当时金融云走网关出现乱码的时候。）</p>
 
-<p>默认账户密码  mysql root root</p>
+<h4 id="toc_1">把程序放到后台执行 恢复</h4>
 
-<p>添加远程连接权限  </p>
+<pre><code>
+需要注意，放入后台的命令必须和用户没有交互的，
+例如 vi xx  &amp; 编辑一个文件是个用户有交互的 即使使用&amp; 也同样是暂停的
+ 
+php artisan serve &amp;  后台执行
+ctrl + z   暂停快捷键 放入后台是暂停的
 
-<pre><code>    USE mysql;
-    SELECT User, Password, Host FROM user;
-    //添加一个远程连接用户 账号root密码root
-    GRANT ALL PRIVILEGES ON *.* TO &#39;root&#39;@&#39;%&#39; IDENTIFIED BY &#39;root&#39; WITH GRANT OPTION;
-    flush privileges;
+
+vi a &amp;
+php artisan serve &amp;
+php artisan serve --port = 8001   ctrl+z
+
+显示：
+[1]  - suspended (tty output)  vi a
+[2]    running    php artisan serve
+[3]  + suspended  php artisan serve --port=8001
+
+jobs -l  （-l 显示进程id） + 号表示最后一个放入的 -号表示倒数第二个放入的 ：
+[1]  - 46579 suspended (tty output)  vi a
+[2]    46730 running    php artisan serve
+[3]  + 46875 suspended  php artisan serve --port=8001
+
+
+恢复
+
+fg %工作号    工作号是1|2|3 而不是进程号   
+bg %后台执行  
+
 </code></pre>
 
-<h3 id="toc_1">git</h3>
+<h4 id="toc_2">后台命令脱离终端执行方法</h4>
 
-<p>git config --global user.email &quot;<a href="mailto:598684053@qq.com">598684053@qq.com</a>&quot;<br/>
-git config --global user.name &quot;lishuo&quot;</p>
+<ol>
+<li>把需要执行的文件放到/etc/rc.local文件 （每次启动都会启动该文件）</li>
+<li>使用系统定时任务，让系统在制定的时间执行某个后台命令</li>
+<li>nohup 命令</li>
+</ol>
 
-<p>git push 的时候需要输入github的账号密码</p>
+<h4 id="toc_3">ps  查看进程</h4>
 
-<h3 id="toc_2">php artisan serve</h3>
+<pre><code>
+ps aux 查看系统中的所有进程，BSD操作系统格式
 
-<p>passthru() has been disabled for security reasons</p>
+ps -le 查看系统中的所有进程，使用linux标准命令格式
 
-<p>原因：LNMP 0.9禁用了部分存在危险的PHP函数<br/>
-php.ini 寻找disable_functions字符串，将后面的scandir删除</p>
+ 
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0  43176  3304 ?        Ss   Jun25 128:29 /usr/lib/systemd/systemd --switch
+root         2  0.0  0.0      0     0 ?        S    Jun25   0:01 [kthreadd]
+
+USER运行者 
+PID进程号 
+cpu 
+MEM物理内存 
+VSZ虚拟内存KB 
+RSS真是内存KB 
+STAT终端号  1-6 个终端 7是图像界面终端   pts/0-255 代表远程虚拟终端   ？号说明都不是通过终端来启动的而是由内核直接启动
+START启动时间
+TIME 耗费cpu的运行资源
+
+
+stat 中的参数意义如下：
+   D 不可中断 Uninterruptible（usually IO）
+   R 正在运行，或在队列中的进程
+   S 处于休眠状态
+   T 停止或被追踪
+   Z 僵尸进程
+   W 进入内存交换（从内核2.6开始无效）
+   X   死掉的进程
+
+    &lt; 高优先级
+    n   低优先级
+    s   包含子进程
+    +   位于后台的进程组
+
+</code></pre>
+
+<h4 id="toc_4">pstree  查看进程数（进程关系）</h4>
+
+<pre><code>
+ -p : 显示进程ID
+ -u : 显示进程所属用户
+ 
+</code></pre>
+
+<h4 id="toc_5">rz sz</h4>
+
+<p>rz 本地上传文件到服务器（ssh）<br/>
+sz 选定的文件发送到服务器</p>
+
+<h4 id="toc_6">scp(secure copy 安全copy)</h4>
+
+<p>文件夹 -r<br/>
+下载<br/>
+ scp d1@123.206.62.146:/home/d1/test.sh /Users/shuo/Desktop/test<br/>
+上传<br/>
+ scp test.sh d1@123.206.62.146:/home/d1/test.sh</p>
 
 
 		</div>

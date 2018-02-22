@@ -313,8 +313,6 @@
         <li><label>other</label></li>
 
           
-            <li><a title="2018" href="15192205651213.html">2018</a></li>
-          
             <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
           
             <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -612,8 +610,6 @@
                     
                       <li class="side-title"><span>other</span></li>
                         
-                          <li><a title="2018" href="15192205651213.html">2018</a></li>
-                        
                           <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
                         
                           <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -668,105 +664,174 @@
 
 	
 		<div class="markdown-body">
-		<h1>装饰者模式 Decorator</h1>
+		<h1>观察者模式（发布/订阅）</h1>
 
-		<blockquote>
-<p>允许向一个现有的对象添加新的功能，同时又不改变其结构。这种类型的设计模式属于结构型模式，它是作为现有的类的一个包装。</p>
+		<p>代码解耦神器</p>
+
+<blockquote>
+<p>观察者模式有时也被称作发布/订阅模式，该模式用于为对象实现发布/订阅功能：一旦主体对象状态发生改变，与之关联的观察者对象会收到通知，并进行相应操作。</p>
 </blockquote>
 
-<p>通常给对象添加功能，<br/>
-    1. 直接修改对象添加相应的功能，(不可取)<br/>
-    2. 派生对应的子类来扩展，（有局限性，单继承）<br/>
-    3. 使用对象组合的方式。（灵活）</p>
+<p>注意：<strong>将一个系统分割成一个一些类相互协作的类有一个不好的副作用，那就是需要维护相关对象间的一致性。我们不希望为了维持一致性而使各类紧密耦合，这样会给维护、扩展和重用都带来不便。观察者就是解决这类的耦合关系的。</strong></p>
 
-<p>显然，直接修改对应的类这种方式并。在面向对象的设计中，我们也应该尽量使用对象组合，而不是对象继承来扩展和复用功能。装饰器模式就是基于对象组合的方式，可以很灵活的给对象添加所需要的功能。<strong>装饰器模式的本质就是动态组合。动态是手段</strong>，组合才是目的。</p>
+<p>应用场景：<strong>消息队列系统</strong>、<strong>事件</strong>都使用了观察者模式。</p>
 
-<h3 id="toc_0">实例</h3>
+<p>本人比较喜欢这个模式，所以一下没控制住，写了几个demo。</p>
 
-<p>场景：调用服务接口，返回数据，需求变更，返回数据要提供有json的和xml格式的<br/>
-UML图<br/>
-<img src="media/15157475295856/15157518929090.jpg" alt=""/></p>
+<h3 id="toc_0">手动实现观察者</h3>
 
-<p><img src="media/15157475295856/15157488260206.jpg" alt=""/></p>
+<pre><code>1. 定义一个类，作为容器，用来存放事件和事件监听者的绑定的
+2. 添加绑定关系到上面的容器中
+3. 手动触发绑定的事件，所有监听器自动执行
 
-<p><img src="media/15157475295856/15157489587904.jpg" alt=""/></p>
 
-<pre><code>//定义一个装饰器
-abstract class Decorator implements RendererInterface
+//第一步
+class  EventGenerator
 {
-    protected $wrapped;
-    /**
-     * 必须类型声明装饰组件以便在子类中可以调用renderData()方法
-     */
-    public function __construct (RendererInterface $wrappable)
+    private $server = [];
+
+    //注册
+    public function add(UserUpdate $server)
     {
-        $this-&gt;wrapped = $wrappable;
+        $this-&gt;server[] = $server;
     }
-}
 
-//返回json
-class ReadJson extends Decorator
-{
-    /**
-     * render data as JSON
-     *
-     * @return mixed|string
-     */
-    public function returnData ()
+    //一旦事件触发，就通知所有的对象，调用update方法
+    public function notify()
     {
-        $output = $this-&gt;wrapped-&gt;returnData();
-        return json_encode($output);
-    }
-}
-
-//返回xml
-class ReadXml extends Decorator
-{
-    public function returnData ()
-    {
-        $output = $this-&gt;wrapped-&gt;returnData();
-        // do some fancy conversion to xml from array ...
-        $doc = new \DOMDocument();
-        foreach ($output as $key =&gt; $val) {
-            $doc-&gt;appendChild($doc-&gt;createElement($key, $val));
+        foreach ($this-&gt;server as $item) {
+            $item-&gt;handle(); 
         }
-        return $doc-&gt;saveXML();
     }
 }
+
+//第二步
+interface UserUpdate
+{
+    public function handle();
+}
+//卡券
+class Coupon implements UserUpdate
+{
+    public function handle()
+    {
+        echo &quot;用户更新（vip升级），添加一张卡券&quot;;
+    }
+}
+//订单
+class Order implements UserUpdate
+{
+    public function handle()
+    {
+        echo &quot;用户更新（vip升级），送一笔体验金的订单&quot;;
+    }
+}
+//第三步
+class User
+{
+    private $event;
+    public function __construct(EventGenerator $eventGenerator)
+    {
+        $this-&gt;event = $eventGenerator;
+    }
+    public function update()
+    {
+        //开启事务 : 其实观察者模式，只不过是为了把代码逻辑给分开，其实还是在一个方法里面
+        //用户升级为VIP
+        $this-&gt;event-&gt;notify();   //通知所有调用者
+        //关闭事务
+    }
+}
+
+
 
 </code></pre>
 
-<p><img src="media/15157475295856/15157517069204.jpg" alt=""/></p>
+<h3 id="toc_1">利用SPL自带方法实现观察者模式</h3>
 
-<p><a href="http://laravelacademy.org/post/2760.html">参考来源</a></p>
+<pre><code>思想和上面自定义的相同。只是用到了php标准库中的3个方法
+    1. SplSubject
+    2. SplObserver
+    3. SplObjectStorage
+/**
+ * 观察者模式 : 被观察对象 (主体对象)
+ * 主体对象维护观察者列表并发送通知
+ */
+class User implements \SplSubject  //主题
+{
+    protected $data = [];
 
-<h3 id="toc_1">总结：</h3>
+    protected $observers;
 
-<h5 id="toc_2">适用性</h5>
+    public function __construct()
+    {
+        $this-&gt;observers = new \SplObjectStorage();//这个对象防止重复注册
+    }
+    //注册一个观察者
+    public function attach(\SplObserver $observer)
+    {
+        $this-&gt;observers-&gt;attach($observer);
+    }
 
-<p>以下情况使用Decorator模式</p>
+    //删除观察者
+    public function detach(\SplObserver $observer)
+    {
+        $this-&gt;observers-&gt;detach($observer);
+    }
 
-<ol>
-<li>需要扩展一个类的功能，或给一个类添加附加职责。</li>
-<li>需要动态的给一个对象添加功能，这些功能可以再动态的撤销。</li>
-<li>需要增加由一些基本功能的排列组合而产生的非常大量的功能，从而使继承关系变的不现实。</li>
-<li>当不能采用生成子类的方法进行扩充时。一种情况是，可能有大量独立的扩展，为支持每一种组合将产生大量的子类，使得子类数目呈爆炸性增长。另一种情况可能是因为类定义被隐藏，或类定义不能用于生成子类。</li>
-</ol>
+    // 通知观察者方法
+    public function notify()
+    {
+        /** @var \SplObserver $observer */
+        foreach ($this-&gt;observers as $observer) {
+            $observer-&gt;update($this);
+        }
+    }
 
-<h5 id="toc_3">优点</h5>
+    //一旦修改用户信息，就会触发此方法，来通知所有对象
+    public function __set($name, $value)
+    {
+        $this-&gt;data[$name] = $value;
+        // 通知观察者用户被改变
+        $this-&gt;notify();
+    }
+}
 
-<ol>
-<li>Decorator模式与继承关系的目的都是要扩展对象的功能，但是Decorator可以提供比继承更多的灵活性。</li>
-<li>通过使用不同的具体装饰类以及这些装饰类的排列组合，设计师可以创造出很多不同行为的组合。</li>
-</ol>
+//（观察者对象）
+class UserObserver implements \SplObserver
+{
+     //观察者要实现的唯一方法 也是被 Subject 调用的方法
+    public function update(\SplSubject $subject)
+    {
+        echo &#39;has been updated&#39;;
+    }
+}
 
-<h5 id="toc_4">缺点</h5>
+//测试通知
+  $subject = new User();
+  $subject-&gt;attach($this-&gt;observer); //注册容器中去
+  $subject-&gt;property = 123;
 
-<ol>
-<li>这种比继承更加灵活机动的特性，也同时意味着更加多的复杂性。</li>
-<li>装饰模式会导致设计中出现许多小类，如果过度使用，会使程序变得很复杂。</li>
-<li>装饰模式是针对抽象组件（Component）类型编程。但是，如果你要针对具体组件编程时，就应该重新思考你的应用架构，以及装饰者是否合适。当然也可以改变Component接口，增加新的公开的行为，实现“半透明”的装饰者模式。在实际项目中要做出最佳选择。</li>
-</ol>
+
+</code></pre>
+
+<h3 id="toc_2">laravel使用观察者模式</h3>
+
+<p><a href="http://laravelacademy.org/post/6877.html#toc_10">laravel学院文档</a><br/>
+<img src="media/15156567245483/15156619081235.jpg" alt=""/></p>
+
+<p><img src="media/15156567245483/15156623978876.jpg" alt=""/><br/>
+<img src="media/15156567245483/15156622369470.jpg" alt=""/></p>
+
+<p><img src="media/15156567245483/15156623387280.jpg" alt=""/></p>
+
+<p>上面的一种方式是通知的方式，一旦我绑定完之后，事件触发就会通知所有的时间。<br/>
+下面是一种订阅的方式，我可以在制定services中某个方法，订阅某个事件，也是由同样的效果<br/>
+<a href="http://laravelacademy.org/post/6877.html#toc_10">laravel学院文档，参考第七项</a><br/>
+<img src="media/15156567245483/15156653958157.jpg" alt=""/></p>
+
+<p>总结：<br/>
+观察者模式解除了主体和具体观察者的耦合，让耦合的双方都依赖于抽象，而不是依赖具体。从而使得各自的变化都不会影响另一边的变化。</p>
 
 
 		</div>
