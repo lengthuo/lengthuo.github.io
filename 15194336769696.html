@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-   - lengthuo
+  魔术方法 - lengthuo
   
   </title>
  <meta name="description" content="路漫漫其修远兮吾将上下而求索">
@@ -47,11 +47,19 @@
         <li><label>php</label></li>
 
           
+            <li><a title="生成唯一id" href="15196281546423.html">生成唯一id</a></li>
+          
+            <li><a title="php运行机制" href="15196243924490.html">php运行机制</a></li>
+          
+            <li><a title="php高级" href="15194406504410.html">php高级</a></li>
+          
+            <li><a title="魔术方法" href="15194336769696.html">魔术方法</a></li>
+          
             <li><a title="php7新特性" href="15173733442452.html">php7新特性</a></li>
           
             <li><a title="supervisor运行laravel的队列" href="15173644197300.html">supervisor运行laravel的队列</a></li>
           
-            <li><a title="php数组" href="15161783412583.html">php数组</a></li>
+            <li><a title="php数组(只记常用的)" href="15161783412583.html">php数组(只记常用的)</a></li>
           
             <li><a title="输出区别" href="15160839984550.html">输出区别</a></li>
           
@@ -76,6 +84,8 @@
         <li class="divider"></li>
         <li><label>mysql</label></li>
 
+          
+            <li><a title="重点：分库分表" href="15193062637949.html">重点：分库分表</a></li>
           
             <li><a title="实战：主键设计" href="15179987835900.html">实战：主键设计</a></li>
           
@@ -208,14 +218,6 @@
 
       
         <li class="divider"></li>
-        <li><label>nginx</label></li>
-
-          
-            <li><a title="" href="15178121495507.html"></a></li>
-          
-
-      
-        <li class="divider"></li>
         <li><label>计算机网络</label></li>
 
           
@@ -313,6 +315,12 @@
         <li><label>other</label></li>
 
           
+            <li><a title="session 和 token 的区别" href="15197089516431.html">session 和 token 的区别</a></li>
+          
+            <li><a title="幂等性" href="15197085600692.html">幂等性</a></li>
+          
+            <li><a title="安全" href="15196955951857.html">安全</a></li>
+          
             <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
           
             <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -374,11 +382,19 @@
                     
                       <li class="side-title"><span>php</span></li>
                         
+                          <li><a title="生成唯一id" href="15196281546423.html">生成唯一id</a></li>
+                        
+                          <li><a title="php运行机制" href="15196243924490.html">php运行机制</a></li>
+                        
+                          <li><a title="php高级" href="15194406504410.html">php高级</a></li>
+                        
+                          <li><a title="魔术方法" href="15194336769696.html">魔术方法</a></li>
+                        
                           <li><a title="php7新特性" href="15173733442452.html">php7新特性</a></li>
                         
                           <li><a title="supervisor运行laravel的队列" href="15173644197300.html">supervisor运行laravel的队列</a></li>
                         
-                          <li><a title="php数组" href="15161783412583.html">php数组</a></li>
+                          <li><a title="php数组(只记常用的)" href="15161783412583.html">php数组(只记常用的)</a></li>
                         
                           <li><a title="输出区别" href="15160839984550.html">输出区别</a></li>
                         
@@ -401,6 +417,8 @@
 
                     
                       <li class="side-title"><span>mysql</span></li>
+                        
+                          <li><a title="重点：分库分表" href="15193062637949.html">重点：分库分表</a></li>
                         
                           <li><a title="实战：主键设计" href="15179987835900.html">实战：主键设计</a></li>
                         
@@ -524,12 +542,6 @@
                         
 
                     
-                      <li class="side-title"><span>nginx</span></li>
-                        
-                          <li><a title="" href="15178121495507.html"></a></li>
-                        
-
-                    
                       <li class="side-title"><span>计算机网络</span></li>
                         
                           <li><a title="tcp长连接和短连接" href="15126148983598.html">tcp长连接和短连接</a></li>
@@ -610,6 +622,12 @@
                     
                       <li class="side-title"><span>other</span></li>
                         
+                          <li><a title="session 和 token 的区别" href="15197089516431.html">session 和 token 的区别</a></li>
+                        
+                          <li><a title="幂等性" href="15197085600692.html">幂等性</a></li>
+                        
+                          <li><a title="安全" href="15196955951857.html">安全</a></li>
+                        
                           <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
                         
                           <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -660,13 +678,132 @@
             <div class="large-9 medium-9 columns">
 
  <div class="markdown-body">
-<h1></h1>
+<h1>魔术方法</h1>
 
-<p>Linux IO模式及 select、poll、epoll详解<br/>
-<a href="http://guojing.me/linux-kernel-architecture/posts/process-switch/">http://guojing.me/linux-kernel-architecture/posts/process-switch/</a></p>
+<ol>
+<li>__construct   构造方法</li>
+<li>__destruct    析构方法</li>
+<li><p>__toString    输出方法</p></li>
+<li><p>__invock 当尝试以调用函数的方式调用一个对象时，__invoke() 方法会被自动调用。</p></li>
+<li><p>__call</p></li>
+<li><p>__callStatic</p></li>
+<li><p>__get</p></li>
+<li><p>__set</p></li>
+<li><p>__isset</p></li>
+<li><p>__unset</p></li>
+</ol>
 
-<p>进程切换<br/>
-<a href="http://guojing.me/linux-kernel-architecture/posts/process-switch/">http://guojing.me/linux-kernel-architecture/posts/process-switch/</a></p>
+<h3 id="toc_0">demo</h3>
+
+<pre><code>
+class Demo
+{
+    //构造方法
+    public function __construct()
+    {
+        echo &quot;new &quot;;
+    }
+    //析构方法
+    public function __destruct()
+    {
+        echo &quot;destruct&quot;;
+    }
+
+    public function __toString()
+    {
+        return &quot;toString&quot;;
+    }
+    
+    public function __invoke($s)
+    {
+        echo &quot;类被当成函数调用&quot;.$s;
+    }
+
+
+    private $demoName;
+    //私有属性赋值
+    public function __set($name, $value)
+    {
+        $this-&gt;$name = $value;
+    }
+    
+    public function __get($name)
+    {
+        echo &#39;get&#39;;
+        return $this-&gt;$name;
+    }
+
+    //个未定义的方法的时候，会自动调用类中预先定义的__call()
+
+    public function __call($name, $arguments)
+    {
+
+    }
+    //当对一个类使用一个未定义的静态方法的时候，会自动调用类中预先定义的__callStatic()这个静态魔术方法。
+    public static function __callStatic($name, $arguments)
+    {
+
+    }
+    //共有属性可以直接使用isset()，但是私有属性不行，  unset是同理的。
+    public function __isset($name)
+    {
+       return isset($this-&gt;demoName);
+    }
+}
+
+</code></pre>
+
+<h3 id="toc_1">__get  __set 扩展</h3>
+
+<pre><code>class Fruit
+{
+    private $color;
+    private $weight;
+
+
+
+    public function __get($name)              // 这里$name是属性名
+    {
+        $getter = &#39;get&#39; . $name;              // getter函数的函数名
+        if (method_exists($this, $getter)) {
+            return $this-&gt;$getter();          // 调用了getter函数
+        } elseif (method_exists($this, &#39;set&#39; . $name)) {
+            throw new InvalidCallException(&#39;Getting write-only property: &#39;
+                . get_class($this) . &#39;::&#39; . $name);
+        } else {
+            throw new UnknownPropertyException(&#39;Getting unknown property: &#39;
+                . get_class($this) . &#39;::&#39; . $name);
+        }
+    }
+
+// $name是属性名，$value是拟写入的属性值
+    public function __set($name, $value)
+    {
+        $setter = &#39;set&#39; . $name;             // setter函数的函数名
+        if (method_exists($this, $setter)) {
+            $this-&gt;$setter($value);          // 调用setter函数
+        } elseif (method_exists($this, &#39;get&#39; . $name)) {
+            throw new InvalidCallException(&#39;Setting read-only property: &#39; .
+                get_class($this) . &#39;::&#39; . $name);
+        } else {
+            throw new UnknownPropertyException(&#39;Setting unknown property: &#39;
+                . get_class($this) . &#39;::&#39; . $name);
+        }
+    }
+
+    public  function  setColor($value){
+        if(trim($value)){
+            $this-&gt;color = $value;
+        }
+    }
+
+    public  function  getColor(){
+        return &#39;The color is &#39; . $this-&gt;color;
+    }
+
+}
+
+</code></pre>
 
 
 </div>
@@ -683,8 +820,8 @@
   <div class="large-6 columns">
 	<div class="text-right" style="padding:15px 0px;">
 		
-	        <a href="15172820975706.html" 
-	        title="Next Post: B树">B树 &raquo;</a>
+	        <a href="15181672512390.html" 
+	        title="Next Post: 金融云总结">金融云总结 &raquo;</a>
 	    
 	</div>
   </div>
@@ -697,7 +834,7 @@
 </div>
 <script type="text/javascript">
 	$(function(){
-		var currentURL = '15178121495507.html';
+		var currentURL = '15194336769696.html';
 		$('#side-nav a').each(function(){
 			if($(this).attr('href') == currentURL){
 				$(this).parent().addClass('active');

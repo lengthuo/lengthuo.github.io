@@ -47,11 +47,19 @@
         <li><label>php</label></li>
 
           
+            <li><a title="生成唯一id" href="15196281546423.html">生成唯一id</a></li>
+          
+            <li><a title="php运行机制" href="15196243924490.html">php运行机制</a></li>
+          
+            <li><a title="php高级" href="15194406504410.html">php高级</a></li>
+          
+            <li><a title="魔术方法" href="15194336769696.html">魔术方法</a></li>
+          
             <li><a title="php7新特性" href="15173733442452.html">php7新特性</a></li>
           
             <li><a title="supervisor运行laravel的队列" href="15173644197300.html">supervisor运行laravel的队列</a></li>
           
-            <li><a title="php数组" href="15161783412583.html">php数组</a></li>
+            <li><a title="php数组(只记常用的)" href="15161783412583.html">php数组(只记常用的)</a></li>
           
             <li><a title="输出区别" href="15160839984550.html">输出区别</a></li>
           
@@ -76,6 +84,8 @@
         <li class="divider"></li>
         <li><label>mysql</label></li>
 
+          
+            <li><a title="重点：分库分表" href="15193062637949.html">重点：分库分表</a></li>
           
             <li><a title="实战：主键设计" href="15179987835900.html">实战：主键设计</a></li>
           
@@ -208,14 +218,6 @@
 
       
         <li class="divider"></li>
-        <li><label>nginx</label></li>
-
-          
-            <li><a title="" href="15178121495507.html"></a></li>
-          
-
-      
-        <li class="divider"></li>
         <li><label>计算机网络</label></li>
 
           
@@ -313,6 +315,12 @@
         <li><label>other</label></li>
 
           
+            <li><a title="session 和 token 的区别" href="15197089516431.html">session 和 token 的区别</a></li>
+          
+            <li><a title="幂等性" href="15197085600692.html">幂等性</a></li>
+          
+            <li><a title="安全" href="15196955951857.html">安全</a></li>
+          
             <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
           
             <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -374,11 +382,19 @@
                     
                       <li class="side-title"><span>php</span></li>
                         
+                          <li><a title="生成唯一id" href="15196281546423.html">生成唯一id</a></li>
+                        
+                          <li><a title="php运行机制" href="15196243924490.html">php运行机制</a></li>
+                        
+                          <li><a title="php高级" href="15194406504410.html">php高级</a></li>
+                        
+                          <li><a title="魔术方法" href="15194336769696.html">魔术方法</a></li>
+                        
                           <li><a title="php7新特性" href="15173733442452.html">php7新特性</a></li>
                         
                           <li><a title="supervisor运行laravel的队列" href="15173644197300.html">supervisor运行laravel的队列</a></li>
                         
-                          <li><a title="php数组" href="15161783412583.html">php数组</a></li>
+                          <li><a title="php数组(只记常用的)" href="15161783412583.html">php数组(只记常用的)</a></li>
                         
                           <li><a title="输出区别" href="15160839984550.html">输出区别</a></li>
                         
@@ -401,6 +417,8 @@
 
                     
                       <li class="side-title"><span>mysql</span></li>
+                        
+                          <li><a title="重点：分库分表" href="15193062637949.html">重点：分库分表</a></li>
                         
                           <li><a title="实战：主键设计" href="15179987835900.html">实战：主键设计</a></li>
                         
@@ -524,12 +542,6 @@
                         
 
                     
-                      <li class="side-title"><span>nginx</span></li>
-                        
-                          <li><a title="" href="15178121495507.html"></a></li>
-                        
-
-                    
                       <li class="side-title"><span>计算机网络</span></li>
                         
                           <li><a title="tcp长连接和短连接" href="15126148983598.html">tcp长连接和短连接</a></li>
@@ -610,6 +622,12 @@
                     
                       <li class="side-title"><span>other</span></li>
                         
+                          <li><a title="session 和 token 的区别" href="15197089516431.html">session 和 token 的区别</a></li>
+                        
+                          <li><a title="幂等性" href="15197085600692.html">幂等性</a></li>
+                        
+                          <li><a title="安全" href="15196955951857.html">安全</a></li>
+                        
                           <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
                         
                           <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -664,95 +682,24 @@
 
 	
 		<div class="markdown-body">
-		<h1>php7新特性</h1>
+		<h1>生成唯一id</h1>
 
-		<h3 id="toc_0">1. 新操作符&lt;=&gt;</h3>
+		<p>php生成uuid的方法</p>
 
-<p>操作变量的时候非常有用：变量包括（数值，字符串，整形，浮点型，数组，对象）</p>
+<pre><code>
+  public static function guid()
+    {
 
-<pre><code>* 符号两边相等返回0
-* 左边大于右边 1
-* 右边大于左边 -1
-</code></pre>
+        $str = md5(uniqid(mt_rand(), true));
+        $uuid = substr($str, 0, 8) . &#39;-&#39;;
+        $uuid .= substr($str, 8, 4) . &#39;-&#39;;
+        $uuid .= substr($str, 12, 4) . &#39;-&#39;;
+        $uuid .= substr($str, 16, 4) . &#39;-&#39;;
+        $uuid .= substr($str, 20, 12);
+        return $uuid;
 
-<h3 id="toc_1">2. 类型声明</h3>
-
-<p>7中引入类型声明，目前明确的有2中类型声明<br/>
-形参和返回值</p>
-
-<p>declare(strict_types =1 );  强制类型（不按照相应的参数会报错）必须放在文件开头</p>
-
-<p>function test(int $a):string{<br/>
-    return &#39;asdada&#39;;<br/>
-}</p>
-
-<h3 id="toc_2">3. 统一变量语法</h3>
-
-<p>我们常常会遇到以下情况：方法，变量 类名等会保存在某个变量里，例如</p>
-
-<pre><code>$first = [&#39;name&#39; =&gt; &#39;second&#39;];
-$second = 2;
-echo $$first[&#39;name&#39;];
-</code></pre>
-
-<p>php5会完美运行并且输出2，</p>
-
-<p>变量解析的原则：左右解析</p>
-
-<p>上面代码在7中会产生一个Notice级别的错误，并且得不到确定的输出内容，</p>
-
-<p>为了一直引入{}的写法</p>
-
-<p><code>echo ${$first[&#39;name&#39;]};</code></p>
-
-<h3 id="toc_3">4. throwable</h3>
-
-<p>php7之前可以截获异常，错误不会截获</p>
-
-<p>php7可以截获错误，如下代码</p>
-
-<pre><code>try{
-
-}catch(Error $e){ //可以截获错误（）
- 
-}
-</code></pre>
-
-<h3 id="toc_4">5. ??</h3>
-
-<p>首先回去判断是否存在，在第一个操作数存在的时可以被直接返回</p>
-
-<p>直接上代码</p>
-
-<pre><code>echo $a?$a:&#39;asd&#39;;  //报错Notice: Undefined variable: a 
-
-echo isset($a)?$a:&#39;123&#39;; //解决上面问题
-
-echo $a??&#39;123&#39;;         //7推荐更简便的写法
-
-??可以连续使用
-echo $a??$b??&quot;ab都不存在&quot;；
-
-
-</code></pre>
-
-<h3 id="toc_5">6. use批量声明</h3>
-
-<pre><code>//混合式声明(函数变量都同一声明)
-
-use App\Controller\{
-    TestController,
-    HelloTestController,
-    function getTest(),  
-    const KEY
-};
-
-
-\\非混合式声明
-
-use App\Controller\{TestController,HelloController};
-use App\Controller\{getTest()}
-use APP\Controller\{KEY}
+    }
+    
 </code></pre>
 
 

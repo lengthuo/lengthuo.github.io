@@ -47,11 +47,19 @@
         <li><label>php</label></li>
 
           
+            <li><a title="生成唯一id" href="15196281546423.html">生成唯一id</a></li>
+          
+            <li><a title="php运行机制" href="15196243924490.html">php运行机制</a></li>
+          
+            <li><a title="php高级" href="15194406504410.html">php高级</a></li>
+          
+            <li><a title="魔术方法" href="15194336769696.html">魔术方法</a></li>
+          
             <li><a title="php7新特性" href="15173733442452.html">php7新特性</a></li>
           
             <li><a title="supervisor运行laravel的队列" href="15173644197300.html">supervisor运行laravel的队列</a></li>
           
-            <li><a title="php数组" href="15161783412583.html">php数组</a></li>
+            <li><a title="php数组(只记常用的)" href="15161783412583.html">php数组(只记常用的)</a></li>
           
             <li><a title="输出区别" href="15160839984550.html">输出区别</a></li>
           
@@ -76,6 +84,8 @@
         <li class="divider"></li>
         <li><label>mysql</label></li>
 
+          
+            <li><a title="重点：分库分表" href="15193062637949.html">重点：分库分表</a></li>
           
             <li><a title="实战：主键设计" href="15179987835900.html">实战：主键设计</a></li>
           
@@ -208,14 +218,6 @@
 
       
         <li class="divider"></li>
-        <li><label>nginx</label></li>
-
-          
-            <li><a title="" href="15178121495507.html"></a></li>
-          
-
-      
-        <li class="divider"></li>
         <li><label>计算机网络</label></li>
 
           
@@ -313,6 +315,12 @@
         <li><label>other</label></li>
 
           
+            <li><a title="session 和 token 的区别" href="15197089516431.html">session 和 token 的区别</a></li>
+          
+            <li><a title="幂等性" href="15197085600692.html">幂等性</a></li>
+          
+            <li><a title="安全" href="15196955951857.html">安全</a></li>
+          
             <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
           
             <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -374,11 +382,19 @@
                     
                       <li class="side-title"><span>php</span></li>
                         
+                          <li><a title="生成唯一id" href="15196281546423.html">生成唯一id</a></li>
+                        
+                          <li><a title="php运行机制" href="15196243924490.html">php运行机制</a></li>
+                        
+                          <li><a title="php高级" href="15194406504410.html">php高级</a></li>
+                        
+                          <li><a title="魔术方法" href="15194336769696.html">魔术方法</a></li>
+                        
                           <li><a title="php7新特性" href="15173733442452.html">php7新特性</a></li>
                         
                           <li><a title="supervisor运行laravel的队列" href="15173644197300.html">supervisor运行laravel的队列</a></li>
                         
-                          <li><a title="php数组" href="15161783412583.html">php数组</a></li>
+                          <li><a title="php数组(只记常用的)" href="15161783412583.html">php数组(只记常用的)</a></li>
                         
                           <li><a title="输出区别" href="15160839984550.html">输出区别</a></li>
                         
@@ -401,6 +417,8 @@
 
                     
                       <li class="side-title"><span>mysql</span></li>
+                        
+                          <li><a title="重点：分库分表" href="15193062637949.html">重点：分库分表</a></li>
                         
                           <li><a title="实战：主键设计" href="15179987835900.html">实战：主键设计</a></li>
                         
@@ -524,12 +542,6 @@
                         
 
                     
-                      <li class="side-title"><span>nginx</span></li>
-                        
-                          <li><a title="" href="15178121495507.html"></a></li>
-                        
-
-                    
                       <li class="side-title"><span>计算机网络</span></li>
                         
                           <li><a title="tcp长连接和短连接" href="15126148983598.html">tcp长连接和短连接</a></li>
@@ -610,6 +622,12 @@
                     
                       <li class="side-title"><span>other</span></li>
                         
+                          <li><a title="session 和 token 的区别" href="15197089516431.html">session 和 token 的区别</a></li>
+                        
+                          <li><a title="幂等性" href="15197085600692.html">幂等性</a></li>
+                        
+                          <li><a title="安全" href="15196955951857.html">安全</a></li>
+                        
                           <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
                         
                           <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -664,47 +682,9 @@
 
 	
 		<div class="markdown-body">
-		<h1>文档--排序-插入排序-希尔排序（面试热点）</h1>
+		<h1>幂等性</h1>
 
-		<blockquote>
-<p>直接插入排序的改进<br/>
-不稳定</p>
-</blockquote>
-
-<p><img src="media/15097185400207/15098637955002.jpg" alt=""/></p>
-
-<h3 id="toc_0">注意事项</h3>
-
-<ul>
-<li>增量选择  一般的初次取序列的一半为增量，以后每次减半，直到增量为1。</li>
-</ul>
-
-<h3 id="toc_1">代码示例</h3>
-
-<pre><code>
-$arr = [10, 9, 29, 22, 6, 18, 30, 29];
-
-function shell_sort(&amp;$arr)
-{
-    if (!is_array($arr)) return;
-    $n = count($arr);
-    for ($gap = floor($n / 2); $gap &gt; 0; $gap = floor($gap /= 2)) {
-        for ($i = $gap; $i &lt; $n; ++$i) {
-            for ($j = $i - $gap; $j &gt;= 0 &amp;&amp; $arr[$j + $gap] &lt; $arr[$j]; $j -= $gap) {
-                $temp = $arr[$j];
-                $arr[$j] = $arr[$j + $gap];
-                $arr[$j + $gap] = $temp;
-            }
-        }
-    }
-}
-
-shell_sort($arr);
-print_r($arr);
-
-
-
-</code></pre>
+		<p>浏览器请求幂等</p>
 
 
 		</div>

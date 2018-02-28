@@ -47,11 +47,19 @@
         <li><label>php</label></li>
 
           
+            <li><a title="生成唯一id" href="15196281546423.html">生成唯一id</a></li>
+          
+            <li><a title="php运行机制" href="15196243924490.html">php运行机制</a></li>
+          
+            <li><a title="php高级" href="15194406504410.html">php高级</a></li>
+          
+            <li><a title="魔术方法" href="15194336769696.html">魔术方法</a></li>
+          
             <li><a title="php7新特性" href="15173733442452.html">php7新特性</a></li>
           
             <li><a title="supervisor运行laravel的队列" href="15173644197300.html">supervisor运行laravel的队列</a></li>
           
-            <li><a title="php数组" href="15161783412583.html">php数组</a></li>
+            <li><a title="php数组(只记常用的)" href="15161783412583.html">php数组(只记常用的)</a></li>
           
             <li><a title="输出区别" href="15160839984550.html">输出区别</a></li>
           
@@ -76,6 +84,8 @@
         <li class="divider"></li>
         <li><label>mysql</label></li>
 
+          
+            <li><a title="重点：分库分表" href="15193062637949.html">重点：分库分表</a></li>
           
             <li><a title="实战：主键设计" href="15179987835900.html">实战：主键设计</a></li>
           
@@ -208,14 +218,6 @@
 
       
         <li class="divider"></li>
-        <li><label>nginx</label></li>
-
-          
-            <li><a title="" href="15178121495507.html"></a></li>
-          
-
-      
-        <li class="divider"></li>
         <li><label>计算机网络</label></li>
 
           
@@ -313,6 +315,12 @@
         <li><label>other</label></li>
 
           
+            <li><a title="session 和 token 的区别" href="15197089516431.html">session 和 token 的区别</a></li>
+          
+            <li><a title="幂等性" href="15197085600692.html">幂等性</a></li>
+          
+            <li><a title="安全" href="15196955951857.html">安全</a></li>
+          
             <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
           
             <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -374,11 +382,19 @@
                     
                       <li class="side-title"><span>php</span></li>
                         
+                          <li><a title="生成唯一id" href="15196281546423.html">生成唯一id</a></li>
+                        
+                          <li><a title="php运行机制" href="15196243924490.html">php运行机制</a></li>
+                        
+                          <li><a title="php高级" href="15194406504410.html">php高级</a></li>
+                        
+                          <li><a title="魔术方法" href="15194336769696.html">魔术方法</a></li>
+                        
                           <li><a title="php7新特性" href="15173733442452.html">php7新特性</a></li>
                         
                           <li><a title="supervisor运行laravel的队列" href="15173644197300.html">supervisor运行laravel的队列</a></li>
                         
-                          <li><a title="php数组" href="15161783412583.html">php数组</a></li>
+                          <li><a title="php数组(只记常用的)" href="15161783412583.html">php数组(只记常用的)</a></li>
                         
                           <li><a title="输出区别" href="15160839984550.html">输出区别</a></li>
                         
@@ -401,6 +417,8 @@
 
                     
                       <li class="side-title"><span>mysql</span></li>
+                        
+                          <li><a title="重点：分库分表" href="15193062637949.html">重点：分库分表</a></li>
                         
                           <li><a title="实战：主键设计" href="15179987835900.html">实战：主键设计</a></li>
                         
@@ -524,12 +542,6 @@
                         
 
                     
-                      <li class="side-title"><span>nginx</span></li>
-                        
-                          <li><a title="" href="15178121495507.html"></a></li>
-                        
-
-                    
                       <li class="side-title"><span>计算机网络</span></li>
                         
                           <li><a title="tcp长连接和短连接" href="15126148983598.html">tcp长连接和短连接</a></li>
@@ -610,6 +622,12 @@
                     
                       <li class="side-title"><span>other</span></li>
                         
+                          <li><a title="session 和 token 的区别" href="15197089516431.html">session 和 token 的区别</a></li>
+                        
+                          <li><a title="幂等性" href="15197085600692.html">幂等性</a></li>
+                        
+                          <li><a title="安全" href="15196955951857.html">安全</a></li>
+                        
                           <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
                         
                           <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -664,28 +682,55 @@
 
 	
 		<div class="markdown-body">
-		<h1>工厂模式 Factory</h1>
+		<h1>文档--排序-选择排序</h1>
 
 		<blockquote>
-<p>定义：父类决定生成的方式，但并不决定所要生成的具体类，具体的处理全部交个子类负责。</p>
+<p>不稳定 <br/>
+工作原理:<code>是每一次从待排序的数据元素中选出最小（或最大）的一个元素，存放在序列的起始位置，直到全部待排序的数据元素排完。</code></p>
 </blockquote>
 
-<p>应用场景：<br/>
-    1. 如果一个对象拥有很多子类，那么创建该对象的子类使用工厂模式是最合适的，不但可以面向接口的编程，为维护以及开发带来方便。 <br/>
-    2. 如果xxx类名称修改了，那么所有new的地方都得修改，而工厂模式可以只修改一处即可。</p>
+<pre><code>
+/**
+ * 选择排序也是一种简单直观的排序算法。它的工作原理很容易理解：
+ *     1初始时在序列中找到最小（大）元素，放到序列的起始位置作为已排序序列；
+ *     2然后，再从剩余未排序元素中继续寻找最小（大）元素，放到已排序序列的末尾。
+ *     3以此类推，直到所有元素均排序完毕。
+ * 注意选择排序与冒泡排序的区别：
+ *     冒泡排序通过依次交换相邻两个顺序不合法的元素位置，从而将当前最小（大）元素放到合适的位置；
+ *     而选择排序每遍历一次都记住了当前最小（大）元素的位置，最后仅需一次交换操作即可将其放到合适的位置。
+ */
 
-<p>使用实例 ：laravel对数据库的管理(laravel源码中所有的工厂方法，都统一命名xxxManager)</p>
+$s = [1, 9, 2, 8, 3, 7, 100, 24, 21];
+$n = count($s);
 
-<p><img src="media/15155788496928/15155794585683.jpg" alt=""/></p>
+// 最差时间复杂度 ---- O(n^2)
+// 最优时间复杂度 ---- O(n^2)
+// 平均时间复杂度 ---- O(n^2)
 
-<p><img src="media/15155788496928/15155794920765.jpg" alt=""/></p>
+for ($i = 0; $i &lt; $n - 1; ++$i) {
+    $num = $i;
+    for ($j = $i + 1; $j &lt; $n; ++$j) {
+        if ($s[$j] &lt; $s[$num]) {
+            $num = $j;
+        }
+    }
+    if ($num != $i) {
+        swap($s, $i, $num);
+    }
+}
+print_r($s);
 
-<p>扩展：<br/>
-<img src="media/15155788496928/15155796303471.jpg" alt=""/></p>
 
-<p>从一个工厂获取所需的产品类似于factory.getProduct1();或factory.getProduct2()，最经典的运用switch语句。简单工厂要增加产品要修改源码，破坏ocp原则（对扩展开放，修改封闭）</p>
+function swap(&amp;$s, $i, $j)
+{
+    $temp = $s[$i];
+    $s[$i] = $s[$j];
+    $s[$j] = $temp;
+}
 
-<h3 id="toc_0"><a href="http://www.runoob.com/design-pattern/abstract-factory-pattern.html">抽象工厂模式</a>（工厂的工厂）</h3>
+
+
+</code></pre>
 
 
 		</div>

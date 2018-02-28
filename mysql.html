@@ -47,11 +47,19 @@
         <li><label>php</label></li>
 
           
+            <li><a title="生成唯一id" href="15196281546423.html">生成唯一id</a></li>
+          
+            <li><a title="php运行机制" href="15196243924490.html">php运行机制</a></li>
+          
+            <li><a title="php高级" href="15194406504410.html">php高级</a></li>
+          
+            <li><a title="魔术方法" href="15194336769696.html">魔术方法</a></li>
+          
             <li><a title="php7新特性" href="15173733442452.html">php7新特性</a></li>
           
             <li><a title="supervisor运行laravel的队列" href="15173644197300.html">supervisor运行laravel的队列</a></li>
           
-            <li><a title="php数组" href="15161783412583.html">php数组</a></li>
+            <li><a title="php数组(只记常用的)" href="15161783412583.html">php数组(只记常用的)</a></li>
           
             <li><a title="输出区别" href="15160839984550.html">输出区别</a></li>
           
@@ -76,6 +84,8 @@
         <li class="divider"></li>
         <li><label>mysql</label></li>
 
+          
+            <li><a title="重点：分库分表" href="15193062637949.html">重点：分库分表</a></li>
           
             <li><a title="实战：主键设计" href="15179987835900.html">实战：主键设计</a></li>
           
@@ -208,14 +218,6 @@
 
       
         <li class="divider"></li>
-        <li><label>nginx</label></li>
-
-          
-            <li><a title="" href="15178121495507.html"></a></li>
-          
-
-      
-        <li class="divider"></li>
         <li><label>计算机网络</label></li>
 
           
@@ -313,6 +315,12 @@
         <li><label>other</label></li>
 
           
+            <li><a title="session 和 token 的区别" href="15197089516431.html">session 和 token 的区别</a></li>
+          
+            <li><a title="幂等性" href="15197085600692.html">幂等性</a></li>
+          
+            <li><a title="安全" href="15196955951857.html">安全</a></li>
+          
             <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
           
             <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -374,11 +382,19 @@
                     
                       <li class="side-title"><span>php</span></li>
                         
+                          <li><a title="生成唯一id" href="15196281546423.html">生成唯一id</a></li>
+                        
+                          <li><a title="php运行机制" href="15196243924490.html">php运行机制</a></li>
+                        
+                          <li><a title="php高级" href="15194406504410.html">php高级</a></li>
+                        
+                          <li><a title="魔术方法" href="15194336769696.html">魔术方法</a></li>
+                        
                           <li><a title="php7新特性" href="15173733442452.html">php7新特性</a></li>
                         
                           <li><a title="supervisor运行laravel的队列" href="15173644197300.html">supervisor运行laravel的队列</a></li>
                         
-                          <li><a title="php数组" href="15161783412583.html">php数组</a></li>
+                          <li><a title="php数组(只记常用的)" href="15161783412583.html">php数组(只记常用的)</a></li>
                         
                           <li><a title="输出区别" href="15160839984550.html">输出区别</a></li>
                         
@@ -401,6 +417,8 @@
 
                     
                       <li class="side-title"><span>mysql</span></li>
+                        
+                          <li><a title="重点：分库分表" href="15193062637949.html">重点：分库分表</a></li>
                         
                           <li><a title="实战：主键设计" href="15179987835900.html">实战：主键设计</a></li>
                         
@@ -524,12 +542,6 @@
                         
 
                     
-                      <li class="side-title"><span>nginx</span></li>
-                        
-                          <li><a title="" href="15178121495507.html"></a></li>
-                        
-
-                    
                       <li class="side-title"><span>计算机网络</span></li>
                         
                           <li><a title="tcp长连接和短连接" href="15126148983598.html">tcp长连接和短连接</a></li>
@@ -610,6 +622,12 @@
                     
                       <li class="side-title"><span>other</span></li>
                         
+                          <li><a title="session 和 token 的区别" href="15197089516431.html">session 和 token 的区别</a></li>
+                        
+                          <li><a title="幂等性" href="15197085600692.html">幂等性</a></li>
+                        
+                          <li><a title="安全" href="15196955951857.html">安全</a></li>
+                        
                           <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
                         
                           <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -664,68 +682,30 @@
 
 	
 		<div class="markdown-body">
-		<h1>实战：主键设计</h1>
+		<h1>重点：分库分表</h1>
 
-		<h3 id="toc_0">主键作用</h3>
+		<p>单库单表<br/>
+读写分离<br/>
+分库分表</p>
 
-<ol>
-<li>保证实体的完整性; </li>
-<li>加快数据库的操作速度 </li>
-<li>在表中添加新记录时，ACCESS会自动检查新记录的主键值，不允许该值与其他记录的主键值重复。(主键只能有一个) </li>
-<li>ACCESS自动按主键值的顺序显示表中的记录。如果没有定义主键，则按输入记录的顺序显示表中的记录。 </li>
-</ol>
+<h3 id="toc_0">为什么要分表：</h3>
 
-<h3 id="toc_1">常用主键设计思路</h3>
+<p>当一张表的数据达到几千万时，你查询一次所花的时间会变多，如果有联合查询的话，我想有可能会死在那儿了。分表的目的就在于此，减小数据库的负担，缩短查询时间。</p>
 
-<p>手动增长字段可以用redis来存储。<br/>
-<img src="media/15179987835900/15180538235892.jpg" alt=""/></p>
+<hr/>
 
-<h2 id="toc_2">自增id</h2>
+<p>单库单表 </p>
 
-<p>优点：<br/>
-    性能高，空间小，容易记,简单不需要去程序维护。</p>
+<p>单库单表是最常见的数据库设计，例如，有一张用户(user)表放在数据库db中，所有的用户都可以在db库中的user表中查到。 </p>
 
-<p>缺点：</p>
+<p>单库多表 </p>
 
-<ol>
-<li>如果经常有合并表的操作，就可能会出现主键重复的情况。（项目案例中使用redis来存储自增的id，也就是上面说的手动增长字段）。</li>
-<li>使用INT数据范围有限制。如果存在大量的数据，可能会超出INT的取值范围。</li>
-<li>很难处理分布式存储的数据表。</li>
-</ol>
+<p>随着用户数量的增加，user表的数据量会越来越大，当数据量达到一定程度的时候对user表的查询会渐渐的变慢，从而影响整个DB的性能。如果使用mysql, 还有一个更严重的问题是，当需要添加一列的时候，mysql会锁表，期间所有的读写操作只能等待。 </p>
 
-<h2 id="toc_3">uuid</h2>
+<p>可以通过某种方式将user进行水平的切分，产生两个表结构完全一样的user_0000,user_0001等表，user_0000 + user_0001 + …的数据刚好是一份完整的数据。 </p>
 
-<p>UUID诞生的目的，<strong>是让分布式系统中的所有元素，都能有唯一的辨识资讯，而不需要透过中央控制端来做辨识资讯的指定。</strong></p>
-
-<p>UUID是由一组32位数的16进制数字所构成，是故UUID理论上的总数为16<sup>32=2<sup>128，约等于3.4</sup></sup> x 10<sup>38。也就是说若每纳秒产生1兆个UUID，要花100亿年才会将所有UUID用完。</sup></p>
-
-<p>优点： <br/>
-    全局唯一，适合大量数据中的插入和更新操作，跨服务器数据合并非常方便。<br/>
-缺点：</p>
-
-<ol>
-<li>不易于存储：UUID太长，16字节128位，通常以36(32+4个横线)长度的字符串表示，很多场景不适用。（占用更多的磁盘大小。）</li>
-<li>信息不安全：基于MAC地址生成UUID的算法可能会造成MAC地址泄露，这个漏洞曾被用于寻找梅丽莎病毒的制作者位置。</li>
-<li>对MySQL索引不利：如果作为数据库主键，在InnoDB引擎下，UUID的无序性可能会引起数据位置频繁变动，严重影响性能。（性能）</li>
-</ol>
-
-<p>扩展：GUID：是微软对UUID这个标准的实现。UUID还有其它各种实现，不止GUID一种。</p>
-
-<pre><code>//php代码实例
-    $str = md5(uniqid(mt_rand(), true));
-    $uuid = substr($str, 0, 8) . &#39;-&#39;;
-    $uuid .= substr($str, 8, 4) . &#39;-&#39;;
-    $uuid .= substr($str, 12, 4) . &#39;-&#39;;
-    $uuid .= substr($str, 16, 4) . &#39;-&#39;;
-    $uuid .= substr($str, 20, 12);
-    return $uuid;
-</code></pre>
-
-<h2 id="toc_4">行业案例解决方案</h2>
-
-<p><a href="https://segmentfault.com/a/1190000011282426">理解分布式id生成算法SnowFlake</a></p>
-
-<p><a href="https://tech.meituan.com/MT_Leaf.html">Leaf——美团点评分布式ID生成系统</a></p>
+<p>多库多表 <br/>
+  随着数据量增加也许单台DB的存储空间不够，随着查询量的增加单台数据库服务器已经没办法支撑。这个时候可以再对数据库进行水平区分。 </p>
 
 
 		</div>

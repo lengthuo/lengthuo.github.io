@@ -47,11 +47,19 @@
         <li><label>php</label></li>
 
           
+            <li><a title="生成唯一id" href="15196281546423.html">生成唯一id</a></li>
+          
+            <li><a title="php运行机制" href="15196243924490.html">php运行机制</a></li>
+          
+            <li><a title="php高级" href="15194406504410.html">php高级</a></li>
+          
+            <li><a title="魔术方法" href="15194336769696.html">魔术方法</a></li>
+          
             <li><a title="php7新特性" href="15173733442452.html">php7新特性</a></li>
           
             <li><a title="supervisor运行laravel的队列" href="15173644197300.html">supervisor运行laravel的队列</a></li>
           
-            <li><a title="php数组" href="15161783412583.html">php数组</a></li>
+            <li><a title="php数组(只记常用的)" href="15161783412583.html">php数组(只记常用的)</a></li>
           
             <li><a title="输出区别" href="15160839984550.html">输出区别</a></li>
           
@@ -76,6 +84,8 @@
         <li class="divider"></li>
         <li><label>mysql</label></li>
 
+          
+            <li><a title="重点：分库分表" href="15193062637949.html">重点：分库分表</a></li>
           
             <li><a title="实战：主键设计" href="15179987835900.html">实战：主键设计</a></li>
           
@@ -208,14 +218,6 @@
 
       
         <li class="divider"></li>
-        <li><label>nginx</label></li>
-
-          
-            <li><a title="" href="15178121495507.html"></a></li>
-          
-
-      
-        <li class="divider"></li>
         <li><label>计算机网络</label></li>
 
           
@@ -313,6 +315,12 @@
         <li><label>other</label></li>
 
           
+            <li><a title="session 和 token 的区别" href="15197089516431.html">session 和 token 的区别</a></li>
+          
+            <li><a title="幂等性" href="15197085600692.html">幂等性</a></li>
+          
+            <li><a title="安全" href="15196955951857.html">安全</a></li>
+          
             <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
           
             <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -374,11 +382,19 @@
                     
                       <li class="side-title"><span>php</span></li>
                         
+                          <li><a title="生成唯一id" href="15196281546423.html">生成唯一id</a></li>
+                        
+                          <li><a title="php运行机制" href="15196243924490.html">php运行机制</a></li>
+                        
+                          <li><a title="php高级" href="15194406504410.html">php高级</a></li>
+                        
+                          <li><a title="魔术方法" href="15194336769696.html">魔术方法</a></li>
+                        
                           <li><a title="php7新特性" href="15173733442452.html">php7新特性</a></li>
                         
                           <li><a title="supervisor运行laravel的队列" href="15173644197300.html">supervisor运行laravel的队列</a></li>
                         
-                          <li><a title="php数组" href="15161783412583.html">php数组</a></li>
+                          <li><a title="php数组(只记常用的)" href="15161783412583.html">php数组(只记常用的)</a></li>
                         
                           <li><a title="输出区别" href="15160839984550.html">输出区别</a></li>
                         
@@ -401,6 +417,8 @@
 
                     
                       <li class="side-title"><span>mysql</span></li>
+                        
+                          <li><a title="重点：分库分表" href="15193062637949.html">重点：分库分表</a></li>
                         
                           <li><a title="实战：主键设计" href="15179987835900.html">实战：主键设计</a></li>
                         
@@ -524,12 +542,6 @@
                         
 
                     
-                      <li class="side-title"><span>nginx</span></li>
-                        
-                          <li><a title="" href="15178121495507.html"></a></li>
-                        
-
-                    
                       <li class="side-title"><span>计算机网络</span></li>
                         
                           <li><a title="tcp长连接和短连接" href="15126148983598.html">tcp长连接和短连接</a></li>
@@ -610,6 +622,12 @@
                     
                       <li class="side-title"><span>other</span></li>
                         
+                          <li><a title="session 和 token 的区别" href="15197089516431.html">session 和 token 的区别</a></li>
+                        
+                          <li><a title="幂等性" href="15197085600692.html">幂等性</a></li>
+                        
+                          <li><a title="安全" href="15196955951857.html">安全</a></li>
+                        
                           <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
                         
                           <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -664,35 +682,89 @@
 
 	
 		<div class="markdown-body">
-		<h1>金融云总结</h1>
+		<h1>htpp  tcp  socket RPC 区别</h1>
 
-		<p>spring cloud</p>
+		<h3 id="toc_0">http</h3>
 
-<ol>
-<li>eureka  服务注册发现</li>
-<li>网关getway </li>
-<li>sidecar</li>
-</ol>
+<p>应用层<br/>
+http 超文本传输协议   请求相应（短连接，之后实现 keep alive，来实现长连接（相对的。限制了时间和访问次数限制））</p>
 
-<p>php</p>
+<h3 id="toc_1">RPC(建立在socket之上的)</h3>
 
-<ol>
-<li>redis</li>
-<li>mysql</li>
-<li>rabbitmq（分布式事物）</li>
-<li>服务之间的调用使用RPC （远程过程调用）</li>
-</ol>
+<h3 id="toc_2">socket</h3>
 
-<p>sidecar是用来整合异构语言的，比如你用python，nodejs等等写的东西，sidecar这个服务必须和python或nodejs等异构语言的服务在同一台主机上面，也就是说他们之间是localhost，不能是ip访问等等</p>
+<p>（应用层和传输层之间）<br/>
+socket 套接字是通信的基石，是支持TCP/IP协议的网络通信的基本操作单元.包含进行网络通信必须的五种信息：五元组：<br/>
+连接使用的协议  本地主机的IP地址 本地进程的协议端口 远地主机的IP地址 远地进程的协议端口。</p>
 
-<p>2.sidecar检查异构语言的健康地址返回结果是：</p>
+<p>创建Socket连接时，可以指定使用的传输层协议，Socket可以支持不同的传输层协议（TCP或UDP），当使用TCP协议进行连接时，该Socket连接就是一个TCP连接。</p>
 
-<p>{<br/>
-&quot;status&quot;:&quot;UP&quot;<br/>
-}</p>
+<h3 id="toc_3">tcp</h3>
+
+<p>传输层<br/>
+TCP即传输控制协议。TCP连接是互联网连接协议集的一种。长连接和短连接都有实现</p>
+
+<h3 id="toc_4">socket &lt;==&gt; tcp|udp</h3>
+
+<p>创建Socket连接时，可以指定使用的传输层协议，Socket可以支持不同的传输层协议（TCP或UDP），当使用TCP协议进行连接时，该Socket连接就是一个TCP连接。</p>
+
+<p><strong>socket则是对TCP/IP协议的封装和应用（程序员层面上）。也可以说，TPC/IP协议是传输层协议，主要解决数据 如何在网络中传输，而HTTP是应用层协议，主要解决如何包装数据。</strong>关于TCP/IP和HTTP协议的关系，网络有一段比较容易理解的介绍：</p>
+
+<p>“我们在传输数据时，可以只使用（传输层）TCP/IP协议，但是那样的话，如 果没有应用层，便无法识别数据内容，如果想要使传输的数据有意义，则必须使用到应用层协议，应用层协议有很多，比如HTTP、FTP、TELNET等，也 可以自己定义应用层协议。WEB使用HTTP协议作应用层协议，以封装HTTP文本信息，然后使用TCP/IP做传输层协议将它发到网络上。”</p>
+
+<p>我们平时说的最多的socket是什么呢，实际上socket是对TCP/IP协议的封装，<strong>Socket本身并不是协议，而是一个调用接口（API），通过Socket，我们才能使用TCP/IP协议。</strong> 实际上，Socket跟TCP/IP协议没有必然的联系。Socket编程接口在设计的时候，就希望也能适应其他的网络协议。所以说，Socket的出现 只是使得程序员更方便地使用TCP/IP协议栈而已，是对TCP/IP协议的抽象，从而形成了我们知道的一些最基本的函数接口，比如create、 listen、connect、accept、send、read和write等等。网络有一段关于socket和TCP/IP协议关系的说法比较容易理解：</p>
+
+<p>“TCP/IP只是一个协议栈，就像操作系统的运行机制一样，必须要具体实现，同时还要提供对外的操作接口。这个就像操作系统会提供标准的编程接口，比如win32编程接口一样，TCP/IP也要提供可供程序员做网络开发所用的接口，这就是Socket编程接口。” <br/>
+实际上，传输层的TCP是基于网络层的IP协议的，而应用层的HTTP协议又是基于传输层的TCP协议的，而Socket本身不算是协议，就像上面所说，它只是提供了一个针对TCP或者UDP编程的接口。socket是对端口通信开发的工具,它要更底层一些.</p>
+
+<h3 id="toc_5">socket &lt;==&gt; http</h3>
+
+<p>由于通常情况下Socket连接就是TCP连接，因此Socket连接一旦建立，通信双方即可开始相互发送数据内容，直到双方连接断开。但在实际网络应用中，客户端到服务器之间的通信往往需要穿越多个中间节点，例如路由器、网关、防火墙等，大部分防火墙默认会关闭长时间处于非活跃状态的连接而导致 Socket 连接断连，因此需要通过轮询告诉网络，该连接处于活跃状态。</p>
+
+<p>而HTTP连接使用的是“请求—响应”的方式，不仅在请求时需要先建立连接，而且需要客户端向服务器发出请求后，服务器端才能回复数据。</p>
+
+<p>很多情况下，需要服务器端主动向客户端推送数据，保持客户端与服务器数据的实时与同步。此时若双方建立的是Socket连接，服务器就可以直接将数据传送给客户端；若双方建立的是HTTP连接，则服务器需要等到客户端发送一次请求后才能将数据传回给客户端，因此，客户端定时向服务器端发送连接请求，不仅可以保持在线，同时也是在“询问”服务器是否有新的数据，如果有就将数据传给客户端。</p>
+
+<h3 id="toc_6">http协议是应用层的协义</h3>
+
+<p>有个比较形象的描述：HTTP是轿车，提供了封装或者显示数据的具体形式；Socket是发动机，提供了网络通信的能力</p>
+
+<h3 id="toc_7">RPC 百度百科</h3>
+
+<p>RPC（Remote Procedure Call）——远程过程调用，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。在OSI网络通信模型中，RPC跨越了传输层和应用层。RPC使得开发包括网络分布式多程序在内的应用程序更加容易。</p>
+
+<p>工作原理编辑<br/>
+运行时,一次客户机对服务器的RPC调用,其内部操作大致有如下十步：<br/>
+1.调用客户端句柄；执行传送参数</p>
+
+<p>2.调用本地系统内核发送网络消息<br/>
+3.消息传送到远程主机<br/>
+4.服务器句柄得到消息并取得参数<br/>
+5.执行远程过程<br/>
+6.执行的过程将结果返回服务器句柄<br/>
+7.服务器句柄返回结果，调用远程系统内核<br/>
+8.消息传回本地主机</p>
+
+<p>9.客户句柄由内核接收消息<br/>
+10.客户接收句柄返回的数据<br/>
+RPC OVER HTTP<br/>
+Microsoft RPC-over-HTTP 部署(RPC over HTTP)允许RPC客户端安全和有效地通过Internet 连接到RPC 服务器程序并执行远程过程调用。这是在一个名称为RPC-over-HTTP 代理，或简称为RPC 代理的中间件的帮助下完成的。<br/>
+RPC 代理运行在IIS计算机上。它接受来自Internet 的RPC 请求，在这些请求上执行认证，检验和访问检查，如果请求通过所有的测试，RPC 代理将请求转发给执行真正处理的RPC 服务器。通过RPC over HTTP，RPC客户端不和服务器直接通信，它们使用RPC 代理作为中间件。</p>
 
 
 		</div>
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
 	
 
   

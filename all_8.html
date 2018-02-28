@@ -47,11 +47,19 @@
         <li><label>php</label></li>
 
           
+            <li><a title="生成唯一id" href="15196281546423.html">生成唯一id</a></li>
+          
+            <li><a title="php运行机制" href="15196243924490.html">php运行机制</a></li>
+          
+            <li><a title="php高级" href="15194406504410.html">php高级</a></li>
+          
+            <li><a title="魔术方法" href="15194336769696.html">魔术方法</a></li>
+          
             <li><a title="php7新特性" href="15173733442452.html">php7新特性</a></li>
           
             <li><a title="supervisor运行laravel的队列" href="15173644197300.html">supervisor运行laravel的队列</a></li>
           
-            <li><a title="php数组" href="15161783412583.html">php数组</a></li>
+            <li><a title="php数组(只记常用的)" href="15161783412583.html">php数组(只记常用的)</a></li>
           
             <li><a title="输出区别" href="15160839984550.html">输出区别</a></li>
           
@@ -76,6 +84,8 @@
         <li class="divider"></li>
         <li><label>mysql</label></li>
 
+          
+            <li><a title="重点：分库分表" href="15193062637949.html">重点：分库分表</a></li>
           
             <li><a title="实战：主键设计" href="15179987835900.html">实战：主键设计</a></li>
           
@@ -208,14 +218,6 @@
 
       
         <li class="divider"></li>
-        <li><label>nginx</label></li>
-
-          
-            <li><a title="" href="15178121495507.html"></a></li>
-          
-
-      
-        <li class="divider"></li>
         <li><label>计算机网络</label></li>
 
           
@@ -313,6 +315,12 @@
         <li><label>other</label></li>
 
           
+            <li><a title="session 和 token 的区别" href="15197089516431.html">session 和 token 的区别</a></li>
+          
+            <li><a title="幂等性" href="15197085600692.html">幂等性</a></li>
+          
+            <li><a title="安全" href="15196955951857.html">安全</a></li>
+          
             <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
           
             <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -374,11 +382,19 @@
                     
                       <li class="side-title"><span>php</span></li>
                         
+                          <li><a title="生成唯一id" href="15196281546423.html">生成唯一id</a></li>
+                        
+                          <li><a title="php运行机制" href="15196243924490.html">php运行机制</a></li>
+                        
+                          <li><a title="php高级" href="15194406504410.html">php高级</a></li>
+                        
+                          <li><a title="魔术方法" href="15194336769696.html">魔术方法</a></li>
+                        
                           <li><a title="php7新特性" href="15173733442452.html">php7新特性</a></li>
                         
                           <li><a title="supervisor运行laravel的队列" href="15173644197300.html">supervisor运行laravel的队列</a></li>
                         
-                          <li><a title="php数组" href="15161783412583.html">php数组</a></li>
+                          <li><a title="php数组(只记常用的)" href="15161783412583.html">php数组(只记常用的)</a></li>
                         
                           <li><a title="输出区别" href="15160839984550.html">输出区别</a></li>
                         
@@ -401,6 +417,8 @@
 
                     
                       <li class="side-title"><span>mysql</span></li>
+                        
+                          <li><a title="重点：分库分表" href="15193062637949.html">重点：分库分表</a></li>
                         
                           <li><a title="实战：主键设计" href="15179987835900.html">实战：主键设计</a></li>
                         
@@ -524,12 +542,6 @@
                         
 
                     
-                      <li class="side-title"><span>nginx</span></li>
-                        
-                          <li><a title="" href="15178121495507.html"></a></li>
-                        
-
-                    
                       <li class="side-title"><span>计算机网络</span></li>
                         
                           <li><a title="tcp长连接和短连接" href="15126148983598.html">tcp长连接和短连接</a></li>
@@ -610,6 +622,12 @@
                     
                       <li class="side-title"><span>other</span></li>
                         
+                          <li><a title="session 和 token 的区别" href="15197089516431.html">session 和 token 的区别</a></li>
+                        
+                          <li><a title="幂等性" href="15197085600692.html">幂等性</a></li>
+                        
+                          <li><a title="安全" href="15196955951857.html">安全</a></li>
+                        
                           <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
                         
                           <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -664,93 +682,24 @@
 
 	
 		<div class="markdown-body">
-		<h1>实战--统一异常处理</h1>
+		<h1>模板模式 Template</h1>
 
-		<h3 id="toc_0">异常总是会和枚举一起使用</h3>
+		<blockquote>
+<p>模板方法模式又叫模板模式，该模式在一个方法中定义一个算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以在不改变算法结构的情况下，重新定义算法中的某些步骤。<br/>
+模板方法模式将主要的方法定义为 final，防止子类修改算法骨架，将子类必须实现的方法定义为 abstract。而普通的方法（无 final 或 abstract 修饰）则称之为钩子（hook）。</p>
+</blockquote>
 
-<p>1 枚举类的定义</p>
+<p>模式中的角色<br/>
+    抽象类（AbstractClass）：实现了模板方法，定义了算法的骨架。<br/>
+    具体类（ConcreteClass) ：实现抽象类中的抽象方法，已完成完整的算法。</p>
 
-<pre><code>
-//返回枚举定义
-public enum ResultEnum {
-    ERROR(-1,&quot;位置错误&quot;),
-    SUCCESS(1000,&quot;成功&quot;),
-    TEXT(200,&quot;测试&quot;),
-    ;
+<p><img src="media/15160863540227/15160874031190.jpg" alt=""/></p>
 
-    private Integer code;
-    private String msg;
+<p>总结：<br/>
+父类与子类之间的协作关系：<br/>
+    在这个模式中，处理的流程交给了父类，具体的处理交给子类，但是如何划分处理的级别，哪些处理需要父类完成，哪些处理需要交给子类完成，并没有限定，这些都需要程序设计的开发人员来决定。</p>
 
-    ResultEnum(Integer code, String msg) {
-        this.code = code;
-        this.msg = msg;
-    }
-
-    //不需要set方法。
-    public Integer getCode() {
-        return code;
-    }
-    public String getMsg() {
-        return msg;
-    }
-
-} 
-
-</code></pre>
-
-<ol>
-<li>自定义的异常处理</li>
-</ol>
-
-<pre><code>//一定要继承RuntimeException出现异常之后会自动回滚。
-public class TestException  extends  RuntimeException{
-
-    private Integer code;
-
-    public TestException(ResultEnum resultEnum) {
-        super(resultEnum.getMsg());
-        this.code = resultEnum.getCode();
-    }
-
-    public Integer getCode() {
-        return code;
-    }
-
-    public void setCode(Integer code) {
-        this.code = code;
-    }
-}
-</code></pre>
-
-<ol>
-<li>统一异常处理。处理所有的异常<br/>
-（使用 ：  使用 throw new TestException(ResultEnum.TEXT);）</li>
-</ol>
-
-<pre><code>@ControllerAdvice
-public class HandleException {
-
-    private final static Logger logger = LoggerFactory.getLogger(HandleException.class);
-
-    //统一异常处理
-    @ResponseBody
-    @ExceptionHandler(value = Exception.class) //要捕获的异常类
-    public Result handle(Exception e) {
-        if (e instanceof TestException) {
-            TestException testException = (TestException) e;
-            return ResultUtils.error(testException.getCode(), testException.getMessage());
-        }
-        logger.error(&quot;[系统异常]={}&quot;, e); //会出现未知的异常
-        return ResultUtils.error(100, e.getMessage());
-    }
-
-}
-</code></pre>
-
-<h3 id="toc_1">设计到的注解</h3>
-
-<p>@ControllerAdvice<br/>
-@ExceptionHandler(value = Exception.class) //要捕获的异常类</p>
+<p><a href="http://laravelacademy.org/post/3006.html">laravel学院</a></p>
 
 
 		</div>

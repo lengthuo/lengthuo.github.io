@@ -47,11 +47,19 @@
         <li><label>php</label></li>
 
           
+            <li><a title="生成唯一id" href="15196281546423.html">生成唯一id</a></li>
+          
+            <li><a title="php运行机制" href="15196243924490.html">php运行机制</a></li>
+          
+            <li><a title="php高级" href="15194406504410.html">php高级</a></li>
+          
+            <li><a title="魔术方法" href="15194336769696.html">魔术方法</a></li>
+          
             <li><a title="php7新特性" href="15173733442452.html">php7新特性</a></li>
           
             <li><a title="supervisor运行laravel的队列" href="15173644197300.html">supervisor运行laravel的队列</a></li>
           
-            <li><a title="php数组" href="15161783412583.html">php数组</a></li>
+            <li><a title="php数组(只记常用的)" href="15161783412583.html">php数组(只记常用的)</a></li>
           
             <li><a title="输出区别" href="15160839984550.html">输出区别</a></li>
           
@@ -76,6 +84,8 @@
         <li class="divider"></li>
         <li><label>mysql</label></li>
 
+          
+            <li><a title="重点：分库分表" href="15193062637949.html">重点：分库分表</a></li>
           
             <li><a title="实战：主键设计" href="15179987835900.html">实战：主键设计</a></li>
           
@@ -208,14 +218,6 @@
 
       
         <li class="divider"></li>
-        <li><label>nginx</label></li>
-
-          
-            <li><a title="" href="15178121495507.html"></a></li>
-          
-
-      
-        <li class="divider"></li>
         <li><label>计算机网络</label></li>
 
           
@@ -313,6 +315,12 @@
         <li><label>other</label></li>
 
           
+            <li><a title="session 和 token 的区别" href="15197089516431.html">session 和 token 的区别</a></li>
+          
+            <li><a title="幂等性" href="15197085600692.html">幂等性</a></li>
+          
+            <li><a title="安全" href="15196955951857.html">安全</a></li>
+          
             <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
           
             <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -374,11 +382,19 @@
                     
                       <li class="side-title"><span>php</span></li>
                         
+                          <li><a title="生成唯一id" href="15196281546423.html">生成唯一id</a></li>
+                        
+                          <li><a title="php运行机制" href="15196243924490.html">php运行机制</a></li>
+                        
+                          <li><a title="php高级" href="15194406504410.html">php高级</a></li>
+                        
+                          <li><a title="魔术方法" href="15194336769696.html">魔术方法</a></li>
+                        
                           <li><a title="php7新特性" href="15173733442452.html">php7新特性</a></li>
                         
                           <li><a title="supervisor运行laravel的队列" href="15173644197300.html">supervisor运行laravel的队列</a></li>
                         
-                          <li><a title="php数组" href="15161783412583.html">php数组</a></li>
+                          <li><a title="php数组(只记常用的)" href="15161783412583.html">php数组(只记常用的)</a></li>
                         
                           <li><a title="输出区别" href="15160839984550.html">输出区别</a></li>
                         
@@ -401,6 +417,8 @@
 
                     
                       <li class="side-title"><span>mysql</span></li>
+                        
+                          <li><a title="重点：分库分表" href="15193062637949.html">重点：分库分表</a></li>
                         
                           <li><a title="实战：主键设计" href="15179987835900.html">实战：主键设计</a></li>
                         
@@ -524,12 +542,6 @@
                         
 
                     
-                      <li class="side-title"><span>nginx</span></li>
-                        
-                          <li><a title="" href="15178121495507.html"></a></li>
-                        
-
-                    
                       <li class="side-title"><span>计算机网络</span></li>
                         
                           <li><a title="tcp长连接和短连接" href="15126148983598.html">tcp长连接和短连接</a></li>
@@ -610,6 +622,12 @@
                     
                       <li class="side-title"><span>other</span></li>
                         
+                          <li><a title="session 和 token 的区别" href="15197089516431.html">session 和 token 的区别</a></li>
+                        
+                          <li><a title="幂等性" href="15197085600692.html">幂等性</a></li>
+                        
+                          <li><a title="安全" href="15196955951857.html">安全</a></li>
+                        
                           <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
                         
                           <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -664,47 +682,28 @@
 
 	
 		<div class="markdown-body">
-		<h1>索引-最左原则正确理解</h1>
+		<h1>加密 - php</h1>
 
-		<pre><code>
-CREATE TABLE `student` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
-  `cid` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-  KEY `name_cid_INX` (`name`,`cid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+		<p>自述对加密的了解：</p>
 
+<p>可逆    aes<br/>
+不可逆  </p>
 
-explain select * from student where cid = 1;  //type = index
+<p><a href="https://v.qq.com/x/page/r0382zb80cb.html">加密过程</a></p>
 
+<p>加密模式：<br/>
+ 分组密码有五种工作体制：<br/>
+ 1.电码本模式（Electronic Codebook Book (ECB)）；<br/>
+ 2.密码分组链接模式（Cipher Block Chaining (CBC)）；<br/>
+ 3.计算器模式（Counter (CTR)）；<br/>
+ 4.密码反馈模式（Cipher FeedBack (CFB)）；<br/>
+ 5.输出反馈模式（Output FeedBack (OFB)）。</p>
 
-explain select * from student where name =&#39;1&#39;; //type = ref 
+<p>五中模式的讲解<br/>
+<a href="https://www.tuicool.com/articles/AZZjiu">模式讲解</a></p>
 
-
-explain select * from student where name = &#39;1&#39; and cid = 1;   //type = ref 
-
-explain select * from student where cid = 1 and name = &#39;1&#39;;   //type = ref
-
-
-</code></pre>
-
-<h3 id="toc_0">type类型说明</h3>
-
-<p>const，eq_ref，ref，fulltext，ref_or_null，unique_subquery，index_subquery，range，index_merge，    ===   index，ALL，</p>
-
-<p>除了all之外，其他的type都可以使用到索引，除了index_merge之外，其他的type只可以用到一个索引</p>
-
-<p>const：表示通过索引一次就找到了；</p>
-
-<p>index：这种类型表示是mysql会对整个该索引进行扫描。要想用到这种类型的索引，对这个索引并无特别要求，<strong>只要是索引，或者某个复合索引的一部分</strong>，mysql都可能会采用index类型的方式扫描。<br/>
-但是呢,<strong>缺点是效率不高</strong>，mysql会从索引中的第一个数据一个个的查找到最后一个数据，直到找到符合判断条件的某个索引。</p>
-
-<p>ref：这种类型表示mysql会根据特定的算法快速查找到某个符合条件的索引，而不是会对索引中每一个数据都进行一一的扫描判断，也就是所谓你平常理解的使用索引查询会更快的取出数据。而要想实现这种查找，索引却是有要求的，要实现这种能快速查找的算法，索引就要满足特定的数据结构。简单说，也就是索引字段的数据必须是有序的，才能实现这种类型的查找，才能利用到索引。</p>
-
-<h3 id="toc_1">总结</h3>
-
-<p>只要字段是索引的一部分的时候，查询的时候都是用到索引的，只是索引的算法效率问题。上面实例中，没有用使用最左原则，但是执行计划中type是index。所以说用到了索引，只是效率和all近似。</p>
+<p>key就是自定义加密key，自己定义的简单串；<br/>
+iv是initialization vector的意思，就是加密的初始话矢量，初始化加密函数的变量。</p>
 
 
 		</div>

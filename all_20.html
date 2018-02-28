@@ -47,11 +47,19 @@
         <li><label>php</label></li>
 
           
+            <li><a title="生成唯一id" href="15196281546423.html">生成唯一id</a></li>
+          
+            <li><a title="php运行机制" href="15196243924490.html">php运行机制</a></li>
+          
+            <li><a title="php高级" href="15194406504410.html">php高级</a></li>
+          
+            <li><a title="魔术方法" href="15194336769696.html">魔术方法</a></li>
+          
             <li><a title="php7新特性" href="15173733442452.html">php7新特性</a></li>
           
             <li><a title="supervisor运行laravel的队列" href="15173644197300.html">supervisor运行laravel的队列</a></li>
           
-            <li><a title="php数组" href="15161783412583.html">php数组</a></li>
+            <li><a title="php数组(只记常用的)" href="15161783412583.html">php数组(只记常用的)</a></li>
           
             <li><a title="输出区别" href="15160839984550.html">输出区别</a></li>
           
@@ -76,6 +84,8 @@
         <li class="divider"></li>
         <li><label>mysql</label></li>
 
+          
+            <li><a title="重点：分库分表" href="15193062637949.html">重点：分库分表</a></li>
           
             <li><a title="实战：主键设计" href="15179987835900.html">实战：主键设计</a></li>
           
@@ -208,14 +218,6 @@
 
       
         <li class="divider"></li>
-        <li><label>nginx</label></li>
-
-          
-            <li><a title="" href="15178121495507.html"></a></li>
-          
-
-      
-        <li class="divider"></li>
         <li><label>计算机网络</label></li>
 
           
@@ -313,6 +315,12 @@
         <li><label>other</label></li>
 
           
+            <li><a title="session 和 token 的区别" href="15197089516431.html">session 和 token 的区别</a></li>
+          
+            <li><a title="幂等性" href="15197085600692.html">幂等性</a></li>
+          
+            <li><a title="安全" href="15196955951857.html">安全</a></li>
+          
             <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
           
             <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -374,11 +382,19 @@
                     
                       <li class="side-title"><span>php</span></li>
                         
+                          <li><a title="生成唯一id" href="15196281546423.html">生成唯一id</a></li>
+                        
+                          <li><a title="php运行机制" href="15196243924490.html">php运行机制</a></li>
+                        
+                          <li><a title="php高级" href="15194406504410.html">php高级</a></li>
+                        
+                          <li><a title="魔术方法" href="15194336769696.html">魔术方法</a></li>
+                        
                           <li><a title="php7新特性" href="15173733442452.html">php7新特性</a></li>
                         
                           <li><a title="supervisor运行laravel的队列" href="15173644197300.html">supervisor运行laravel的队列</a></li>
                         
-                          <li><a title="php数组" href="15161783412583.html">php数组</a></li>
+                          <li><a title="php数组(只记常用的)" href="15161783412583.html">php数组(只记常用的)</a></li>
                         
                           <li><a title="输出区别" href="15160839984550.html">输出区别</a></li>
                         
@@ -401,6 +417,8 @@
 
                     
                       <li class="side-title"><span>mysql</span></li>
+                        
+                          <li><a title="重点：分库分表" href="15193062637949.html">重点：分库分表</a></li>
                         
                           <li><a title="实战：主键设计" href="15179987835900.html">实战：主键设计</a></li>
                         
@@ -524,12 +542,6 @@
                         
 
                     
-                      <li class="side-title"><span>nginx</span></li>
-                        
-                          <li><a title="" href="15178121495507.html"></a></li>
-                        
-
-                    
                       <li class="side-title"><span>计算机网络</span></li>
                         
                           <li><a title="tcp长连接和短连接" href="15126148983598.html">tcp长连接和短连接</a></li>
@@ -610,6 +622,12 @@
                     
                       <li class="side-title"><span>other</span></li>
                         
+                          <li><a title="session 和 token 的区别" href="15197089516431.html">session 和 token 的区别</a></li>
+                        
+                          <li><a title="幂等性" href="15197085600692.html">幂等性</a></li>
+                        
+                          <li><a title="安全" href="15196955951857.html">安全</a></li>
+                        
                           <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
                         
                           <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -664,200 +682,104 @@
 
 	
 		<div class="markdown-body">
-		<h1>迭代器模式 Iterator</h1>
+		<h1>php7新特性</h1>
 
-		<blockquote>
-<p>迭代器模式，提供一种方法顺序访问一个聚合对象中的各种元素，而又不暴露该对象的内部表示。</p>
-</blockquote>
+		<h3 id="toc_0">新操作符&lt;=&gt;</h3>
 
-<h3 id="toc_0">角色</h3>
+<p>操作变量的时候非常有用：变量包括（数值，字符串，整形，浮点型，数组，对象）</p>
 
-<ol>
-<li>迭代器角色（Iterator）:
+<pre><code>* 符号两边相等返回0
+* 左边大于右边 1
+* 右边大于左边 -1
+</code></pre>
 
-<ol>
-<li>定义遍历元素所需要的方法，一般来说会有这么三个方法：取得下一个元素的方法next()，判断是否遍历结束的方法hasNext()），移出当前对象的方法remove(),</li>
-<li>php默认的spl标准库中自带这个接口，有5个方法（参考实例代码）</li>
-</ol></li>
-<li>具体迭代器角色（Concrete Iterator）：实现迭代器接口中定义的方法，完成集合的迭代。</li>
-<li>容器角色(Aggregate):  一般是一个接口，提供一个iterator()方法，例如java中的Collection接口，List接口，Set接口等</li>
-<li>具体容器角色（ConcreteAggregate）：就是抽象容器的具体实现类，比如List接口的有序列表实现ArrayList，List接口的链表实现LinkList，Set接口的哈希列表的实现HashSet等。</li>
-</ol>
+<h3 id="toc_1">??</h3>
 
-<h3 id="toc_1">实例</h3>
+<p>null合并运算符<br/>
+项目中存在大量同时使用三元表达式和 isset()的情况，新增了null合并运算符 (??) 这个语法糖。如果变量存在且值不为NULL， 它就会返回自身的值，否则返回第二个操作数。</p>
 
-<p>分析:<br/>
-Book                        具体容器中存放的角色<br/>
-BookList                    容器<br/>
-BookListIterator            具体迭代器<br/>
-BookListReverseIterator     具体迭代器 反向的（实际中使用中，只需要遍历的操作，很少会用）</p>
+<p>旧版：isset(\(_GET[‘id&#39;]) ? \)_GET[id] : err;<br/>
+新版：$_GET[&#39;id&#39;] ?? &#39;err&#39;;</p>
 
-<p>uml图<br/>
-<img src="media/15159115676241/15159135264436.jpg" alt=""/></p>
+<h3 id="toc_2">统一变量语法</h3>
 
-<p>代码实例：</p>
+<p>我们常常会遇到以下情况：方法，变量 类名等会保存在某个变量里，例如</p>
 
-<pre><code>//Book
-namespace MyApp\Iterator;
-class Book
-{
-    protected $id;
+<pre><code>$first = [&#39;name&#39; =&gt; &#39;second&#39;];
+$second = 2;
+echo $$first[&#39;name&#39;];
+</code></pre>
 
-    protected $title;
+<p>php5会完美运行并且输出2，</p>
 
-    public function __construct ($id, $title)
-    {
-        $this-&gt;id = $id;
-        $this-&gt;title = $title;
-    }
+<p>变量解析的原则：左右解析</p>
 
-    /**
-     * @return mixed
-     */
-    public function getId ()
-    {
-        return $this-&gt;id;
-    }
+<p>上面代码在7中会产生一个Notice级别的错误，并且得不到确定的输出内容，</p>
 
-    /**
-     * @param mixed $id
-     */
-    public function setId ($id)
-    {
-        $this-&gt;id = $id;
-    }
+<p>为了一直引入{}的写法</p>
 
-    /**
-     * @return mixed
-     */
-    public function getTitle ()
-    {
-        return $this-&gt;title;
-    }
+<p><code>echo ${$first[&#39;name&#39;]};</code></p>
 
-    /**
-     * @param mixed $title
-     */
-    public function setTitle ($title)
-    {
-        $this-&gt;title = $title;
-    }
+<h3 id="toc_3">foreach</h3>
+
+<p>指针不会移动，php5.6的时候指针会移动一下.</p>
+
+<pre><code>&lt;?php
+$array = [0];
+foreach ($array as &amp;$val) { //通过引用遍历时，有更好的迭代特性
+var_dump($val);
+$array[1] = 1;  
 }
-
-
-//BookList
-namespace MyApp\Iterator;
-
-
-//容器:存储书
-class BookList
-{
-    protected $books = [];
-
-    public function getBook ($id)
-    {
-        if (isset($this-&gt;books[$id])) return $this-&gt;books[$id];
-        return null;
-    }
-
-    public function addBook (Book $book)
-    {
-        $this-&gt;books[] = $book;
-    }
-
-    public function remove ($id)
-    {
-        foreach ($this-&gt;books as $key =&gt; $book) {
-            if ($id == $key) unset($this-&gt;books[$key]);
-        }
-    }
-
-    public function count ()
-    {
-        return count($this-&gt;books);
-    }
-}
-
-//BookListIterator
-namespace MyApp\Iterator;
-
-//spl 标准类库 Iterator 自带5个方法
-//当然如果对于简单的数据结构比如数组，我们宁愿使用for也不会使用迭代器的
-class BookListIterator implements \Iterator
-{
-    protected $books;
-    protected $currentBook = 0;
-
-    public function __construct (BookList $bookList)
-    {
-        $this-&gt;books = $bookList;
-    }
-
-    //Return the current element 返回当前元素
-    public function current ()
-    {
-        return $this-&gt;books-&gt;getBook($this-&gt;currentBook);
-    }
-
-    //Move forward to next element 移动下标到下一个元素
-    public function next ()
-    {
-        $this-&gt;currentBook++;
-    }
-
-    //Return the key of the current element 返回当前元素的key
-    public function key ()
-    {
-        return $this-&gt;currentBook;
-    }
-
-    //Checks if current position is valid 检查当前元素是否有效
-    public function valid ()
-    {
-        return null !== $this-&gt;books-&gt;getBook($this-&gt;currentBook);
-    }
-
-    // Rewind the Iterator to the first element 回到第一个元素
-    public function rewind ()
-    {
-        $this-&gt;currentBook = 0;
-    }
-}
+PHP5输出：
+int(0)
+PHP7输出：
+int(0)
+int(1)
 
 </code></pre>
 
-<p>测试：<br/>
-<img src="media/15159115676241/15159184846617.jpg" alt=""/></p>
+<h3 id="toc_4">throwable</h3>
 
-<h3 id="toc_2">代码优化（遍历与实现分开）</h3>
+<p>php7之前可以截获异常，错误不会截获</p>
 
-<pre><code>BookList类添加一个方法
- public function iterator ()
-    {
-        return new  BookListIterator($this);
-    }
+<p>php7可以截获错误，如下代码</p>
+
+<pre><code>try{
+
+}catch(Error $e){ //可以截获错误（）
+ 
+}
 </code></pre>
 
-<p>测试：<br/>
-<img src="media/15159115676241/15159898544198.jpg" alt=""/></p>
+<h3 id="toc_5">类型声明</h3>
 
-<h3 id="toc_3">迭代器模式的优缺点：</h3>
+<p>7中引入类型声明，目前明确的有2中类型声明<br/>
+形参和返回值</p>
 
-<p>迭代器模式的优点有：</p>
+<p>declare(strict_types =1 );  强制类型（不按照相应的参数会报错）必须放在文件开头</p>
 
-<ol>
-<li>简化了遍历方式，对于对象集合的遍历，还是比较麻烦的，对于数组或者有序列表，我们尚可以通过游标来取得，但用户需要在对集合了解很清楚的前提下，自行遍历对象，但是对于hash表来说，用户遍历起来就比较麻烦了。而引入了迭代器方法后，用户用起来就简单的多了。</li>
-<li>可以提供多种遍历方式，比如说对有序列表，我们可以根据需要提供正序遍历，倒序遍历两种迭代器，用户用起来只需要得到我们实现好的迭代器，就可以方便的对集合进行遍历了。</li>
-<li>封装性良好，用户只需要得到迭代器就可以遍历，而对于遍历算法则不用去关心。</li>
-</ol>
+<p>function test(int $a):string{<br/>
+    return &#39;asdada&#39;;<br/>
+}</p>
 
-<p>迭代器模式的缺点：<br/>
-对于比较简单的遍历（像数组或者有序列表），使用迭代器方式遍历较为繁琐，大家可能都有感觉，像ArrayList，我们宁可愿意使用for循环和get方法来遍历集合。（是因为我们熟悉他们的内部结构）</p>
+<h3 id="toc_6">use批量声明</h3>
 
-<p>在java中迭代器模式是与集合共生共死的，一般来说，我们只要实现一个集合，就需要同时提供这个集合的迭代器，就像java中的Collection，List、Set、Map等，这些集合都有自己的迭代器。假如我们要实现一个这样的新的容器，当然也需要引入迭代器模式，给我们的容器实现一个迭代器。</p>
+<pre><code>//混合式声明(函数变量都同一声明)
 
-<p>参考文档<br/>
-<a href="https://www.cnblogs.com/ysw-go/p/5384516.html">Java设计模式系列之迭代器模式</a></p>
+use App\Controller\{
+    TestController,
+    HelloTestController,
+    function getTest(),  
+    const KEY
+};
+
+
+\\非混合式声明
+
+use App\Controller\{TestController,HelloController};
+use App\Controller\{getTest()}
+use APP\Controller\{KEY}
+</code></pre>
 
 
 		</div>

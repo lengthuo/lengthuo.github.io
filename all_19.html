@@ -47,11 +47,19 @@
         <li><label>php</label></li>
 
           
+            <li><a title="生成唯一id" href="15196281546423.html">生成唯一id</a></li>
+          
+            <li><a title="php运行机制" href="15196243924490.html">php运行机制</a></li>
+          
+            <li><a title="php高级" href="15194406504410.html">php高级</a></li>
+          
+            <li><a title="魔术方法" href="15194336769696.html">魔术方法</a></li>
+          
             <li><a title="php7新特性" href="15173733442452.html">php7新特性</a></li>
           
             <li><a title="supervisor运行laravel的队列" href="15173644197300.html">supervisor运行laravel的队列</a></li>
           
-            <li><a title="php数组" href="15161783412583.html">php数组</a></li>
+            <li><a title="php数组(只记常用的)" href="15161783412583.html">php数组(只记常用的)</a></li>
           
             <li><a title="输出区别" href="15160839984550.html">输出区别</a></li>
           
@@ -76,6 +84,8 @@
         <li class="divider"></li>
         <li><label>mysql</label></li>
 
+          
+            <li><a title="重点：分库分表" href="15193062637949.html">重点：分库分表</a></li>
           
             <li><a title="实战：主键设计" href="15179987835900.html">实战：主键设计</a></li>
           
@@ -208,14 +218,6 @@
 
       
         <li class="divider"></li>
-        <li><label>nginx</label></li>
-
-          
-            <li><a title="" href="15178121495507.html"></a></li>
-          
-
-      
-        <li class="divider"></li>
         <li><label>计算机网络</label></li>
 
           
@@ -313,6 +315,12 @@
         <li><label>other</label></li>
 
           
+            <li><a title="session 和 token 的区别" href="15197089516431.html">session 和 token 的区别</a></li>
+          
+            <li><a title="幂等性" href="15197085600692.html">幂等性</a></li>
+          
+            <li><a title="安全" href="15196955951857.html">安全</a></li>
+          
             <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
           
             <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -374,11 +382,19 @@
                     
                       <li class="side-title"><span>php</span></li>
                         
+                          <li><a title="生成唯一id" href="15196281546423.html">生成唯一id</a></li>
+                        
+                          <li><a title="php运行机制" href="15196243924490.html">php运行机制</a></li>
+                        
+                          <li><a title="php高级" href="15194406504410.html">php高级</a></li>
+                        
+                          <li><a title="魔术方法" href="15194336769696.html">魔术方法</a></li>
+                        
                           <li><a title="php7新特性" href="15173733442452.html">php7新特性</a></li>
                         
                           <li><a title="supervisor运行laravel的队列" href="15173644197300.html">supervisor运行laravel的队列</a></li>
                         
-                          <li><a title="php数组" href="15161783412583.html">php数组</a></li>
+                          <li><a title="php数组(只记常用的)" href="15161783412583.html">php数组(只记常用的)</a></li>
                         
                           <li><a title="输出区别" href="15160839984550.html">输出区别</a></li>
                         
@@ -401,6 +417,8 @@
 
                     
                       <li class="side-title"><span>mysql</span></li>
+                        
+                          <li><a title="重点：分库分表" href="15193062637949.html">重点：分库分表</a></li>
                         
                           <li><a title="实战：主键设计" href="15179987835900.html">实战：主键设计</a></li>
                         
@@ -524,12 +542,6 @@
                         
 
                     
-                      <li class="side-title"><span>nginx</span></li>
-                        
-                          <li><a title="" href="15178121495507.html"></a></li>
-                        
-
-                    
                       <li class="side-title"><span>计算机网络</span></li>
                         
                           <li><a title="tcp长连接和短连接" href="15126148983598.html">tcp长连接和短连接</a></li>
@@ -610,6 +622,12 @@
                     
                       <li class="side-title"><span>other</span></li>
                         
+                          <li><a title="session 和 token 的区别" href="15197089516431.html">session 和 token 的区别</a></li>
+                        
+                          <li><a title="幂等性" href="15197085600692.html">幂等性</a></li>
+                        
+                          <li><a title="安全" href="15196955951857.html">安全</a></li>
+                        
                           <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
                         
                           <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -664,73 +682,19 @@
 
 	
 		<div class="markdown-body">
-		<h1>资源使用情况-top</h1>
+		<h1>session 和 token 的区别</h1>
 
-		<p>top命令的结果分为两个部分：</p>
+		<p>//单点登录，需要token</p>
 
-<p>统计信息：前五行是系统整体的统计信息；<br/>
-进程信息：统计信息下方类似表格区域显示的是各个进程的详细信息，默认5秒刷新一次。</p>
+<p>Session 是一种HTTP存储机制，<strong>目的是为无状态的HTTP提供的持久机制。</strong></p>
 
-<h2 id="toc_0">第一行 统计信息说明</h2>
+<p>所谓Session 认证只是简单的把User 信息存储到Session 里，因为SID 的不可预测性，暂且认为是安全的。这是一种认证手段。 </p>
 
-<pre><code>top - 17:59:02 up  2:18,  2 users,  load average: 0.07, 0.08, 0.10
+<p>而Token ，如果指的是OAuth Token 或类似的机制的话，提供的是 认证 和 授权 ，认证是针对用户，授权是针对App 。</p>
 
-第1段：系统当前时间，例如：16:07:37
-第2段：系统运行时间，未重启的时间，时间越长系统越稳定。 
-格式：up xx days, HH:MM
-例如：241 days, 20:11, 表示连续运行了241天20小时11分钟
-第3段：当前登录用户数，例如：1 user，表示当前只有1个用户登录
-第4段：系统负载，即任务队列的平均长度，3个数值分别统计最近1，5，15分钟的系统平均负载 
-系统平均负载：单核CPU情况下，0.00 表示没有任何负荷，1.00表示刚好满负荷，超过1侧表示超负荷，理想值是0.7；
-多核CPU负载：CPU核数 * 理想值0.7 = 理想负荷，例如：4核CPU负载不超过2.8何表示没有出现高负载。
-</code></pre>
+<p>其目的是让 某App有权利访问 某用户 的信息。这里的 Token是唯一的。不可以转移到其它 App上，也不可以转到其它 用户 上。 转过来说Session 。Session只提供一种简单的认证，即有此 SID，即认为有此 User的全部权利。是需要严格保密的，这个数据应该只保存在站方，不应该共享给其它网站或者第三方App。 所以简单来说，如果你的用户数据可能需要和第三方共享，或者允许第三方调用 API 接口，用 Token 。如果永远只是自己的网站，自己的 App，用什么就无所谓了。</p>
 
-<h2 id="toc_1">第二行  Tasks(任务) 进程相关信息</h2>
-
-<pre><code>Tasks: 503 total,   1 running, 502 sleeping,   0 stopped,   0 zombie
-
-第1段：进程总数，例如：Tasks: 231 total, 表示总共运行231个进程
-第2段：正在运行的进程数，例如：1 running,
-第3段：睡眠的进程数，例如：230 sleeping,
-第4段：停止的进程数，例如：0 stopped,
-第5段：僵尸进程数，例如：0 zombie
-
-</code></pre>
-
-<h2 id="toc_2">第三行   CPU相关信息</h2>
-
-<p>Cpus CPU相关信息，如果是多核CPU，按数字1可显示各核CPU信息，此时1行将转为Cpu核数行，数字1可以来回切换。</p>
-
-<pre><code>%Cpu(s):  0.7 us,  0.3 sy,  0.0 ni, 98.8 id,  0.1 wa,  0.0 hi,  0.1 si,  0.0 st
-第1段：us 用户空间占用CPU百分比，例如：Cpu(s): 12.7%us,
-第2段：sy 内核空间占用CPU百分比，例如：8.4%sy,
-第3段：ni 用户进程空间内改变过优先级的进程占用CPU百分比，例如：0.0%ni,
-第4段：id 空闲CPU百分比，例如：77.1%id,
-第5段：wa 等待输入输出的CPU时间百分比，例如：0.0%wa,
-第6段：hi CPU服务于硬件中断所耗费的时间总额，例如：0.0%hi,
-第7段：si CPU服务软中断所耗费的时间总额，例如：1.8%si,
-第8段：st Steal time 虚拟机被hypervisor偷去的CPU时间（如果当前处于一个hypervisor下的vm，实际上hypervisor也是要消耗一部分CPU处理时间的）
-
-</code></pre>
-
-<h2 id="toc_3">第四行  内存相关信息</h2>
-
-<pre><code>第4行：Mem 内存相关信息（Mem: 12196436k total, 12056552k used, 139884k free, 64564k buffers） 
-第1段：物理内存总量，例如：Mem: 12196436k total,
-第2段：使用的物理内存总量，例如：12056552k used,
-第3段：空闲内存总量，例如：Mem: 139884k free,
-第4段：用作内核缓存的内存量，例如：64564k buffers
-
-</code></pre>
-
-<h2 id="toc_4">第五行  交换分区</h2>
-
-<pre><code>第5行：Swap 交换分区相关信息（Swap: 2097144k total, 151016k used, 1946128k free, 3120236k cached）
-第1段：交换区总量，例如：Swap: 2097144k total,
-第2段：使用的交换区总量，例如：151016k used,
-第3段：空闲交换区总量，例如：1946128k free,
-第4段：缓冲的交换区总量，3120236k cached
-</code></pre>
+<p>token就是令牌，比如你授权（登录）一个程序时，他就是个依据，判断你是否已经授权该软件；cookie就是写在客户端的一个txt文件，里面包括你登录信息之类的，这样你下次在登录某个网站，就会自动调用cookie自动登录用户名；session和cookie差不多，只是session是写在服务器端的文件，也需要在客户端写入cookie文件，但是文件里是你的浏览器编号.Session的状态是存储在服务器端，客户端只有session id；而Token的状态是存储在客户端。</p>
 
 
 		</div>

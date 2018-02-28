@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  php数组 - lengthuo
+  php数组(只记常用的) - lengthuo
   
   </title>
  <meta name="description" content="路漫漫其修远兮吾将上下而求索">
@@ -47,11 +47,19 @@
         <li><label>php</label></li>
 
           
+            <li><a title="生成唯一id" href="15196281546423.html">生成唯一id</a></li>
+          
+            <li><a title="php运行机制" href="15196243924490.html">php运行机制</a></li>
+          
+            <li><a title="php高级" href="15194406504410.html">php高级</a></li>
+          
+            <li><a title="魔术方法" href="15194336769696.html">魔术方法</a></li>
+          
             <li><a title="php7新特性" href="15173733442452.html">php7新特性</a></li>
           
             <li><a title="supervisor运行laravel的队列" href="15173644197300.html">supervisor运行laravel的队列</a></li>
           
-            <li><a title="php数组" href="15161783412583.html">php数组</a></li>
+            <li><a title="php数组(只记常用的)" href="15161783412583.html">php数组(只记常用的)</a></li>
           
             <li><a title="输出区别" href="15160839984550.html">输出区别</a></li>
           
@@ -76,6 +84,8 @@
         <li class="divider"></li>
         <li><label>mysql</label></li>
 
+          
+            <li><a title="重点：分库分表" href="15193062637949.html">重点：分库分表</a></li>
           
             <li><a title="实战：主键设计" href="15179987835900.html">实战：主键设计</a></li>
           
@@ -208,14 +218,6 @@
 
       
         <li class="divider"></li>
-        <li><label>nginx</label></li>
-
-          
-            <li><a title="" href="15178121495507.html"></a></li>
-          
-
-      
-        <li class="divider"></li>
         <li><label>计算机网络</label></li>
 
           
@@ -313,6 +315,12 @@
         <li><label>other</label></li>
 
           
+            <li><a title="session 和 token 的区别" href="15197089516431.html">session 和 token 的区别</a></li>
+          
+            <li><a title="幂等性" href="15197085600692.html">幂等性</a></li>
+          
+            <li><a title="安全" href="15196955951857.html">安全</a></li>
+          
             <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
           
             <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -374,11 +382,19 @@
                     
                       <li class="side-title"><span>php</span></li>
                         
+                          <li><a title="生成唯一id" href="15196281546423.html">生成唯一id</a></li>
+                        
+                          <li><a title="php运行机制" href="15196243924490.html">php运行机制</a></li>
+                        
+                          <li><a title="php高级" href="15194406504410.html">php高级</a></li>
+                        
+                          <li><a title="魔术方法" href="15194336769696.html">魔术方法</a></li>
+                        
                           <li><a title="php7新特性" href="15173733442452.html">php7新特性</a></li>
                         
                           <li><a title="supervisor运行laravel的队列" href="15173644197300.html">supervisor运行laravel的队列</a></li>
                         
-                          <li><a title="php数组" href="15161783412583.html">php数组</a></li>
+                          <li><a title="php数组(只记常用的)" href="15161783412583.html">php数组(只记常用的)</a></li>
                         
                           <li><a title="输出区别" href="15160839984550.html">输出区别</a></li>
                         
@@ -401,6 +417,8 @@
 
                     
                       <li class="side-title"><span>mysql</span></li>
+                        
+                          <li><a title="重点：分库分表" href="15193062637949.html">重点：分库分表</a></li>
                         
                           <li><a title="实战：主键设计" href="15179987835900.html">实战：主键设计</a></li>
                         
@@ -524,12 +542,6 @@
                         
 
                     
-                      <li class="side-title"><span>nginx</span></li>
-                        
-                          <li><a title="" href="15178121495507.html"></a></li>
-                        
-
-                    
                       <li class="side-title"><span>计算机网络</span></li>
                         
                           <li><a title="tcp长连接和短连接" href="15126148983598.html">tcp长连接和短连接</a></li>
@@ -610,6 +622,12 @@
                     
                       <li class="side-title"><span>other</span></li>
                         
+                          <li><a title="session 和 token 的区别" href="15197089516431.html">session 和 token 的区别</a></li>
+                        
+                          <li><a title="幂等性" href="15197085600692.html">幂等性</a></li>
+                        
+                          <li><a title="安全" href="15196955951857.html">安全</a></li>
+                        
                           <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
                         
                           <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -660,59 +678,106 @@
             <div class="large-9 medium-9 columns">
 
  <div class="markdown-body">
-<h1>php数组</h1>
+<h1>php数组(只记常用的)</h1>
 
-<p>个人观点：php要想学的好，数组是关键。因为在php中数组就代表了大部分的数据结构。</p>
+<h2 id="toc_0">数组操作的基本函数</h2>
 
-<h3 id="toc_0">常用的函数一些简单区别</h3>
+<pre><code>数组的键名和值
+array_values($arr);  返回含所有值的索引数组。
+array_keys($arr);    返回数组里的所有键。
 
-<pre><code>$a1 = [&quot;a&quot; =&gt; 1, 2, 3]; 
+isset($arr[apple]):   检索给定的键名是否存在数组中
+in_array(&quot;apple&quot;,$arr);  在数组中检索apple
+
+array_flip($arr);  数组中的值与键名互换（如果有重复前面的会被后面的覆盖）
+
+array_search(&quot;apple&quot;,$arr);  在数组中检索apple ，如果存在返回键名
+array_key_exists(&quot;apple&quot;,$arr);  检索给定的键名是否存在数组中
+
+</code></pre>
+
+<h2 id="toc_1">常用的函数</h2>
+
+<h3 id="toc_2">array_map(为数组的每个元素应用回调函数)</h3>
+
+<p>array array_map ( callable \(callback , array \)array1 [, array $... ] )</p>
+
+<p>array_map()：返回数组，是为 array1 每个元素应用 callback函数之后的数组。 callback 函数形参的数量和传给 array_map() 数组数量，两者必须一样。</p>
+
+<pre><code>function myfunction($v)
+{
+  return($v*$v);
+}
+
+$a=array(1,2,3,4,5);
+print_r(array_map(&quot;myfunction&quot;,$a));
+
+//如果是静态方法注意(array_map(&quot;class&quot;，“method”,$a));
+
+</code></pre>
+
+<h3 id="toc_3">array_column(从多维数组中返回单列数组)</h3>
+
+<pre><code>$records = array(
+    array(
+        &#39;id&#39; =&gt; 2135,
+        &#39;first_name&#39; =&gt; &#39;John&#39;,
+        &#39;last_name&#39; =&gt; &#39;Doe&#39;,
+    ),
+    array(
+        &#39;id&#39; =&gt; 3245,
+        &#39;first_name&#39; =&gt; &#39;Sally&#39;,
+        &#39;last_name&#39; =&gt; &#39;Smith&#39;,
+    )
+);
+$first_names = array_column($records, &#39;first_name&#39;);
+print_r($first_names); //索引数字
+$last_names = array_column($records, &#39;last_name&#39;, &#39;id&#39;);
+//第三个参数是作为索引
+print_r($last_names); // 关联数组  
+</code></pre>
+
+<h3 id="toc_4">array_merge | []+[]</h3>
+
+<pre><code>
+$a1 = [&quot;a&quot; =&gt; 1, 2, 3];
 $a2 = [4, 5, 6];
-$a3 = array_merge($a1, $a2);
+$a3 = array_merge($a1, $a2); 
+$a3 = $a1+$a2;  //[&#39;a&#39;=&gt;1,2,3,6]
 //array_merge() 将一个或多个数组的单元合并起来，一个数组中的值附加在前一个数组的后面。返回作为结果的数组。
 //如果输入的数组中有相同的字符串键名，则该键名后面的值将覆盖前一个值。
 //然而，如果数组包含数字键名，后面的值将不会覆盖原来的值，而是附加到后面。
-$a3 = array_replace($a1,$a2);
-//array_replace() 函数使用后面数组元素相同 key 的值替换 array1 数组的值。
-//如果一个键存在于第一个数组同时也存在于第二个数组，它的值将被第二个数组中的值替换。
-//如果一个键存在于第二个数组，但是不存在于第一个数组，则会在第一个数组中创建这个元素。
-//如果一个键仅存在于第一个数组，它将保持不变。如果传递了多个替换数组，它们将被按顺序依次处理，后面的数组将覆盖之前的值。
-
-//简单的理解：对于数字作为键值的merge是合并，replace是替换
 
 </code></pre>
 
-<h3 id="toc_1">数组当做集中数据结构来使用</h3>
+<h2 id="toc_5">数组的排序</h2>
 
-<p>java中有list set hashmap 等数据结构，但是在php中，一个数组全部解决（有好有坏） <br/>
-php中通过不同的数组的方法来处理不同的数据结构</p>
-
-<pre><code> 
-$a = [];
-//list set 数据结构 都是用树组实现的
-
-//队列 先进先出
-array_push($a, &#39;1&#39;);     //$a[0]
-array_push($a, 2);       //$a[2]
-array_push($a, 3.00);    //$a[3]
-array_shift($a);         // 将数组开头的单元移出数组
-//array_unshift($a);     // 将数组开头数组
-var_dump($a);
-
-//栈 后进先出
-array_push($a, &#39;1&#39;);   
-array_push($a, 2);    
-array_push($a, 3.00);  
-array_pop($a);          //弹出数组最后一个单元（出栈）  
-var_dump($a);
-
+<pre><code> sort  asort  都是按照值排序，一个是索引重排，一个是保持索引关系
+ ksort   是按照键名进行排序
+ 
+//不保持索引
+    sort() 函数用于对数组单元从   低到高进行排序。
+　　rsort() 函数用于对数组单元从   高到低进行排序。
+　　
+//保持索引
+　　asort() 函数用于对数组单元从   低到高进行排序并保持索引关系。
+　　arsort()函数用于对数组单元从   高到低进行排序并保持索引关系。
+　　
+//按照键名排序
+　　ksort() 函数用于对数组单元按照键名从  低到高进行排序。
+　　krsort() 函数用于对数组单元按照键名从  高到低进行排序。
+　　
 </code></pre>
 
-<p>总结：<br/>
-array_push  顺序添加元素<br/>
-array_pop   弹出数组最后一个单元<br/>
-array_shift 将数组开头的单元移出数组<br/>
-array_unshift 将数组开头数组</p>
+<h2 id="toc_6">数据结构（不常用）</h2>
+
+<p>数组与栈<br/>
+array_push(\(arr,&quot;apple&quot;,&quot;pear&quot;);  将一个或多个元素压入数组栈的末尾（入栈），返回入栈元素的个数<br/>
+array_pop(\)arr);  将数组栈的最后一个元素弹出（出栈）</p>
+
+<p>数组与列队<br/>
+array_shift(\(arr);数组中的第一个元素移出并作为结果返回（数组长度减1，其他元素向前移动一位，数字键名改为从零技术，文字键名不变）<br/>
+array_unshift(\)arr,&quot;a&quot;,array(1,2));在数组的开头插入一个或多个元素</p>
 
 
 </div>
@@ -724,15 +789,15 @@ array_unshift 将数组开头数组</p>
   <div class="large-6 columns">
 	<div class="text-left" style="padding:15px 0px;">
 		
-	        <a href="15173733442452.html"  title="Previous Post: php7新特性">&laquo; php7新特性</a>
+	        <a href="15196243924490.html"  title="Previous Post: php运行机制">&laquo; php运行机制</a>
 	    
 	</div>
   </div>
   <div class="large-6 columns">
 	<div class="text-right" style="padding:15px 0px;">
 		
-	        <a href="15153208224566.html" 
-	        title="Next Post: rabbitMq使用（php）">rabbitMq使用（php） &raquo;</a>
+	        <a href="15173733442452.html" 
+	        title="Next Post: php7新特性">php7新特性 &raquo;</a>
 	    
 	</div>
   </div>

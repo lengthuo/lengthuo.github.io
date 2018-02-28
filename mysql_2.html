@@ -47,11 +47,19 @@
         <li><label>php</label></li>
 
           
+            <li><a title="生成唯一id" href="15196281546423.html">生成唯一id</a></li>
+          
+            <li><a title="php运行机制" href="15196243924490.html">php运行机制</a></li>
+          
+            <li><a title="php高级" href="15194406504410.html">php高级</a></li>
+          
+            <li><a title="魔术方法" href="15194336769696.html">魔术方法</a></li>
+          
             <li><a title="php7新特性" href="15173733442452.html">php7新特性</a></li>
           
             <li><a title="supervisor运行laravel的队列" href="15173644197300.html">supervisor运行laravel的队列</a></li>
           
-            <li><a title="php数组" href="15161783412583.html">php数组</a></li>
+            <li><a title="php数组(只记常用的)" href="15161783412583.html">php数组(只记常用的)</a></li>
           
             <li><a title="输出区别" href="15160839984550.html">输出区别</a></li>
           
@@ -76,6 +84,8 @@
         <li class="divider"></li>
         <li><label>mysql</label></li>
 
+          
+            <li><a title="重点：分库分表" href="15193062637949.html">重点：分库分表</a></li>
           
             <li><a title="实战：主键设计" href="15179987835900.html">实战：主键设计</a></li>
           
@@ -208,14 +218,6 @@
 
       
         <li class="divider"></li>
-        <li><label>nginx</label></li>
-
-          
-            <li><a title="" href="15178121495507.html"></a></li>
-          
-
-      
-        <li class="divider"></li>
         <li><label>计算机网络</label></li>
 
           
@@ -313,6 +315,12 @@
         <li><label>other</label></li>
 
           
+            <li><a title="session 和 token 的区别" href="15197089516431.html">session 和 token 的区别</a></li>
+          
+            <li><a title="幂等性" href="15197085600692.html">幂等性</a></li>
+          
+            <li><a title="安全" href="15196955951857.html">安全</a></li>
+          
             <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
           
             <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -374,11 +382,19 @@
                     
                       <li class="side-title"><span>php</span></li>
                         
+                          <li><a title="生成唯一id" href="15196281546423.html">生成唯一id</a></li>
+                        
+                          <li><a title="php运行机制" href="15196243924490.html">php运行机制</a></li>
+                        
+                          <li><a title="php高级" href="15194406504410.html">php高级</a></li>
+                        
+                          <li><a title="魔术方法" href="15194336769696.html">魔术方法</a></li>
+                        
                           <li><a title="php7新特性" href="15173733442452.html">php7新特性</a></li>
                         
                           <li><a title="supervisor运行laravel的队列" href="15173644197300.html">supervisor运行laravel的队列</a></li>
                         
-                          <li><a title="php数组" href="15161783412583.html">php数组</a></li>
+                          <li><a title="php数组(只记常用的)" href="15161783412583.html">php数组(只记常用的)</a></li>
                         
                           <li><a title="输出区别" href="15160839984550.html">输出区别</a></li>
                         
@@ -401,6 +417,8 @@
 
                     
                       <li class="side-title"><span>mysql</span></li>
+                        
+                          <li><a title="重点：分库分表" href="15193062637949.html">重点：分库分表</a></li>
                         
                           <li><a title="实战：主键设计" href="15179987835900.html">实战：主键设计</a></li>
                         
@@ -524,12 +542,6 @@
                         
 
                     
-                      <li class="side-title"><span>nginx</span></li>
-                        
-                          <li><a title="" href="15178121495507.html"></a></li>
-                        
-
-                    
                       <li class="side-title"><span>计算机网络</span></li>
                         
                           <li><a title="tcp长连接和短连接" href="15126148983598.html">tcp长连接和短连接</a></li>
@@ -610,6 +622,12 @@
                     
                       <li class="side-title"><span>other</span></li>
                         
+                          <li><a title="session 和 token 的区别" href="15197089516431.html">session 和 token 的区别</a></li>
+                        
+                          <li><a title="幂等性" href="15197085600692.html">幂等性</a></li>
+                        
+                          <li><a title="安全" href="15196955951857.html">安全</a></li>
+                        
                           <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
                         
                           <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -664,213 +682,50 @@
 
 	
 		<div class="markdown-body">
-		<h1>手册（笔记）</h1>
+		<h1>重点：开发常用数据库优化方案</h1>
 
-		<h3 id="toc_0">收藏地址</h3>
+		<h3 id="toc_0">选取最适用的字段属性</h3>
 
-<p><a href="https://www.2cto.com/database/201610/558345.html">mysql 海量数据的存储和访问解决方案</a></p>
+<p>MySQL可以很好的支持大数据量的存取，但是一般说来，数据库中的表越小，在它上面执行的查询也就会越快。因此，在创建表的时候，为了获得更好的性能，我们可以将表中字段的宽度设得尽可能小。</p>
 
-<p><a href="https://my.oschina.net/candiesyangyang/blog/203425">为什么数据库读写分离可以提高性能</a></p>
+<p>例如，在定义邮政编码这个字段时，如果将其设置为CHAR(255),显然给数据库增加了不必要的空间，甚至使用VARCHAR这种类型也是多余的，因为CHAR(6)就可以很好的完成任务了。同样的，如果可以的话，我们应该使用MEDIUMINT而不是BIGIN来定义整型字段。</p>
 
-<h3 id="toc_1">数据优化</h3>
+<p>另外一个提高效率的方法是在可能的情况下，应该<strong>尽量把字段设置为NOTNULL，这样在将来执行查询的时候，数据库不用去比较NULL值。</strong><br/>
+对于某些文本字段，例如“省份”或者“性别”，我们可以将它们<strong>定义为ENUM类型。因为在MySQL中，ENUM类型被当作数值型数据来处理，而数值型数据被处理起来的速度要比文本类型快得多</strong>。这样，我们又可以提高数据库的性能。</p>
 
-<p>表分拆，建索引，做缓存 </p>
+<h3 id="toc_1">使用连接（JOIN）来代替子查询</h3>
 
-<h3 id="toc_2">left join 后,左表怎样合并或者去掉重复记录</h3>
+<p>如果使用连接（JOIN）..来完成查询工作，速度将会快很多。尤其是当表中建有索引的话，性能将会更好，</p>
 
-<p>(子查询可以直接distinct)<br/>
-<a href="http://blog.sina.com.cn/s/blog_69398ed901018buq.html">left join 后,左表怎样合并或者去掉重复记录</a></p>
+<p><strong>连接（JOIN）之所以更有效率一些，是因为MySQL不需要在内存中创建临时表来完成这个逻辑上的需要两个步骤的查询工作。</strong></p>
 
-<h3 id="toc_3">like替代函数</h3>
+<h3 id="toc_2">使用联合(UNION)来代替手动创建的临时表</h3>
 
-<p>like 替换工具  position locate instr </p>
+<p>MySQL从4.0的版本开始支持union查询，它可以把需要使用临时表的两条或更多的select查询合并的一个查询中。在客户端的查询会话结束的时候，临时表会被自动删除，从而保证数据库整齐、高效。使用union来创建查询的时候，我们只需要用UNION作为关键字把多个select语句连接起来就可以了，要注意的是所有select语句中的字段数目要想同</p>
 
-<pre><code> explain select count(id) from users where phone like &#39;%1234%&#39;;
+<h3 id="toc_3">正确的使用索引</h3>
 
- explain SELECT count(id) FROM users WHERE position(&#39;1234&#39; in phone);
-
- explain SELECT count(id) FROM users WHERE locate(&#39;1234&#39;,phone)&gt;0 ;
-
- explain SELECT count(id) FROM users WHERE instr(phone,&#39;1234&#39;)&gt;0 ;
- 
-</code></pre>
-
-<h3 id="toc_4">like</h3>
-
-<pre><code>explain select count(id) from users where phone like &#39;%1234%&#39;;
-
-explain SELECT count(id) FROM users WHERE position(&quot;1234&quot; in phone) &gt; 0
-
-</code></pre>
-
-<h3 id="toc_5">hash索引和Btree索引区别</h3>
-
-<hr/>
-
-<p>Btree 平衡多叉树，查询算法稳定。（从根节点到叶子节点的搜索效率基本相当）<br/>
-hash 通过计算找到相应数据的存储位置，快，但是涉及到范围查询就不行，（不是顺序的）</p>
-
-<ol>
-<li>如果是等值查询，那么哈希索引明显有绝对优势，因为只需要经过一次算法即可找到相应的键值；当然了，这个前提是，键值都是唯一的。如果键值不是唯一的，就需要先找到该键所在位置，然后再根据链表往后扫描，直到找到相应的数据；</li>
-<li>如果是范围查询检索，这时候哈希索引就毫无用武之地了，因为原先是有序的键值，经过哈希算法后，有可能变成不连续的了，就没办法再利用索引完成范围查询检索；</li>
-<li>同理，哈希索引也没办法利用索引完成排序，以及like ‘xxx%’ 这样的部分模糊查询（这种部分模糊查询，其实本质上也是范围查询）；</li>
-<li>哈希索引也不支持多列联合索引的最左匹配规则；</li>
-<li>B+树索引的关键字检索效率比较平均，不像B树那样波动幅度大，在有大量重复键值情况下，哈希索引的效率也是极低的，因为存在所谓的哈希碰撞问题。</li>
-</ol>
-
-<h3 id="toc_6">sql执行顺序</h3>
-
-<hr/>
-
-<ul>
-<li> from </li>
-<li> join </li>
-<li> on </li>
-<li> where </li>
-<li> group by(开始使用select中的别名，后面的语句中都可以使用)</li>
-<li> avg,sum.... </li>
-<li> having </li>
-<li> select </li>
-<li> distinct </li>
-<li> union   union all</li>
-<li> order by </li>
-</ul>
-
-<h3 id="toc_7">null的使用</h3>
+<p>什么是索引：在关系数据库中，索引是一种单独的、物理的对数据库表中一列或多列的值进行排序的一种存储结构，它是某个表中一列或若干列值的集合和相应的指向表中物理标识这些值的数据页的逻辑指针清单</p>
 
 <hr/>
 
 <ol>
-<li>在 MySQL 中，NULL 值与任何其它值的比较（即使是 NULL）永远返回 false，即 NULL = NULL 返回false</li>
-<li>关于 NULL 的条件比较运算是比较特殊的。你不能使用 = NULL 或 != NULL 在列中查找 NULL 值 。 MySQL 中处理 NULL 使用 IS NULL 和 IS NOT NULL 运算符。</li>
-<li> </li>
+<li>like查询  %号放在首位会使索引失效</li>
+<li>where 字句中出现 不等于|函数 。索引失效</li>
+<li>最左前缀 （索引重复创建）</li>
+<li>范围查询(&gt;、&lt;、between、like)也会停止索引匹配，比如 c1=a and c2 &gt; 2 and c3=c，只有c1,c2列上的比较能用到索引，<strong>(c1,c2,c3)排列的索引才可能会都用上</strong>
+5.隐式转换也会使索引失效。</li>
 </ol>
 
-<h3 id="toc_8">死锁</h3>
-
-<hr/>
-
-<p>一般死锁都是业务问题，只需要把相应的业务时间给错开即可。</p>
-
-<blockquote>
-<p>概念如果线程A锁住了记录1并等待记录2，而线程B锁住了记录2并等待记录1，这样两个线程就发生了死锁现象<br/>
-<a href="http://blog.sina.com.cn/s/blog_8445583b0102vv79.html">mysql3中锁表方式</a></p>
-</blockquote>
+<h3 id="toc_4">MySQL 对于千万级的大表要怎么优化？</h3>
 
 <ol>
-<li>共享锁:（读取）操作创建的锁。其他用户可以并发读取数据，但任何事物都不能获取数据上的排它锁，直到已释放所有共享锁。共享锁(S锁)又称为读锁，<strong>若事务T对数据对象A加上S锁，则事务T只能读A；其他事务只能再对A加S锁，而不能加X锁，直到T释放A上的S锁。这就保证了其他事务可以读A，但在T释放A上的S锁之前不能对A做任何修改。</strong></li>
-<li>排它锁：排它锁又称为写锁（(eXclusive lock,简记为X锁)），<strong>若事物T对数据对象A加上X锁，则只允许T读取和修改A，其它任何事务都不能再对A加任何类型的锁，直到T释放A上的锁。它防止任何其它事务获取资源上的锁，直到在事务的末尾将资源上的原始锁释放为止。</strong></li>
+<li>优化你的sql和索引；</li>
+<li>加缓存，memcached,redis；</li>
+<li>读写分离（写库innodb读库myisam）缺点：主要是为了解决读的操作（当然单表数据量太大，也会慢，所以下面会有水平切分），写库会成为瓶颈，</li>
+<li>垂直拆分，其实就是根据你模块的耦合度，将一个大的系统分为多个小的系统，也就是分布式系统。（分库，提高并发）</li>
+<li>水平切分（单表切分为多个表）（问题：查询前排名前10的操作。因为是多个数据源，所以不能使用orderBy，需要每一个数据圈都查询10个最后结果放到一起在取前10个。）解决问题：单表数据量大的问题</li>
 </ol>
-
-<h3 id="toc_9">表结构的优化</h3>
-
-<hr/>
-
-<ol>
-<li>优化数据类型 ： 正确的数据类型对于获的高性能至关重要.不管是存储何种类型的数据，下面几个原则都有助于做出更好的选择</li>
-<li>更小的通常更好</li>
-<li>简单就好    简单的数据类型操作，通常需要更少的CPU周期</li>
-<li>尽量避免null ： 创建表的时候指定not null 默认null</li>
-</ol>
-
-<h3 id="toc_10">整数类型 分为： 整数 + 实数</h3>
-
-<hr/>
-
-<p>整数：分为： tinyint smallint mediumint int bigint<br/>
-     存储空间 8         16      24        32    64 位<br/>
-     存储范围： -2<sup>n-1</sup>  到 2<sup>n-1</sup> - 1  n是存储空间的位数</p>
-
-<ol>
-<li>注意：unsigned 不允许负值可以使<strong>整数的上线提高一倍</strong>，<strong>有符号和无符号使用相同的存储空间，并具有相同的性能。</strong></li>
-<li>实数：带有小数部分的整数，然而他们不止可以存储小数，，可以用decimal 来存储比bigint还要大的整数。</li>
-</ol>
-
-<h3 id="toc_11">字符串类型</h3>
-
-<hr/>
-
-<p>2中最主要的字符串类型:varchar  char,他们是怎们存储在硬盘和内存中的，这跟存储引擎有关。varchar是可变的 char是固定长度，浪费空间。</p>
-
-<p>注意： </p>
-
-<ol>
-<li>MD5值由于是定长的建议用char来处理，</li>
-<li>只有Y|N的时候用char，varchar使用1个或2个额外字符来记录字符串你的长度</li>
-<li>字符串列的最大平均长度比平均长度大很多，列的更新会很少，</li>
-<li>char末尾的空格在检索时候会被取出，varchar会保留（不同存储引擎是一样的，这是在mysql服务层处理的）</li>
-<li>存储二进制字符串对应的 binary varbinary</li>
-<li>varchar(5) varchar(200) 存储hello 有什么区别：事实证明（我没试过，但是能理解）更长的列会占用更多的内存，（必然的）mysql通常会分配固定大小的内存块保存内部值，尤其是使用内存临时表进行排序，</li>
-</ol>
-
-<h3 id="toc_12">日期类型datetime timestamp</h3>
-
-<hr/>
-
-<ol>
-<li>datetime 范围： 1001-9999 8个字节存储  推荐使用</li>
-<li>timestamp 范围: 1970-2038 4个字节存储  只能到2038年</li>
-</ol>
-
-<h3 id="toc_13">bolb text</h3>
-
-<hr/>
-
-<p>为了存储很大的数据而设计的字符串数据类型，分别用二进制和字符方式存储。<br/>
- blob存储的是二进制没有排序规则或字符集，text字符串存储有排序规则和字符集<br/>
- InnoDB会使用专门的外部来进行存储，此时每个值在1-4个字节存储一个指针，然后在外部区域存储实际的值</p>
-
-<h3 id="toc_14">创建索引（索引种类）</h3>
-
-<hr/>
-
-<p>主键索引 唯一索引 联合索引 普通索引  全文索引  </p>
-
-<pre><code>1.添加PRIMARY KEY（主键索引） 
-mysql&gt;ALTER TABLE `table_name` ADD PRIMARY KEY ( `column` ) 
-
-2.添加UNIQUE(唯一索引) 
-mysql&gt;ALTER TABLE `table_name` ADD UNIQUE ( 
-`column` 
-) 
-
-3.添加INDEX(普通索引) 
-mysql&gt;ALTER TABLE `table_name` ADD INDEX index_name ( `column` ) 
-
-4.添加FULLTEXT(全文索引) 
-mysql&gt;ALTER TABLE `table_name` ADD FULLTEXT ( `column`) 
-
-5.添加多列索引 
-mysql&gt;ALTER TABLE `table_name` ADD INDEX index_name ( `column1`, `column2`, `column3` )
-</code></pre>
-
-<h3 id="toc_15">约束</h3>
-
-<hr/>
-
-<p>在MySQL中违反非空约束，不会报错，只会有警告.</p>
-
-<blockquote>
-<p>约束是一种限制，它通过对表的行或列的数据做出限制，来确保表的数据的完整性、唯一性。</p>
-</blockquote>
-
-<p>MYSQL中，常用的几种约束：</p>
-
-<p>约束类型：   主键     默认值      唯一     外键    非空<br/>
-关键字：    PRIMARY KEY DEFAULT UNIQUE  FOREIGN   KEY NOT NULL</p>
-
-<ol>
-<li>主键(PRIMARY KEY)是用于约束表中的一行，作为这一行的标识符，在一张表中通过主键就能准确定位到一行，因此主键十分重要。主键要求这一行的数据不能有重复且不能为空。(还有一种特殊的主键——复合主键。主键不仅可以是表中的一列，也可以由表中的两列或多列来共同标识)</li>
-<li>默认值约束(DEFAULT)规定，当有DEFAULT约束的列，插入数据为空时该怎么办。DEFAULT约束只会在使用INSERT语句（上一实验介绍过）时体现出来，INSERT语句中，如果被DEFAULT约束的位置没有值，那么这个位置将会被DEFAULT的值填充</li>
-<li>唯一约束(UNIQUE)比较简单，它规定一张表中指定的一列的值必须不能有重复值，即这一列每个值都是唯一的。当INSERT语句新插入的数据和已有数据重复的时候，如果有UNIQUE约束，则INSERT失败.</li>
-<li>外键(FOREIGN KEY)既能确保数据完整性，也能表现表之间的关系。一个表可以有多个外键，每个外键必须REFERENCES(参考)另一个表的主键，被外键约束的列，取值必须在它参考的列中有对应值。</li>
-<li>非空约束(NOT NULL),听名字就能理解，被非空约束的列，在插入值时必须非空。</li>
-</ol>
-
-<h3 id="toc_16">如何解决主从数据库同步延迟问题？</h3>
-
-<p><a href="https://www.zhihu.com/search?type=content&amp;q=%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E4%B8%BB%E4%BB%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E5%90%8C%E6%AD%A5%E5%BB%B6%E8%BF%9F%E9%97%AE%E9%A2%98%EF%BC%9F">知乎</a><br/>
-<a href="https://www.zhihu.com/question/20025096">如何解决主从数据库同步延迟问题？</a></p>
 
 
 		</div>

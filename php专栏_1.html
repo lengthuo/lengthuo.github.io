@@ -47,11 +47,19 @@
         <li><label>php</label></li>
 
           
+            <li><a title="生成唯一id" href="15196281546423.html">生成唯一id</a></li>
+          
+            <li><a title="php运行机制" href="15196243924490.html">php运行机制</a></li>
+          
+            <li><a title="php高级" href="15194406504410.html">php高级</a></li>
+          
+            <li><a title="魔术方法" href="15194336769696.html">魔术方法</a></li>
+          
             <li><a title="php7新特性" href="15173733442452.html">php7新特性</a></li>
           
             <li><a title="supervisor运行laravel的队列" href="15173644197300.html">supervisor运行laravel的队列</a></li>
           
-            <li><a title="php数组" href="15161783412583.html">php数组</a></li>
+            <li><a title="php数组(只记常用的)" href="15161783412583.html">php数组(只记常用的)</a></li>
           
             <li><a title="输出区别" href="15160839984550.html">输出区别</a></li>
           
@@ -76,6 +84,8 @@
         <li class="divider"></li>
         <li><label>mysql</label></li>
 
+          
+            <li><a title="重点：分库分表" href="15193062637949.html">重点：分库分表</a></li>
           
             <li><a title="实战：主键设计" href="15179987835900.html">实战：主键设计</a></li>
           
@@ -208,14 +218,6 @@
 
       
         <li class="divider"></li>
-        <li><label>nginx</label></li>
-
-          
-            <li><a title="" href="15178121495507.html"></a></li>
-          
-
-      
-        <li class="divider"></li>
         <li><label>计算机网络</label></li>
 
           
@@ -313,6 +315,12 @@
         <li><label>other</label></li>
 
           
+            <li><a title="session 和 token 的区别" href="15197089516431.html">session 和 token 的区别</a></li>
+          
+            <li><a title="幂等性" href="15197085600692.html">幂等性</a></li>
+          
+            <li><a title="安全" href="15196955951857.html">安全</a></li>
+          
             <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
           
             <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -374,11 +382,19 @@
                     
                       <li class="side-title"><span>php</span></li>
                         
+                          <li><a title="生成唯一id" href="15196281546423.html">生成唯一id</a></li>
+                        
+                          <li><a title="php运行机制" href="15196243924490.html">php运行机制</a></li>
+                        
+                          <li><a title="php高级" href="15194406504410.html">php高级</a></li>
+                        
+                          <li><a title="魔术方法" href="15194336769696.html">魔术方法</a></li>
+                        
                           <li><a title="php7新特性" href="15173733442452.html">php7新特性</a></li>
                         
                           <li><a title="supervisor运行laravel的队列" href="15173644197300.html">supervisor运行laravel的队列</a></li>
                         
-                          <li><a title="php数组" href="15161783412583.html">php数组</a></li>
+                          <li><a title="php数组(只记常用的)" href="15161783412583.html">php数组(只记常用的)</a></li>
                         
                           <li><a title="输出区别" href="15160839984550.html">输出区别</a></li>
                         
@@ -401,6 +417,8 @@
 
                     
                       <li class="side-title"><span>mysql</span></li>
+                        
+                          <li><a title="重点：分库分表" href="15193062637949.html">重点：分库分表</a></li>
                         
                           <li><a title="实战：主键设计" href="15179987835900.html">实战：主键设计</a></li>
                         
@@ -524,12 +542,6 @@
                         
 
                     
-                      <li class="side-title"><span>nginx</span></li>
-                        
-                          <li><a title="" href="15178121495507.html"></a></li>
-                        
-
-                    
                       <li class="side-title"><span>计算机网络</span></li>
                         
                           <li><a title="tcp长连接和短连接" href="15126148983598.html">tcp长连接和短连接</a></li>
@@ -610,6 +622,12 @@
                     
                       <li class="side-title"><span>other</span></li>
                         
+                          <li><a title="session 和 token 的区别" href="15197089516431.html">session 和 token 的区别</a></li>
+                        
+                          <li><a title="幂等性" href="15197085600692.html">幂等性</a></li>
+                        
+                          <li><a title="安全" href="15196955951857.html">安全</a></li>
+                        
                           <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
                         
                           <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -664,53 +682,160 @@
 
 	
 		<div class="markdown-body">
-		<h1>强制类型转换</h1>
+		<h1>supervisor运行laravel的队列</h1>
 
-		<p>PHP的数据类型转换属于强制转换，允许转换的PHP数据类型有：</p>
+		<h3 id="toc_0">介绍</h3>
 
-<p>（int）、（integer）：转换成整形<br/>
-（float）、（double）、（real）：转换成浮点型<br/>
-（string）：转换成字符串<br/>
-（bool）、（boolean）：转换成布尔类型<br/>
-（array）：转换成数组<br/>
-（object）：转换成对象</p>
+<blockquote>
+<p>Supervisor是一个进程控制系统。 它是一个C/S系统(注意: 其提供WEB接口给用户查询和控制)。 它允许用户去监控和控制在类UNIX系统的进程。 它的目标与launchd、daemontools和runit有些相似。 但是与它们不一样的是、它不是作为init(进程号pid是1)运行。 它是被用来控制进程、并且它在启动的时候和一般程序并无二致。 那么通俗点，它的作用是什么？ 你的Nginx，Tomcat，memcache，Redis...会崩么？ 那你自己写的服务器监测脚本呢？ 好吧、不要再纠结了、交给Supervisor吧! 它会帮你维护这些、即使它们不小心崩了、Supervisor会帮你看住它们、维护它们。</p>
+</blockquote>
 
-<p>PHP数据类型有三种转换方式：</p>
+<h3 id="toc_1">安装</h3>
+
+<p>我们这里只介绍centos安装方式</p>
+
+<pre><code>yum install python-setuptools
+easy_install supervisor
+echo_supervisord_conf &gt; /etc/supervisord.conf
+</code></pre>
+
+<p>配置文件/etc/supervisord.conf    </p>
+
+<h3 id="toc_2">配置</h3>
+
+<p>$ vim /etc/supervisord.conf</p>
+
+<p>其中最后一行</p>
+
+<pre><code>[include]
+files = relative/directory/*.ini
+</code></pre>
+
+<p>可以定义独立配置文件</p>
+
+<h3 id="toc_3">laravel模板</h3>
+
+<p>这个是laravel官方给的模板</p>
+
+<pre><code>[program:laravel-worker1]
+process_name=%(program_name)s_%(process_num)02d
+command=php /home/wwwroot/site.webshowu.com/artisan queue:work redis --sleep=3 --tries=3 --daemon
+autostart=true
+autorestart=true
+user=root
+numprocs=3
+redirect_stderr=true
+stdout_logfile=/home/wwwlogs/worker1.log
+
+</code></pre>
+
+<h3 id="toc_4">项目实例</h3>
+
+<pre><code>[program:redpacket]
+command                 =php /app/www/htdocs/jbhweb/artisan queue:work --daemon --tries=1 --memory=128  --queue=redpacket
+directory               = /app/www/htdocs/jbhweb
+;如果是true,当supervisor启动时,程序将会自动启动
+autostart               = true 
+;*自动重启
+autorestart             = true
+
+stdout_logfile          = /app/logs/supervisor/supervisor_queue.log
+stdout_logfile_maxbytes = 10MB
+stderr_logfile          = /app/logs/supervisor/supervisor_queue.log
+stderr_logfile_maxbytes = 10MB
+</code></pre>
+
+<p>产品中心</p>
+
+<pre><code>[program:orderWalletLockSuccessListener]
+command                 =php /app/www/htdocs/jbhweb/artisan command:WalletLockSuccessListener --daemon --tries=1 --memory=128   
+directory               = /app/www/htdocs/jbhweb 
+autostart               = true                                                                                                                                           
+autorestart             = true
+stdout_logfile          = /app/logs/supervisor/supervisor_order.log
+stdout_logfile_maxbytes = 10MB
+stderr_logfile          = /app/logs/supervisor/supervisor_order.log
+stderr_logfile_maxbytes = 10MB
+</code></pre>
+
+<h3 id="toc_5">配置文件详细解释</h3>
+
+<pre><code>;*为必须填写项
+;*[program:应用名称]
+[program:cat]
+;*命令路径,如果使用python启动的程序应该为 python /home/test.py, 
+;不建议放入/home/user/, 对于非user用户一般情况下是不能访问
+command=/bin/cat
+;当numprocs为1时,process_name=%(program_name)s
+;当numprocs&gt;=2时,%(program_name)s_%(process_num)02d
+process_name=%(program_name)s
+;进程数量
+numprocs=1
+;执行目录,若有/home/supervisor_test/test1.py
+;将directory设置成/home/supervisor_test
+;则command只需设置成python test1.py
+;否则command必须设置成绝对执行目录
+directory=/tmp
+;掩码:--- -w- -w-, 转换后rwx r-x w-x
+umask=022
+;优先级,值越高,最后启动,最先被关闭,默认值999
+priority=999
+;如果是true,当supervisor启动时,程序将会自动启动
+autostart=true
+;*自动重启
+autorestart=true
+;启动延时执行,默认1秒
+startsecs=10
+;启动尝试次数,默认3次
+startretries=3
+;当退出码是0,2时,执行重启,默认值0,2
+exitcodes=0,2
+;停止信号,默认TERM
+;中断:INT(类似于Ctrl+C)(kill -INT pid),退出后会将写文件或日志(推荐)
+;终止:TERM(kill -TERM pid)
+;挂起:HUP(kill -HUP pid),注意与Ctrl+Z/kill -stop pid不同
+;从容停止:QUIT(kill -QUIT pid)
+;KILL, USR1, USR2其他见命令(kill -l),说明1
+stopsignal=TERM
+stopwaitsecs=10
+;*以root用户执行
+user=root
+;重定向
+redirect_stderr=false
+stdout_logfile=/a/path
+stdout_logfile_maxbytes=1MB
+stdout_logfile_backups=10
+stdout_capture_maxbytes=1MB
+stderr_logfile=/a/path
+stderr_logfile_maxbytes=1MB
+stderr_logfile_backups=10
+stderr_capture_maxbytes=1MB
+;环境变量设置
+environment=A=&quot;1&quot;,B=&quot;2&quot;
+serverurl=AUTO
+
+</code></pre>
+
+<h3 id="toc_6">inet_http_server配置</h3>
+
+<p>可以使用浏览器查看和控制进程状态</p>
+
+<pre><code>[inet_http_server]         ; inet (TCP) server disabled by default
+port=0.0.0.0:9001          ; (ip_address:port specifier, *:port for all iface)
+username=user              ; 用户名 (default is no username (open server))
+password=123               ; 密码 (default is no password (open server))
+</code></pre>
+
+<h3 id="toc_7">supervisor命令</h3>
 
 <ol>
-<li>在要转换的变量之前加上用括号括起来的目标类型</li>
-<li>使用3个具体类型的转换函数，intval()、floatval()、strval()</li>
-<li>使用通用类型转换函数settype(mixed var,string type)</li>
+<li>启动 supervisord -c /etc/supervisord.conf</li>
+<li>关闭 supervisorctl shutdown </li>
+<li>重新载入 supervisorctl reload. (修改代码之后一定要记得重新启动)</li>
+<li>supricorctl  进入交互界面（下图），（help命令，查看每个队列状态。可以启动或停着某个队列）</li>
 </ol>
 
-<h3 id="toc_0">第一种转换方式： (int)  (bool)  (float)  (string)  (array) (object)</h3>
-
-<pre><code>&lt;?php   
-$num1=3.14;   
-$num2=(int)$num1;   
-var_dump($num1); //输出float(3.14)   
-var_dump($num2); //输出int(3)   
-</code></pre>
-
-<h3 id="toc_1">第二种转换方式：  intval()  floatval()  strval()</h3>
-
-<pre><code>&lt;?php   
-$str=&quot;123.9abc&quot;;   
-$int=intval($str);     //转换后数值：123   
-$float=floatval($str); //转换后数值：123.9   
-$str=strval($float);   //转换后字符串：&quot;123.9&quot;    
-  
-</code></pre>
-
-<h3 id="toc_2">第三种转换方式： settype();</h3>
-
-<pre><code>&lt;?php   
-$num4=12.8;   
-$flg=settype($num4,&quot;int&quot;);   
-var_dump($flg);  //输出bool(true)   
-var_dump($num4); //输出int(12)   
-
-</code></pre>
+<p><img src="media/15173644197300/15174653245430.jpg" alt=""/></p>
 
 
 		</div>

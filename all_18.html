@@ -47,11 +47,19 @@
         <li><label>php</label></li>
 
           
+            <li><a title="生成唯一id" href="15196281546423.html">生成唯一id</a></li>
+          
+            <li><a title="php运行机制" href="15196243924490.html">php运行机制</a></li>
+          
+            <li><a title="php高级" href="15194406504410.html">php高级</a></li>
+          
+            <li><a title="魔术方法" href="15194336769696.html">魔术方法</a></li>
+          
             <li><a title="php7新特性" href="15173733442452.html">php7新特性</a></li>
           
             <li><a title="supervisor运行laravel的队列" href="15173644197300.html">supervisor运行laravel的队列</a></li>
           
-            <li><a title="php数组" href="15161783412583.html">php数组</a></li>
+            <li><a title="php数组(只记常用的)" href="15161783412583.html">php数组(只记常用的)</a></li>
           
             <li><a title="输出区别" href="15160839984550.html">输出区别</a></li>
           
@@ -76,6 +84,8 @@
         <li class="divider"></li>
         <li><label>mysql</label></li>
 
+          
+            <li><a title="重点：分库分表" href="15193062637949.html">重点：分库分表</a></li>
           
             <li><a title="实战：主键设计" href="15179987835900.html">实战：主键设计</a></li>
           
@@ -208,14 +218,6 @@
 
       
         <li class="divider"></li>
-        <li><label>nginx</label></li>
-
-          
-            <li><a title="" href="15178121495507.html"></a></li>
-          
-
-      
-        <li class="divider"></li>
         <li><label>计算机网络</label></li>
 
           
@@ -313,6 +315,12 @@
         <li><label>other</label></li>
 
           
+            <li><a title="session 和 token 的区别" href="15197089516431.html">session 和 token 的区别</a></li>
+          
+            <li><a title="幂等性" href="15197085600692.html">幂等性</a></li>
+          
+            <li><a title="安全" href="15196955951857.html">安全</a></li>
+          
             <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
           
             <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -374,11 +382,19 @@
                     
                       <li class="side-title"><span>php</span></li>
                         
+                          <li><a title="生成唯一id" href="15196281546423.html">生成唯一id</a></li>
+                        
+                          <li><a title="php运行机制" href="15196243924490.html">php运行机制</a></li>
+                        
+                          <li><a title="php高级" href="15194406504410.html">php高级</a></li>
+                        
+                          <li><a title="魔术方法" href="15194336769696.html">魔术方法</a></li>
+                        
                           <li><a title="php7新特性" href="15173733442452.html">php7新特性</a></li>
                         
                           <li><a title="supervisor运行laravel的队列" href="15173644197300.html">supervisor运行laravel的队列</a></li>
                         
-                          <li><a title="php数组" href="15161783412583.html">php数组</a></li>
+                          <li><a title="php数组(只记常用的)" href="15161783412583.html">php数组(只记常用的)</a></li>
                         
                           <li><a title="输出区别" href="15160839984550.html">输出区别</a></li>
                         
@@ -401,6 +417,8 @@
 
                     
                       <li class="side-title"><span>mysql</span></li>
+                        
+                          <li><a title="重点：分库分表" href="15193062637949.html">重点：分库分表</a></li>
                         
                           <li><a title="实战：主键设计" href="15179987835900.html">实战：主键设计</a></li>
                         
@@ -524,12 +542,6 @@
                         
 
                     
-                      <li class="side-title"><span>nginx</span></li>
-                        
-                          <li><a title="" href="15178121495507.html"></a></li>
-                        
-
-                    
                       <li class="side-title"><span>计算机网络</span></li>
                         
                           <li><a title="tcp长连接和短连接" href="15126148983598.html">tcp长连接和短连接</a></li>
@@ -610,6 +622,12 @@
                     
                       <li class="side-title"><span>other</span></li>
                         
+                          <li><a title="session 和 token 的区别" href="15197089516431.html">session 和 token 的区别</a></li>
+                        
+                          <li><a title="幂等性" href="15197085600692.html">幂等性</a></li>
+                        
+                          <li><a title="安全" href="15196955951857.html">安全</a></li>
+                        
                           <li><a title="金融云总结" href="15181672512390.html">金融云总结</a></li>
                         
                           <li><a title="计算机基础-单位划算" href="15180666486345.html">计算机基础-单位划算</a></li>
@@ -664,174 +682,15 @@
 
 	
 		<div class="markdown-body">
-		<h1>观察者模式（发布/订阅）</h1>
+		<h1>专业术语</h1>
 
-		<p>代码解耦神器</p>
+		<h3 id="toc_0">QPS(Query Per Second)</h3>
 
-<blockquote>
-<p>观察者模式有时也被称作发布/订阅模式，该模式用于为对象实现发布/订阅功能：一旦主体对象状态发生改变，与之关联的观察者对象会收到通知，并进行相应操作。</p>
-</blockquote>
+<p>每秒查询率QPS是对一个特定的查询服务器在<strong>规定时间内所处理流量多少</strong>的衡量标准。</p>
 
-<p>注意：<strong>将一个系统分割成一个一些类相互协作的类有一个不好的副作用，那就是需要维护相关对象间的一致性。我们不希望为了维持一致性而使各类紧密耦合，这样会给维护、扩展和重用都带来不便。观察者就是解决这类的耦合关系的。</strong></p>
+<p>和并发相关不得不提的一个概念就是 QPS（Query Per Second），QPS 其实是衡量吞吐量（Throughput）的一个常用指标，就是说**服务器在一秒的时间内处理了多少个请求 **  我们通常是指 HTTP 请求，显然数字越大代表服务器的负荷越高、处理能力越强。</p>
 
-<p>应用场景：<strong>消息队列系统</strong>、<strong>事件</strong>都使用了观察者模式。</p>
-
-<p>本人比较喜欢这个模式，所以一下没控制住，写了几个demo。</p>
-
-<h3 id="toc_0">手动实现观察者</h3>
-
-<pre><code>1. 定义一个类，作为容器，用来存放事件和事件监听者的绑定的
-2. 添加绑定关系到上面的容器中
-3. 手动触发绑定的事件，所有监听器自动执行
-
-
-//第一步
-class  EventGenerator
-{
-    private $server = [];
-
-    //注册
-    public function add(UserUpdate $server)
-    {
-        $this-&gt;server[] = $server;
-    }
-
-    //一旦事件触发，就通知所有的对象，调用update方法
-    public function notify()
-    {
-        foreach ($this-&gt;server as $item) {
-            $item-&gt;handle(); 
-        }
-    }
-}
-
-//第二步
-interface UserUpdate
-{
-    public function handle();
-}
-//卡券
-class Coupon implements UserUpdate
-{
-    public function handle()
-    {
-        echo &quot;用户更新（vip升级），添加一张卡券&quot;;
-    }
-}
-//订单
-class Order implements UserUpdate
-{
-    public function handle()
-    {
-        echo &quot;用户更新（vip升级），送一笔体验金的订单&quot;;
-    }
-}
-//第三步
-class User
-{
-    private $event;
-    public function __construct(EventGenerator $eventGenerator)
-    {
-        $this-&gt;event = $eventGenerator;
-    }
-    public function update()
-    {
-        //开启事务 : 其实观察者模式，只不过是为了把代码逻辑给分开，其实还是在一个方法里面
-        //用户升级为VIP
-        $this-&gt;event-&gt;notify();   //通知所有调用者
-        //关闭事务
-    }
-}
-
-
-
-</code></pre>
-
-<h3 id="toc_1">利用SPL自带方法实现观察者模式</h3>
-
-<pre><code>思想和上面自定义的相同。只是用到了php标准库中的3个方法
-    1. SplSubject
-    2. SplObserver
-    3. SplObjectStorage
-/**
- * 观察者模式 : 被观察对象 (主体对象)
- * 主体对象维护观察者列表并发送通知
- */
-class User implements \SplSubject  //主题
-{
-    protected $data = [];
-
-    protected $observers;
-
-    public function __construct()
-    {
-        $this-&gt;observers = new \SplObjectStorage();//这个对象防止重复注册
-    }
-    //注册一个观察者
-    public function attach(\SplObserver $observer)
-    {
-        $this-&gt;observers-&gt;attach($observer);
-    }
-
-    //删除观察者
-    public function detach(\SplObserver $observer)
-    {
-        $this-&gt;observers-&gt;detach($observer);
-    }
-
-    // 通知观察者方法
-    public function notify()
-    {
-        /** @var \SplObserver $observer */
-        foreach ($this-&gt;observers as $observer) {
-            $observer-&gt;update($this);
-        }
-    }
-
-    //一旦修改用户信息，就会触发此方法，来通知所有对象
-    public function __set($name, $value)
-    {
-        $this-&gt;data[$name] = $value;
-        // 通知观察者用户被改变
-        $this-&gt;notify();
-    }
-}
-
-//（观察者对象）
-class UserObserver implements \SplObserver
-{
-     //观察者要实现的唯一方法 也是被 Subject 调用的方法
-    public function update(\SplSubject $subject)
-    {
-        echo &#39;has been updated&#39;;
-    }
-}
-
-//测试通知
-  $subject = new User();
-  $subject-&gt;attach($this-&gt;observer); //注册容器中去
-  $subject-&gt;property = 123;
-
-
-</code></pre>
-
-<h3 id="toc_2">laravel使用观察者模式</h3>
-
-<p><a href="http://laravelacademy.org/post/6877.html#toc_10">laravel学院文档</a><br/>
-<img src="media/15156567245483/15156619081235.jpg" alt=""/></p>
-
-<p><img src="media/15156567245483/15156623978876.jpg" alt=""/><br/>
-<img src="media/15156567245483/15156622369470.jpg" alt=""/></p>
-
-<p><img src="media/15156567245483/15156623387280.jpg" alt=""/></p>
-
-<p>上面的一种方式是通知的方式，一旦我绑定完之后，事件触发就会通知所有的时间。<br/>
-下面是一种订阅的方式，我可以在制定services中某个方法，订阅某个事件，也是由同样的效果<br/>
-<a href="http://laravelacademy.org/post/6877.html#toc_10">laravel学院文档，参考第七项</a><br/>
-<img src="media/15156567245483/15156653958157.jpg" alt=""/></p>
-
-<p>总结：<br/>
-观察者模式解除了主体和具体观察者的耦合，让耦合的双方都依赖于抽象，而不是依赖具体。从而使得各自的变化都不会影响另一边的变化。</p>
+<p>qps 为多少，</p>
 
 
 		</div>
