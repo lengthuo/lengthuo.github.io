@@ -67,8 +67,6 @@
           
             <li><a title="强制类型转换" href="15159830999579.html">强制类型转换</a></li>
           
-            <li><a title="数组的常用操作" href="15159199909308.html">数组的常用操作</a></li>
-          
             <li><a title="SPL--SplObjectStorage 方法使用" href="15157440556671.html">SPL--SplObjectStorage 方法使用</a></li>
           
             <li><a title="php 与 nginx" href="15128085452995.html">php 与 nginx</a></li>
@@ -402,8 +400,6 @@
                         
                           <li><a title="强制类型转换" href="15159830999579.html">强制类型转换</a></li>
                         
-                          <li><a title="数组的常用操作" href="15159199909308.html">数组的常用操作</a></li>
-                        
                           <li><a title="SPL--SplObjectStorage 方法使用" href="15157440556671.html">SPL--SplObjectStorage 方法使用</a></li>
                         
                           <li><a title="php 与 nginx" href="15128085452995.html">php 与 nginx</a></li>
@@ -682,83 +678,213 @@
 
 	
 		<div class="markdown-body">
-		<h1>持久化机制</h1>
+		<h1>手册（笔记）</h1>
 
-		<p>RDB是默认的持久化方式，</p>
+		<h3 id="toc_0">收藏地址</h3>
 
-<p>RDB 快照：只保留最终的数据，恢复快，只有追中的数据，但是快照会丢失少量数据（毕竟是一个快照版，中间时间间隔会有数据丢失）<br/>
-AOF 追加：中间会有多余的操作，数据量大，恢复慢，</p>
+<p><a href="https://www.2cto.com/database/201610/558345.html">mysql 海量数据的存储和访问解决方案</a></p>
 
-<h3 id="toc_0">RDB</h3>
+<p><a href="https://my.oschina.net/candiesyangyang/blog/203425">为什么数据库读写分离可以提高性能</a></p>
 
-<p>RDB机制的优势和略施<br/>
-　<strong>　RDB持久化是指在指定的时间间隔内将内存中的数据集快照写入磁盘。</strong></p>
+<h3 id="toc_1">数据优化</h3>
 
-<p>　　也是默认的持久化方式，这种方式是就是将内存中数据以快照的方式写入到二进制文件中,默认的文件名为dump.rdb。</p>
+<p>表分拆，建索引，做缓存 </p>
 
-<p>可以通过配置设置自动做快照持久化的方式。我们可以配置redis在n秒内如果超过m个key被修改就自动做快照，下面是默认的快照保存配置</p>
+<h3 id="toc_2">left join 后,左表怎样合并或者去掉重复记录</h3>
 
-<p>save 900 1     #900秒内如果超过1个key被修改，则发起快照保存<br/>
-   save 300 10    #300秒内容如超过10个key被修改，则发起快照保存<br/>
-   save 60 10000<br/>
-RDB文件保存过程</p>
+<p>(子查询可以直接distinct)<br/>
+<a href="http://blog.sina.com.cn/s/blog_69398ed901018buq.html">left join 后,左表怎样合并或者去掉重复记录</a></p>
 
-<p>redis调用fork,现在有了子进程和父进程。<br/>
-父进程继续处理client请求，子进程负责将内存内容写入到临时文件。由于os的写时复制机制（copy on write)父子进程会共享相同的物理页面，当父进程处理写请求时os会为父进程要修改的页面创建副本，而不是写共享的页面。所以子进程的地址空间内的数 据是fork时刻整个数据库的一个快照。<br/>
-当子进程将快照写入临时文件完毕后，用临时文件替换原来的快照文件，然后子进程退出。<br/>
-client 也可以使用save或者bgsave命令通知redis做一次快照持久化。save操作是在主线程中保存快照的，由于redis是用一个主线程来处理所有 client的请求，这种方式会阻塞所有client请求。所以不推荐使用。</p>
+<h3 id="toc_3">like替代函数</h3>
 
-<p>另一点需要注意的是，每次快照持久化都是将内存数据完整写入到磁盘一次，并不 是增量的只同步脏数据。如果数据量大的话，而且写操作比较多，必然会引起大量的磁盘io操作，可能会严重影响性能。</p>
+<p>like 替换工具  position locate instr </p>
 
-<h4 id="toc_1">优势</h4>
+<pre><code> explain select count(id) from users where phone like &#39;%1234%&#39;;
 
-<p>一旦采用该方式，那么你的整个Redis数据库将只包含一个文件，这样非常方便进行备份。比如你可能打算没1天归档一些数据。<br/>
-方便备份，我们可以很容易的将一个一个RDB文件移动到其他的存储介质上<br/>
-RDB 在恢复大数据集时的速度比 AOF 的恢复速度要快。<br/>
-RDB 可以最大化 Redis 的性能：父进程在保存 RDB 文件时唯一要做的就是 fork 出一个子进程，然后这个子进程就会处理接下来的所有保存工作，父进程无须执行任何磁盘 I/O 操作。</p>
+ explain SELECT count(id) FROM users WHERE position(&#39;1234&#39; in phone);
 
-<h4 id="toc_2">劣势</h4>
+ explain SELECT count(id) FROM users WHERE locate(&#39;1234&#39;,phone)&gt;0 ;
 
-<p>如果你需要尽量避免在服务器故障时丢失数据，那么 RDB 不适合你。 虽然 Redis 允许你设置不同的保存点（save point）来控制保存 RDB 文件的频率， 但是， 因为RDB 文件需要保存整个数据集的状态， 所以它并不是一个轻松的操作。 因此你可能会至少 5 分钟才保存一次 RDB 文件。 在这种情况下， 一旦发生故障停机， 你就可能会丢失好几分钟的数据。<br/>
-每次保存 RDB 的时候，Redis 都要 fork() 出一个子进程，并由子进程来进行实际的持久化工作。 在数据集比较庞大时， fork() 可能会非常耗时，造成服务器在某某毫秒内停止处理客户端； 如果数据集非常巨大，并且 CPU 时间非常紧张的话，那么这种停止时间甚至可能会长达整整一秒。 虽然 AOF 重写也需要进行 fork() ，但无论 AOF 重写的执行间隔有多长，数据的耐久性都不会有任何损失。</p>
+ explain SELECT count(id) FROM users WHERE instr(phone,&#39;1234&#39;)&gt;0 ;
+ 
+</code></pre>
 
-<h3 id="toc_3">AOF</h3>
+<h3 id="toc_4">like</h3>
 
-<p>AOF文件保存过程<br/>
-redis会将每一个收到的写命令都通过write函数追加到文件中(默认是appendonly.aof)。<br/>
-当redis重启时会通过重新执行文件中保存的写命令来在内存中重建整个数据库的内容。当然由于os会在内核中缓存 write做的修改，所以可能不是立即写到磁盘上。这样aof方式的持久化也还是有可能会丢失部分修改。不过我们可以通过配置文件告诉redis我们想要 通过fsync函数强制os写入到磁盘的时机。有三种方式如下（默认是：每秒fsync一次）</p>
+<pre><code>explain select count(id) from users where phone like &#39;%1234%&#39;;
 
-<p>appendonly yes              //启用aof持久化方式<br/>
- # appendfsync always      //每次收到写命令就立即强制写入磁盘，最慢的，但是保证完全的持久化，不推荐使用<br/>
-appendfsync everysec     //每秒钟强制写入磁盘一次，在性能和持久化方面做了很好的折中，推荐<br/>
- # appendfsync no    //完全依赖os，性能最好,持久化没保证<br/>
-aof 的方式也同时带来了另一个问题。持久化文件会变的越来越大。例如我们调用incr test命令100次，文件中必须保存全部的100条命令，其实有99条都是多余的。因为要恢复数据库的状态其实文件中保存一条set test 100就够了。</p>
+explain SELECT count(id) FROM users WHERE position(&quot;1234&quot; in phone) &gt; 0
 
-<p>为了压缩aof的持久化文件。redis提供了bgrewriteaof命令。收到此命令redis将使用与快照类似的方式将内存中的数据 以命令的方式保存到临时文件中，最后替换原来的文件。具体过程如下</p>
+</code></pre>
 
-<p>redis调用fork ，现在有父子两个进程<br/>
-子进程根据内存中的数据库快照，往临时文件中写入重建数据库状态的命令<br/>
-父进程继续处理client请求，除了把写命令写入到原来的aof文件中。同时把收到的写命令缓存起来。这样就能保证如果子进程重写失败的话并不会出问题。<br/>
-当子进程把快照内容写入已命令方式写到临时文件中后，子进程发信号通知父进程。然后父进程把缓存的写命令也写入到临时文件。<br/>
-现在父进程可以使用临时文件替换老的aof文件，并重命名，后面收到的写命令也开始往新的aof文件中追加。<br/>
-需要注意到是重写aof文件的操作，并没有读取旧的aof文件，而是将整个内存中的数据库内容用命令的方式重写了一个新的aof文件,这点和快照有点类似。</p>
+<h3 id="toc_5">hash索引和Btree索引区别</h3>
 
-<h4 id="toc_4">优势</h4>
+<hr/>
 
-<p>使用 AOF 持久化会让 Redis 变得非常耐久（much more durable）：你可以设置不同的 fsync 策略，比如无 fsync ，每秒钟一次 fsync ，或者每次执行写入命令时 fsync 。 AOF 的默认策略为每秒钟 fsync 一次，在这种配置下，Redis 仍然可以保持良好的性能，并且就算发生故障停机，也最多只会丢失一秒钟的数据（ fsync 会在后台线程执行，所以主线程可以继续努力地处理命令请求）。</p>
+<p>Btree 平衡多叉树，查询算法稳定。（从根节点到叶子节点的搜索效率基本相当）<br/>
+hash 通过计算找到相应数据的存储位置，快，但是涉及到范围查询就不行，（不是顺序的）</p>
 
-<p>AOF 文件是一个只进行追加操作的日志文件（append only log）， 因此对 AOF 文件的写入不需要进行 seek ， 即使日志因为某些原因而包含了未写入完整的命令（比如写入时磁盘已满，写入中途停机，等等）， redis-check-aof 工具也可以轻易地修复这种问题。<br/>
-Redis 可以在 AOF 文件体积变得过大时，自动地在后台对 AOF 进行重写： 重写后的新 AOF 文件包含了恢复当前数据集所需的最小命令集合。 整个重写操作是绝对安全的，因为 Redis 在创建新 AOF 文件的过程中，会继续将命令追加到现有的 AOF 文件里面，即使重写过程中发生停机，现有的 AOF 文件也不会丢失。 而一旦新 AOF 文件创建完毕，Redis 就会从旧 AOF 文件切换到新 AOF 文件，并开始对新 AOF 文件进行追加操作。</p>
+<ol>
+<li>如果是等值查询，那么哈希索引明显有绝对优势，因为只需要经过一次算法即可找到相应的键值；当然了，这个前提是，键值都是唯一的。如果键值不是唯一的，就需要先找到该键所在位置，然后再根据链表往后扫描，直到找到相应的数据；</li>
+<li>如果是范围查询检索，这时候哈希索引就毫无用武之地了，因为原先是有序的键值，经过哈希算法后，有可能变成不连续的了，就没办法再利用索引完成范围查询检索；</li>
+<li>同理，哈希索引也没办法利用索引完成排序，以及like ‘xxx%’ 这样的部分模糊查询（这种部分模糊查询，其实本质上也是范围查询）；</li>
+<li>哈希索引也不支持多列联合索引的最左匹配规则；</li>
+<li>B+树索引的关键字检索效率比较平均，不像B树那样波动幅度大，在有大量重复键值情况下，哈希索引的效率也是极低的，因为存在所谓的哈希碰撞问题。</li>
+</ol>
 
-<p>AOF 文件有序地保存了对数据库执行的所有写入操作， 这些写入操作以 Redis 协议的格式保存， 因此 AOF 文件的内容非常容易被人读懂， 对文件进行分析（parse）也很轻松。 导出（export） AOF 文件也非常简单： 举个例子， 如果你不小心执行了 FLUSHALL 命令， 但只要 AOF 文件未被重写， 那么只要停止服务器， 移除 AOF 文件末尾的 FLUSHALL 命令， 并重启 Redis ， 就可以将数据集恢复到 FLUSHALL 执行之前的状态。</p>
+<h3 id="toc_6">sql执行顺序</h3>
 
-<h4 id="toc_5">劣势</h4>
+<hr/>
 
-<p>对于相同的数据集来说，AOF 文件的体积通常要大于 RDB 文件的体积。</p>
+<ul>
+<li> from </li>
+<li> join </li>
+<li> on </li>
+<li> where </li>
+<li> group by(开始使用select中的别名，后面的语句中都可以使用)</li>
+<li> avg,sum.... </li>
+<li> having </li>
+<li> select </li>
+<li> distinct </li>
+<li> union   union all</li>
+<li> order by </li>
+</ul>
 
-<p>根据所使用的 fsync 策略，AOF 的速度可能会慢于 RDB 。 在一般情况下， 每秒 fsync 的性能依然非常高， 而关闭 fsync 可以让 AOF 的速度和 RDB 一样快， 即使在高负荷之下也是如此。 不过在处理巨大的写入载入时，RDB 可以提供更有保证的最大延迟时间（latency）。</p>
+<h3 id="toc_7">null的使用</h3>
 
-<p>AOF 在过去曾经发生过这样的 bug ： 因为个别命令的原因，导致 AOF 文件在重新载入时，无法将数据集恢复成保存时的原样。 （举个例子，阻塞命令 BRPOPLPUSH 就曾经引起过这样的 bug 。） 测试套件里为这种情况添加了测试： 它们会自动生成随机的、复杂的数据集， 并通过重新载入这些数据来确保一切正常。 虽然这种 bug 在 AOF 文件中并不常见， 但是对比来说， RDB 几乎是不可能出现这种 bug 的。</p>
+<hr/>
+
+<ol>
+<li>在 MySQL 中，NULL 值与任何其它值的比较（即使是 NULL）永远返回 false，即 NULL = NULL 返回false</li>
+<li>关于 NULL 的条件比较运算是比较特殊的。你不能使用 = NULL 或 != NULL 在列中查找 NULL 值 。 MySQL 中处理 NULL 使用 IS NULL 和 IS NOT NULL 运算符。</li>
+<li> </li>
+</ol>
+
+<h3 id="toc_8">死锁</h3>
+
+<hr/>
+
+<p>一般死锁都是业务问题，只需要把相应的业务时间给错开即可。</p>
+
+<blockquote>
+<p>概念如果线程A锁住了记录1并等待记录2，而线程B锁住了记录2并等待记录1，这样两个线程就发生了死锁现象<br/>
+<a href="http://blog.sina.com.cn/s/blog_8445583b0102vv79.html">mysql3中锁表方式</a></p>
+</blockquote>
+
+<ol>
+<li>共享锁:（读取）操作创建的锁。其他用户可以并发读取数据，但任何事物都不能获取数据上的排它锁，直到已释放所有共享锁。共享锁(S锁)又称为读锁，<strong>若事务T对数据对象A加上S锁，则事务T只能读A；其他事务只能再对A加S锁，而不能加X锁，直到T释放A上的S锁。这就保证了其他事务可以读A，但在T释放A上的S锁之前不能对A做任何修改。</strong></li>
+<li>排它锁：排它锁又称为写锁（(eXclusive lock,简记为X锁)），<strong>若事物T对数据对象A加上X锁，则只允许T读取和修改A，其它任何事务都不能再对A加任何类型的锁，直到T释放A上的锁。它防止任何其它事务获取资源上的锁，直到在事务的末尾将资源上的原始锁释放为止。</strong></li>
+</ol>
+
+<h3 id="toc_9">表结构的优化</h3>
+
+<hr/>
+
+<ol>
+<li>优化数据类型 ： 正确的数据类型对于获的高性能至关重要.不管是存储何种类型的数据，下面几个原则都有助于做出更好的选择</li>
+<li>更小的通常更好</li>
+<li>简单就好    简单的数据类型操作，通常需要更少的CPU周期</li>
+<li>尽量避免null ： 创建表的时候指定not null 默认null</li>
+</ol>
+
+<h3 id="toc_10">整数类型 分为： 整数 + 实数</h3>
+
+<hr/>
+
+<p>整数：分为： tinyint smallint mediumint int bigint<br/>
+     存储空间 8         16      24        32    64 位<br/>
+     存储范围： -2<sup>n-1</sup>  到 2<sup>n-1</sup> - 1  n是存储空间的位数</p>
+
+<ol>
+<li>注意：unsigned 不允许负值可以使<strong>整数的上线提高一倍</strong>，<strong>有符号和无符号使用相同的存储空间，并具有相同的性能。</strong></li>
+<li>实数：带有小数部分的整数，然而他们不止可以存储小数，，可以用decimal 来存储比bigint还要大的整数。</li>
+</ol>
+
+<h3 id="toc_11">字符串类型</h3>
+
+<hr/>
+
+<p>2中最主要的字符串类型:varchar  char,他们是怎们存储在硬盘和内存中的，这跟存储引擎有关。varchar是可变的 char是固定长度，浪费空间。</p>
+
+<p>注意： </p>
+
+<ol>
+<li>MD5值由于是定长的建议用char来处理，</li>
+<li>只有Y|N的时候用char，varchar使用1个或2个额外字符来记录字符串你的长度</li>
+<li>字符串列的最大平均长度比平均长度大很多，列的更新会很少，</li>
+<li>char末尾的空格在检索时候会被取出，varchar会保留（不同存储引擎是一样的，这是在mysql服务层处理的）</li>
+<li>存储二进制字符串对应的 binary varbinary</li>
+<li>varchar(5) varchar(200) 存储hello 有什么区别：事实证明（我没试过，但是能理解）更长的列会占用更多的内存，（必然的）mysql通常会分配固定大小的内存块保存内部值，尤其是使用内存临时表进行排序，</li>
+</ol>
+
+<h3 id="toc_12">日期类型datetime timestamp</h3>
+
+<hr/>
+
+<ol>
+<li>datetime 范围： 1001-9999 8个字节存储  推荐使用</li>
+<li>timestamp 范围: 1970-2038 4个字节存储  只能到2038年</li>
+</ol>
+
+<h3 id="toc_13">bolb text</h3>
+
+<hr/>
+
+<p>为了存储很大的数据而设计的字符串数据类型，分别用二进制和字符方式存储。<br/>
+ blob存储的是二进制没有排序规则或字符集，text字符串存储有排序规则和字符集<br/>
+ InnoDB会使用专门的外部来进行存储，此时每个值在1-4个字节存储一个指针，然后在外部区域存储实际的值</p>
+
+<h3 id="toc_14">创建索引（索引种类）</h3>
+
+<hr/>
+
+<p>主键索引 唯一索引 联合索引 普通索引  全文索引  </p>
+
+<pre><code>1.添加PRIMARY KEY（主键索引） 
+mysql&gt;ALTER TABLE `table_name` ADD PRIMARY KEY ( `column` ) 
+
+2.添加UNIQUE(唯一索引) 
+mysql&gt;ALTER TABLE `table_name` ADD UNIQUE ( 
+`column` 
+) 
+
+3.添加INDEX(普通索引) 
+mysql&gt;ALTER TABLE `table_name` ADD INDEX index_name ( `column` ) 
+
+4.添加FULLTEXT(全文索引) 
+mysql&gt;ALTER TABLE `table_name` ADD FULLTEXT ( `column`) 
+
+5.添加多列索引 
+mysql&gt;ALTER TABLE `table_name` ADD INDEX index_name ( `column1`, `column2`, `column3` )
+</code></pre>
+
+<h3 id="toc_15">约束</h3>
+
+<hr/>
+
+<p>在MySQL中违反非空约束，不会报错，只会有警告.</p>
+
+<blockquote>
+<p>约束是一种限制，它通过对表的行或列的数据做出限制，来确保表的数据的完整性、唯一性。</p>
+</blockquote>
+
+<p>MYSQL中，常用的几种约束：</p>
+
+<p>约束类型：   主键     默认值      唯一     外键    非空<br/>
+关键字：    PRIMARY KEY DEFAULT UNIQUE  FOREIGN   KEY NOT NULL</p>
+
+<ol>
+<li>主键(PRIMARY KEY)是用于约束表中的一行，作为这一行的标识符，在一张表中通过主键就能准确定位到一行，因此主键十分重要。主键要求这一行的数据不能有重复且不能为空。(还有一种特殊的主键——复合主键。主键不仅可以是表中的一列，也可以由表中的两列或多列来共同标识)</li>
+<li>默认值约束(DEFAULT)规定，当有DEFAULT约束的列，插入数据为空时该怎么办。DEFAULT约束只会在使用INSERT语句（上一实验介绍过）时体现出来，INSERT语句中，如果被DEFAULT约束的位置没有值，那么这个位置将会被DEFAULT的值填充</li>
+<li>唯一约束(UNIQUE)比较简单，它规定一张表中指定的一列的值必须不能有重复值，即这一列每个值都是唯一的。当INSERT语句新插入的数据和已有数据重复的时候，如果有UNIQUE约束，则INSERT失败.</li>
+<li>外键(FOREIGN KEY)既能确保数据完整性，也能表现表之间的关系。一个表可以有多个外键，每个外键必须REFERENCES(参考)另一个表的主键，被外键约束的列，取值必须在它参考的列中有对应值。</li>
+<li>非空约束(NOT NULL),听名字就能理解，被非空约束的列，在插入值时必须非空。</li>
+</ol>
+
+<h3 id="toc_16">如何解决主从数据库同步延迟问题？</h3>
+
+<p><a href="https://www.zhihu.com/search?type=content&amp;q=%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E4%B8%BB%E4%BB%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E5%90%8C%E6%AD%A5%E5%BB%B6%E8%BF%9F%E9%97%AE%E9%A2%98%EF%BC%9F">知乎</a><br/>
+<a href="https://www.zhihu.com/question/20025096">如何解决主从数据库同步延迟问题？</a></p>
 
 
 		</div>

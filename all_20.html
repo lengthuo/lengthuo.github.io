@@ -67,8 +67,6 @@
           
             <li><a title="强制类型转换" href="15159830999579.html">强制类型转换</a></li>
           
-            <li><a title="数组的常用操作" href="15159199909308.html">数组的常用操作</a></li>
-          
             <li><a title="SPL--SplObjectStorage 方法使用" href="15157440556671.html">SPL--SplObjectStorage 方法使用</a></li>
           
             <li><a title="php 与 nginx" href="15128085452995.html">php 与 nginx</a></li>
@@ -402,8 +400,6 @@
                         
                           <li><a title="强制类型转换" href="15159830999579.html">强制类型转换</a></li>
                         
-                          <li><a title="数组的常用操作" href="15159199909308.html">数组的常用操作</a></li>
-                        
                           <li><a title="SPL--SplObjectStorage 方法使用" href="15157440556671.html">SPL--SplObjectStorage 方法使用</a></li>
                         
                           <li><a title="php 与 nginx" href="15128085452995.html">php 与 nginx</a></li>
@@ -682,104 +678,26 @@
 
 	
 		<div class="markdown-body">
-		<h1>php7新特性</h1>
+		<h1>php 与 nginx</h1>
 
-		<h3 id="toc_0">新操作符&lt;=&gt;</h3>
+		<p>一、什么是 FastCGI<br/>
+FastCGI是一个可伸缩地、高速地在HTTP server和动态脚本语言间通信的接口。多数流行的HTTP server都支持FastCGI，包括Apache、Nginx和lighttpd等，同时，FastCGI也被许多脚本语言所支持，其中就有PHP。<br/>
+FastCGI是从CGI发展改进而来的。传统CGI接口方式的主要缺点是性能很差，因为每次HTTP服务器遇到动态程序时都需要重新启动脚本解析器来执行解析，然后结果被返回给HTTP服务器。这在处理高并发访问时，几乎是不可用的。另外传统的CGI接口方式安全性也很差，现在已经很少被使用了。<br/>
+FastCGI接口方式采用C/S结构，可以将HTTP服务器和脚本解析服务器分开，同时在脚本解析服务器上启动一个或者多个脚本解析守护进程。当HTTP服务器每次遇到动态程序时，可以将其直接交付给FastCGI进程来执行，然后将得到的结果返回给浏览器。这种方式可以让HTTP服务器专一地处理静态请求或者将动态脚本服务器的结果返回给客户端，这在很大程度上提高了整个应用系统的性能。</p>
 
-<p>操作变量的时候非常有用：变量包括（数值，字符串，整形，浮点型，数组，对象）</p>
+<p>二、Nginx+FastCGI运行原理<br/>
+Nginx不支持对外部程序的直接调用或者解析，所有的外部程序（包括PHP）必须通过FastCGI接口来调用。FastCGI接口在Linux下是socket，（这个socket可以是文件socket，也可以是ip socket）。为了调用CGI程序，还需要一个FastCGI的wrapper（wrapper可以理解为用于启动另一个程序的程序），这个wrapper绑定在某个固定socket上，如端口或者文件socket。当Nginx将CGI请求发送给这个socket的时候，通过FastCGI接口，wrapper接纳到请求，然后派生出一个新的线程，这个线程调用解释器或者外部程序处理脚本并读取返回数据；接着，wrapper再将返回的数据通过FastCGI接口，沿着固定的socket传递给Nginx；最后，Nginx将返回的数据发送给客户端，这就是Nginx+FastCGI的整个运作过程。详细的过程，如图1所示。<br/>
+<img src="media/15128085452995/15128086522539.jpg" alt=""/></p>
 
-<pre><code>* 符号两边相等返回0
-* 左边大于右边 1
-* 右边大于左边 -1
-</code></pre>
+<p>PHP-FPM也是一个第三方的FastCGI进程管理器，<br/>
+FPM（FastCGI Process Manager:FastCGI进程管理器）</p>
 
-<h3 id="toc_1">??</h3>
+<p>yini<br/>
+<img src="media/15128085452995/15128098533432.jpg" alt=""/><br/>
+<img src="media/15128085452995/15128100944846.jpg" alt=""/></p>
 
-<p>null合并运算符<br/>
-项目中存在大量同时使用三元表达式和 isset()的情况，新增了null合并运算符 (??) 这个语法糖。如果变量存在且值不为NULL， 它就会返回自身的值，否则返回第二个操作数。</p>
-
-<p>旧版：isset(\(_GET[‘id&#39;]) ? \)_GET[id] : err;<br/>
-新版：$_GET[&#39;id&#39;] ?? &#39;err&#39;;</p>
-
-<h3 id="toc_2">统一变量语法</h3>
-
-<p>我们常常会遇到以下情况：方法，变量 类名等会保存在某个变量里，例如</p>
-
-<pre><code>$first = [&#39;name&#39; =&gt; &#39;second&#39;];
-$second = 2;
-echo $$first[&#39;name&#39;];
-</code></pre>
-
-<p>php5会完美运行并且输出2，</p>
-
-<p>变量解析的原则：左右解析</p>
-
-<p>上面代码在7中会产生一个Notice级别的错误，并且得不到确定的输出内容，</p>
-
-<p>为了一直引入{}的写法</p>
-
-<p><code>echo ${$first[&#39;name&#39;]};</code></p>
-
-<h3 id="toc_3">foreach</h3>
-
-<p>指针不会移动，php5.6的时候指针会移动一下.</p>
-
-<pre><code>&lt;?php
-$array = [0];
-foreach ($array as &amp;$val) { //通过引用遍历时，有更好的迭代特性
-var_dump($val);
-$array[1] = 1;  
-}
-PHP5输出：
-int(0)
-PHP7输出：
-int(0)
-int(1)
-
-</code></pre>
-
-<h3 id="toc_4">throwable</h3>
-
-<p>php7之前可以截获异常，错误不会截获</p>
-
-<p>php7可以截获错误，如下代码</p>
-
-<pre><code>try{
-
-}catch(Error $e){ //可以截获错误（）
- 
-}
-</code></pre>
-
-<h3 id="toc_5">类型声明</h3>
-
-<p>7中引入类型声明，目前明确的有2中类型声明<br/>
-形参和返回值</p>
-
-<p>declare(strict_types =1 );  强制类型（不按照相应的参数会报错）必须放在文件开头</p>
-
-<p>function test(int $a):string{<br/>
-    return &#39;asdada&#39;;<br/>
-}</p>
-
-<h3 id="toc_6">use批量声明</h3>
-
-<pre><code>//混合式声明(函数变量都同一声明)
-
-use App\Controller\{
-    TestController,
-    HelloTestController,
-    function getTest(),  
-    const KEY
-};
-
-
-\\非混合式声明
-
-use App\Controller\{TestController,HelloController};
-use App\Controller\{getTest()}
-use APP\Controller\{KEY}
-</code></pre>
+<p>jbh<br/>
+<img src="media/15128085452995/15128098839302.jpg" alt=""/></p>
 
 
 		</div>

@@ -67,8 +67,6 @@
           
             <li><a title="强制类型转换" href="15159830999579.html">强制类型转换</a></li>
           
-            <li><a title="数组的常用操作" href="15159199909308.html">数组的常用操作</a></li>
-          
             <li><a title="SPL--SplObjectStorage 方法使用" href="15157440556671.html">SPL--SplObjectStorage 方法使用</a></li>
           
             <li><a title="php 与 nginx" href="15128085452995.html">php 与 nginx</a></li>
@@ -402,8 +400,6 @@
                         
                           <li><a title="强制类型转换" href="15159830999579.html">强制类型转换</a></li>
                         
-                          <li><a title="数组的常用操作" href="15159199909308.html">数组的常用操作</a></li>
-                        
                           <li><a title="SPL--SplObjectStorage 方法使用" href="15157440556671.html">SPL--SplObjectStorage 方法使用</a></li>
                         
                           <li><a title="php 与 nginx" href="15128085452995.html">php 与 nginx</a></li>
@@ -682,14 +678,96 @@
 
 	
 		<div class="markdown-body">
-		<h1>数组的常用操作</h1>
+		<h1>SPL--SplObjectStorage 方法使用</h1>
 
-		<p><a href="http://php.net/manual/zh/book.array.php">php手册</a></p>
+		<p><a href="http://php.net/manual/zh/class.splobjectstorage.php">php手册</a></p>
 
-<p>array_pop — 弹出数组最后一个单元（出栈）<br/>
-array_push() - 将一个或多个单元压入数组的末尾（入栈）<br/>
-array_shift() - 将数组开头的单元移出数组<br/>
-array_unshift() - 在数组开头插入一个或多个单元</p>
+<h3 id="toc_0">描述</h3>
+
+<p>The SplObjectStorage class provides a map from objects to data or, by ignoring data, an object set. This dual purpose can be useful in many cases involving the need to uniquely identify objects.</p>
+
+<h3 id="toc_1">实例</h3>
+
+<pre><code>class A
+{
+    public $i;
+    public function __construct ($i)
+    {
+        $this-&gt;i = $i;
+    }
+}
+
+$a1 = new A(1);
+$a2 = new A(2);
+$a3 = new A(3);
+$container = new SplObjectStorage();
+//SplObjectStorage::attach 添加对象到Storage中
+$container-&gt;attach($a1);
+$container-&gt;attach($a2);
+//SplObjectStorage::detach 将对象从Storage中移除
+$container-&gt;attach($a2);
+var_dump($container);
+//SplObjectStorage::contains用于检查对象是否存在Storage中
+var_dump($container-&gt;contains($a1)); //true
+var_dump($container-&gt;contains($a4)); //false
+//遍历
+$container-&gt;rewind();
+while ($container-&gt;valid()) {
+    var_dump($container-&gt;current());
+    $container-&gt;next();
+}
+
+
+// As a map from objects to data
+$s = new SplObjectStorage();
+
+$o1 = new StdClass;
+$o2 = new StdClass;
+$o3 = new StdClass;
+
+$s[$o1] = &quot;data for object 1&quot;;
+$s[$o2] = [1, 2, 3];
+
+if (isset($s[$o2])) {
+    var_dump($s);
+    var_dump($s[$o2]);
+}
+
+//输出结果
+class SplObjectStorage#1 (1) {
+  private $storage =&gt;
+  array(2) {
+    &#39;000000000e726c4600000000698e987d&#39; =&gt;
+    array(2) {
+      &#39;obj&#39; =&gt;
+      class stdClass#2 (0) {
+        ...
+      }
+      &#39;inf&#39; =&gt;
+      string(17) &quot;data for object 1&quot;
+    }
+    &#39;000000000e726c4700000000698e987d&#39; =&gt;
+    array(2) {
+      &#39;obj&#39; =&gt;
+      class stdClass#3 (0) {
+        ...
+      }
+      &#39;inf&#39; =&gt;
+      array(3) {
+        ...
+      }
+    }
+  }
+}
+/Users/shuo/w3c/test/spl/splObjectStorage.php:15:
+array(3) {
+  [0] =&gt;
+  int(1)
+  [1] =&gt;
+  int(2)
+  [2] =&gt;
+
+</code></pre>
 
 
 		</div>

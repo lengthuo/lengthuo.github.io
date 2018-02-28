@@ -67,8 +67,6 @@
           
             <li><a title="强制类型转换" href="15159830999579.html">强制类型转换</a></li>
           
-            <li><a title="数组的常用操作" href="15159199909308.html">数组的常用操作</a></li>
-          
             <li><a title="SPL--SplObjectStorage 方法使用" href="15157440556671.html">SPL--SplObjectStorage 方法使用</a></li>
           
             <li><a title="php 与 nginx" href="15128085452995.html">php 与 nginx</a></li>
@@ -402,8 +400,6 @@
                         
                           <li><a title="强制类型转换" href="15159830999579.html">强制类型转换</a></li>
                         
-                          <li><a title="数组的常用操作" href="15159199909308.html">数组的常用操作</a></li>
-                        
                           <li><a title="SPL--SplObjectStorage 方法使用" href="15157440556671.html">SPL--SplObjectStorage 方法使用</a></li>
                         
                           <li><a title="php 与 nginx" href="15128085452995.html">php 与 nginx</a></li>
@@ -682,28 +678,53 @@
 
 	
 		<div class="markdown-body">
-		<h1>实战--热部署（热加载）</h1>
+		<h1>实战--日志</h1>
 
-		<h3 id="toc_0">热部署</h3>
+		<p>默认自带日志 什么都不需要配置<br/>
+1. logback.xml<br/>
+2. private final static Logger logger= LoggerFactory.getLogger(TestController.class);  (包 org.slf4j)</p>
 
-<h3 id="toc_1">热加载（开发）</h3>
+<p>xml文件内容<br/>
+```<br/>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br/>
+<configuration debug="false"><br/>
+    &lt;!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径--&gt;<br/>
+    <property name="LOG_PATH" value="/Users/shuo/web/demo/github/demoMybatis/log" /><br/>
+    <property name="LOG_FileName" value="permission" /><br/>
+    &lt;!-- 控制台输出 --&gt;<br/>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"><br/>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder"><br/>
+            &lt;!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符--&gt;<br/>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern><br/>
+        </encoder><br/>
+    </appender><br/>
+    &lt;!-- 按照每天生成日志文件 --&gt;<br/>
+    <appender name="FILE"  class="ch.qos.logback.core.rolling.RollingFileAppender"><br/>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"><br/>
+            &lt;!--日志文件输出的文件名--&gt;<br/>
+            <FileNamePattern>\({LOG_PATH}/\){LOG_FileName}.%d{yyyy-MM-dd}.log</FileNamePattern><br/>
+            &lt;!--日志文件保留天数--&gt;<br/>
+            <MaxHistory>30</MaxHistory><br/>
+        </rollingPolicy><br/>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder"><br/>
+            &lt;!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符--&gt;<br/>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern><br/>
+        </encoder><br/>
+        &lt;!--日志文件最大的大小--&gt;<br/>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy"><br/>
+            <MaxFileSize>50MB</MaxFileSize><br/>
+        </triggeringPolicy><br/>
+    </appender></p>
 
-<p>很多方式可以百度</p>
+<pre><code>&lt;!-- 日志输出级别 --&gt;
+&lt;root level=&quot;INFO&quot;&gt;
+    &lt;appender-ref ref=&quot;STDOUT&quot; /&gt;
+    &lt;appender-ref ref=&quot;FILE&quot; /&gt;
+&lt;/root&gt;
+</code></pre>
 
-<ol>
-<li><p>&lt;!--热加载--&gt;<br/>
-    <dependency><br/>
-        <groupId>org.springframework.boot</groupId><br/>
-        <artifactId>spring-boot-devtools</artifactId><br/>
-    </dependency></p></li>
-<li><p>Intellij中的设置（eclipse可能不需要配置此项）<br/>
-（如果是第一次配置需要配置下面2项。之后每次只需要配置一次（下面的第一项）即可）</p>
-
-<ol>
-<li>IDEA开启项目自动编译，进入设置，Build,Execut, Deployment -&gt; Compiler 勾选中左侧的Build Project automatically</li>
-<li>IDEA开启项目运行时自动make, ctrl + shift + a搜索命令：registry -&gt; 勾选compiler.automake.allow.when.app.running</li>
-</ol></li>
-</ol>
+<p></configuration><br/>
+```</p>
 
 
 		</div>
