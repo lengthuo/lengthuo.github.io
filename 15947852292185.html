@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  lengthuo
+  如何搭建github个人网站 - lengthuo
   
   </title>
  <meta name="description" content="lengthuo 思维向前一小步，成长快人一大步">
@@ -83,112 +83,57 @@
             </div>
             <div class="large-9 medium-9 columns">
 
- 
+ <div class="markdown-body">
+<h1>如何搭建github个人网站</h1>
+
+<h2 id="toc_0">1. 创建github项目</h2>
+
+<p><img src="media/15947852292185/15947905973703.jpg" alt=""/></p>
+
+<h2 id="toc_1">2. 生成html</h2>
+
+<p>使用mweb自动生成静态网站</p>
+
+<p><img src="media/15947852292185/15947910395350.jpg" alt=""/></p>
+
+<p><img src="media/15947852292185/15947911468116.jpg" alt=""/></p>
 
 
-	
-		<div class="markdown-body">
-		<h1>mysql 安装</h1>
+</div>
 
-		<h2 id="toc_0">一、卸载现有的</h2>
+<br /><br />
+<hr />
 
-<pre><code>rpm -qa | grep mysql
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="15947911703537.html"  title="Previous Post: mysql 安装">&laquo; mysql 安装</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	</div>
+  </div>
+</div>
 
-rpm -e  普通删除
-rpm -e --nodeps  强力删除，消除依赖
-
-检测是否存在mariadb
-rpm -qa | grep mariadb
-</code></pre>
-
-<h2 id="toc_1">二、下载解压</h2>
-
-<pre><code>wget https://cdn.mysql.com//Downloads/MySQL-5.7/mysql-5.7.25-linux-glibc2.12-x86_64.tar.gz
-
-目录准备：
-/usr/local/mysql/mysql57/data
-</code></pre>
-
-<h2 id="toc_2">三、用户组，目录赋予用户组</h2>
-
-<pre><code>[root@iz2ze0ebr6tsvnum4obdcpz mysql57]# cat /etc/group | grep mysql
-mysql:x:27:
-[root@iz2ze0ebr6tsvnum4obdcpz mysql57]# cat /etc/passwd | grep mysql
-mysql:x:27:27:MariaDB Server:/var/lib/mysql:/sbin/nologin
-
-没有则创建
-chown -R mysql.mysql /opt/mysql/mysql-5.7.25
-
-</code></pre>
-
-<h2 id="toc_3">四、创建/etc/cof 文件</h2>
-
-<pre><code>[mysqld]
-sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES 
- 
-basedir = /usr/local/mysql/mysql57
-datadir = /usr/local/mysql/mysql57/data
-port = 3306
-socket = /tmp/mysql.sock
-character-set-server=utf8
- 
-log-error = /usr/local/mysql/mysql57/data/mysqld.log
-pid-file = /usr/local/mysql/mysql57/data/mysqld.pid
-</code></pre>
-
-<h2 id="toc_4">五、初始化</h2>
-
-<pre><code>cd /usr/local/mysql/mysql57/
-./bin/mysqld --initialize --user=mysql --basedir=/usr/local/mysql/mysql57/ --datadir=/usr/local/mysql/mysql57/data/
-
-//会显示初始密码  eHW1&lt;#&gt;o.Ltx
-
-初始化完成之后，查看日志
-/usr/local/mysql/mysql57/data/mysqld.log
-
-把启动脚本开机初始化目录中
-cp support-files/mysql.server /etc/init.d/mysql
-</code></pre>
-
-<p>注意点：<br/>
-如果失败的话，把data目录下文件清空，再执行mysqld --initialize</p>
-
-<h2 id="toc_5">六、启动服务</h2>
-
-<pre><code>service mysql start
-
-cd /opt/mysql/mysql-5.7.25
-./bin/mysql -u root -p
-</code></pre>
-
-<p>修改密码：</p>
-
-<pre><code>mysql&gt; set password=password(&#39;123456&#39;);
-mysql&gt; grant all privileges on *.* to root@&#39;%&#39; identified by &#39;123456&#39;;
-mysql&gt; flush privileges;
-</code></pre>
-
-<p>添加远程访问权限</p>
-
-<pre><code>mysql&gt; use mysql;
-mysql&gt; update user set host=&#39;%&#39; where user = &#39;root&#39;;
-mysql&gt; flush privileges;
-</code></pre>
-
-<p>重启生效</p>
-
-<pre><code>service mysql restart
-</code></pre>
-
-
-		</div>
-	
-
- 
-	
-
-  
-  
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+https://lengthuo.github.io/
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '15947852292185.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
 </div></div>
 
 
